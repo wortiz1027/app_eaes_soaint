@@ -1,7 +1,7 @@
 ----------------------------------------
 --Tabla ROL
 CREATE TABLE rol
-( id_rol varchar2(20) NOT NULL,
+( id_rol NUMBER GENERATED ALWAYS AS IDENTITY,
   nombre varchar2(50) NOT NULL,
   descripcion varchar2(50),
   CONSTRAINT rol_pk PRIMARY KEY (id_rol)
@@ -9,7 +9,7 @@ CREATE TABLE rol
 
 --Tabla VACANTE
 CREATE TABLE vacante
-( id_vacante varchar2(20) NOT NULL,
+( id_vacante NUMBER GENERATED ALWAYS AS IDENTITY,
   nombre varchar2(50),
   estado varchar2(20),
   descripcion varchar2(100),
@@ -18,7 +18,7 @@ CREATE TABLE vacante
 
 --Tabla CANDIDATO
 CREATE TABLE candidato
-( id_candidato varchar2(20) NOT NULL,
+( id_candidato NUMBER GENERATED ALWAYS AS IDENTITY,
   primer_nombre varchar2(20) NOT NULL,
   segundo_nombre varchar2(20),
   primer_apellido varchar2(20) NOT NULL,
@@ -33,8 +33,8 @@ CREATE TABLE candidato
 
 --Tabla Colaborador
 CREATE TABLE colaborador
-( id_colaborador varchar2(20) NOT NULL,
-  id_rol varchar2(20),
+( id_colaborador NUMBER GENERATED ALWAYS AS IDENTITY,
+  id_rol NUMBER,
   primer_nombre varchar2(20) NOT NULL,
   segundo_nombre varchar2(20),
   primer_apellido varchar2(20) NOT NULL,
@@ -49,8 +49,8 @@ CREATE TABLE colaborador
 
 --Tabla CURRICULUM
 CREATE TABLE curriculum
-( id_curriculum varchar2(20) NOT NULL,
-  id_candidato varchar2(20),
+( id_curriculum NUMBER GENERATED ALWAYS AS IDENTITY,
+  id_candidato NUMBER,
   id_documento varchar2(20) NOT NULL,
   nivel_academico varchar2(20),
   titulo_academico varchar2(20),
@@ -62,10 +62,10 @@ CREATE TABLE curriculum
 
 --Tabla ENTREVISTA
 CREATE TABLE entrevista
-( id_entrevista varchar2(20),
-  id_curriculum varchar2(20) NOT NULL,
-  id_colaborador varchar2(20),
-  id_vacante varchar2(20) NOT NULL,
+( id_entrevista NUMBER GENERATED ALWAYS AS IDENTITY,
+  id_curriculum NUMBER,
+  id_colaborador NUMBER,
+  id_vacante NUMBER,
   fecha_realizacion DATE,
   resultado varchar2(20),
   fecha_emision_resultado DATE,
@@ -84,7 +84,7 @@ CREATE TABLE entrevista
 
 --Tabla PROTOTIPO
 CREATE TABLE prototipo
-( id_prototipo varchar2(20) NOT NULL,
+( id_prototipo NUMBER GENERATED ALWAYS AS IDENTITY,
   titulo varchar2(50) NOT NULL,
   fecha_inicio DATE,
   fecha_cierre DATE,
@@ -95,8 +95,8 @@ CREATE TABLE prototipo
 
 --Tabla FASE
 CREATE TABLE fase
-( id_fase varchar2(20),
-  id_prototipo varchar2(20),
+( id_fase NUMBER GENERATED ALWAYS AS IDENTITY,
+  id_prototipo NUMBER,
   fecha_inicio DATE,
   fecha_fin DATE,
   CONSTRAINT fase_pk PRIMARY KEY (id_fase),
@@ -107,8 +107,8 @@ CREATE TABLE fase
 
 --Tabla RECOMENDACION
 CREATE TABLE recomendacion
-( id_recomendacion varchar2(20),
-  id_prototipo varchar2(20),
+( id_recomendacion NUMBER GENERATED ALWAYS AS IDENTITY,
+  id_prototipo NUMBER,
   observacion varchar2(2000),
   CONSTRAINT recomendacion_pk PRIMARY KEY (id_recomendacion),
   CONSTRAINT fk_recomendacion_prototipo
@@ -118,8 +118,8 @@ CREATE TABLE recomendacion
 
 --Tabla PROBLEMA
 CREATE TABLE problema
-( id_problema varchar2(20),
-  id_prototipo varchar2(20),
+( id_problema NUMBER GENERATED ALWAYS AS IDENTITY,
+  id_prototipo NUMBER,
   fecha_incidencia DATE,
   observacion varchar2(2000),
   CONSTRAINT problema_pk PRIMARY KEY (id_problema),
