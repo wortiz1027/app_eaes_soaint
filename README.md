@@ -51,9 +51,11 @@ Para el desarrollo del proyecto se seleccionaron productos Oracle en su versión
 
 ### Modelo E-R Proceso Estratégico
 
-![alt text](MER/ERDFiltroSeleccionCandidatos.jpg "Modelo conceptual")
+![alt text](MER/ERDPrototipoProductosServicios.jpg "Modelo conceptual E-R del proceso Estratégico")
 
 ### Modelo E-R Proceso de Soporte
+
+![alt text](MER/ERDFiltroSeleccionCandidatos.jpg "Modelo conceptual E-R del proceso de soporte")
 
 ## Versiones
 
