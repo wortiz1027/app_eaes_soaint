@@ -51,7 +51,7 @@ Para el desarrollo del proyecto se seleccionaron productos Oracle en su versión
 
 ### Modelo E-R Proceso Estratégico
 
-![Modelo E-R]("https://367ae4a6-a-62cb3a1a-s-sites.googlegroups.com/site/drrc954098/home/bpm/BPMpartssmall.png?attachauth=ANoY7crffhDY8SSSWaOHhQA4zVwnsXBYeCzcGGG89og9sBp9jAjFV-p0mSQm8Nsm7j2fYjD6Cq3QA71R6lHRJxbVr7SipKQUYpH4I5juUtVss-patGV3v-ecTaRbNUYnb7vilQoQsOtBIqpzIqQlOnrouxVeXW9YfopQvXs8vqoiSAs7eGCGXmNeZu4faRsrLeLVlyF2KwxixZD-tAF4QJYBlKZdsY3cpKm-Z2jsytYxQ7aqisdPplk%3D&attredirects=0" "Modelo conceptual")
+![alt text](MER/ERDFiltroSeleccionCandidatos.jpg "Modelo conceptual")
 
 ### Modelo E-R Proceso de Soporte
 
