@@ -10,7 +10,7 @@
 
 El siguiente proyecto ilustra la aplicación de los conceptos aprendidos en clase  y desarrollar el TO-BE para la capacidad de negocio seleccionada por el grupo para el desarrollo de las actividades de la asignatura
 
-### AS-IS
+### AS-IS <a name="AS-IS"></a>
 
 Después de el proceso de evaluación con APQC de describe el AS-IS de la capacidad de negocio seleccionada:
 
