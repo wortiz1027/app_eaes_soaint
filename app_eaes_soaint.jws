@@ -30,6 +30,7 @@
       <hash><url n="URL" path="ADF_Vistas/ADF_Vistas.jpr"/></hash>
       <hash><url n="URL" path="BPM_Estrategico/BPM_Estrategico.jpr"/></hash>
       <hash><url n="URL" path="BPM_Soporte/BPM_Soporte.jpr"/></hash>
-      <hash><url n="URL" path="SOA_Servicios/SOA_Servicios.jpr"/></hash>
+      <hash><url n="URL" path="SOA_Content/SOA_Content.jpr"/></hash>
+      <hash><url n="URL" path="SOA_Database/SOA_Database.jpr"/></hash>
    </list>
 </jws:workspace>

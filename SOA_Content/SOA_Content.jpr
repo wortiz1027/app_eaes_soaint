@@ -112,7 +112,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="SOA_Servicios">
+         <hash n="SOA_Content">
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
@@ -199,18 +199,18 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/sca_SOA_Servicios.jar"/>
+            <url n="jarURL" path="deploy/sca_SOA_Content.jar"/>
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
-            <value n="profileName" v="SOA_Servicios"/>
+            <value n="profileName" v="SOA_Content"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="SOA_Servicios"/>
+         <string v="SOA_Content"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="app_eaes_soaint-SOA_Servicios-webapp"/>
-      <value n="j2eeWebContextRoot" v="app_eaes_soaint-SOA_Servicios-context-root"/>
+      <value n="j2eeWebAppName" v="app_eaes_soaint-SOA_Content-webapp"/>
+      <value n="j2eeWebContextRoot" v="app_eaes_soaint-SOA_Content-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
