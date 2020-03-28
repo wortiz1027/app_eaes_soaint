@@ -10,13 +10,21 @@
 
 El siguiente proyecto ilustra la aplicación de los conceptos aprendidos en clase  y desarrollar el TO-BE para la capacidad de negocio seleccionada por el grupo para el desarrollo de las actividades de la asignatura
 
+![alt text](images/bpm.png "Modelo conceptual E-R del proceso Estratégico")
+
 ### AS-IS <a name="AS-IS"></a>
 
 Después de el proceso de evaluación con APQC de describe el AS-IS de la capacidad de negocio seleccionada:
 
 ### Diagramas
 
-Nota: Insertar Imagen
+#### Proceso Estrategico
+
+![alt text](images/DisenoPrototipoProductosServicios.png "Modelo conceptual E-R del proceso Estratégico")
+
+#### Proceso de Soporte
+
+![alt text](images/FiltrarSeleccionarCandidato.png "Modelo conceptual E-R del proceso Estratégico")
 
 ### TO-BE
 
@@ -51,11 +59,11 @@ Para el desarrollo del proyecto se seleccionaron productos Oracle en su versión
 
 ### Modelo E-R Proceso Estratégico
 
-![alt text](MER/ERDPrototipoProductosServicios.jpg "Modelo conceptual E-R del proceso Estratégico")
+![alt text](images/MER/ERDPrototipoProductosServicios.jpg "Modelo conceptual E-R del proceso Estratégico")
 
 ### Modelo E-R Proceso de Soporte
 
-![alt text](MER/ERDFiltroSeleccionCandidatos.jpg "Modelo conceptual E-R del proceso de soporte")
+![alt text](images/MER/ERDFiltroSeleccionCandidatos.jpg "Modelo conceptual E-R del proceso de soporte")
 
 ## Versiones
 
