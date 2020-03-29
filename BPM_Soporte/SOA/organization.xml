@@ -11,6 +11,30 @@
          <ns3:name>BPM_Soporte.Process Reviewer</ns3:name>
          <ns0:processRole id="ProcessReviewer" name="Process Reviewer"/>
       </ns0:applicationRole>
+      <ns0:applicationRole id="BPM_Soporte.GerentedeRRHH" isProcessRole="true">
+         <ns3:name>BPM_Soporte.Gerente de RRHH</ns3:name>
+         <ns0:processRole id="GerentedeRRHH" name="Gerente de RRHH"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="BPM_Soporte.DirectordeReclutamiento" isProcessRole="true">
+         <ns3:name>BPM_Soporte.Director de Reclutamiento</ns3:name>
+         <ns0:processRole id="DirectordeReclutamiento" name="Director de Reclutamiento"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="BPM_Soporte.AuxiliardeReclutamiento" isProcessRole="true">
+         <ns3:name>BPM_Soporte.Auxiliar de Reclutamiento</ns3:name>
+         <ns0:processRole id="AuxiliardeReclutamiento" name="Auxiliar de Reclutamiento"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="BPM_Soporte.Reclutamiento" isProcessRole="true">
+         <ns3:name>BPM_Soporte.Reclutamiento</ns3:name>
+         <ns0:processRole id="Reclutamiento" name="Reclutamiento"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="BPM_Soporte.Contratacion" isProcessRole="true">
+         <ns3:name>BPM_Soporte.Contratacion</ns3:name>
+         <ns0:processRole id="Contratacion" name="Contratacion"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="BPM_Soporte.SistemadeNotificacion" isProcessRole="true">
+         <ns3:name>BPM_Soporte.Sistema de Notificacion</ns3:name>
+         <ns0:processRole id="SistemadeNotificacion" name="Sistema de Notificacion"/>
+      </ns0:applicationRole>
    </ns0:applicationRoles>
    <ns0:applicationRoleOrgUnitCalendarAssociations/>
    <ns0:participantPropertiesList/>

@@ -19,7 +19,26 @@
           location="WSDLs/DesarrollarEspecificacionesDiseno.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo"
           location="WSDLs/ConstruirProbarPrototipo.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
+          location="oramds:/soa/shared/workflow/NotificationService.wsdl" importType="wsdl"/>
   <service name="DisenoPrototipoProductosServicios.service_2"
+           ui:wsdlLocation="WSDLs/DisenoPrototipoProductosServicios.wsdl">
+    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortType)"
+                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortTypeCallBack)"/>
+    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPort)"/>
+    <callback>
+      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPortTypeCallBack_pt)"/>
+    </callback>
+  </service>
+  <service name="ConstruirProbarPrototipo.service" ui:wsdlLocation="WSDLs/ConstruirProbarPrototipo.wsdl">
+    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.interface(ConstruirProbarPrototipoPortType)"
+                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.interface(ConstruirProbarPrototipoPortTypeCallBack)"/>
+    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.endpoint(ConstruirProbarPrototipo.service/ConstruirProbarPrototipoPort)"/>
+    <callback>
+      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.endpoint(ConstruirProbarPrototipo.service/ConstruirProbarPrototipoPortTypeCallBack_pt)"/>
+    </callback>
+  </service>
+  <service name="DisenoPrototipoProductosServicios.service"
            ui:wsdlLocation="WSDLs/DisenoPrototipoProductosServicios.wsdl">
     <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortType)"
                     callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortTypeCallBack)"/>
@@ -43,23 +62,6 @@
     <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos#wsdl.endpoint(VerificarAsignarRecursos.service/VerificarAsignarRecursosPort)"/>
     <callback>
       <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos#wsdl.endpoint(VerificarAsignarRecursos.service/VerificarAsignarRecursosPortTypeCallBack_pt)"/>
-    </callback>
-  </service>
-  <service name="ConstruirProbarPrototipo.service" ui:wsdlLocation="WSDLs/ConstruirProbarPrototipo.wsdl">
-    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.interface(ConstruirProbarPrototipoPortType)"
-                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.interface(ConstruirProbarPrototipoPortTypeCallBack)"/>
-    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.endpoint(ConstruirProbarPrototipo.service/ConstruirProbarPrototipoPort)"/>
-    <callback>
-      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.endpoint(ConstruirProbarPrototipo.service/ConstruirProbarPrototipoPortTypeCallBack_pt)"/>
-    </callback>
-  </service>
-  <service name="DisenoPrototipoProductosServicios.service"
-           ui:wsdlLocation="WSDLs/DisenoPrototipoProductosServicios.wsdl">
-    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortType)"
-                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortTypeCallBack)"/>
-    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPort)"/>
-    <callback>
-      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPortTypeCallBack_pt)"/>
     </callback>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.3.0.170820</property>
@@ -96,6 +98,10 @@
                         callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos#wsdl.interface(VerificarAsignarRecursosPortTypeCallBack)"/>
         <property name="bpm.generated.service.reference" type="xs:string" many="false">VerificarAsignarRecursos.service</property>
       </service>
+      <reference name="NotificationService.ACT28384423356278"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+      </reference>
     </componentType>
   </component>
   <component name="DesarrollarEspecificacionesDiseno">
@@ -119,6 +125,11 @@
       </service>
     </componentType>
   </component>
+  <reference name="BPM-NotificationService" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+    <binding.wsif port="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.endpoint(NotificationService/JavaPort)"
+                  location="oramds:/soa/shared/workflow/NotificationService.wsdl"/>
+  </reference>
   <wire>
     <source.uri>DisenoPrototipoProductosServicios/VerificarAsignarRecursos.reference</source.uri>
     <target.uri>VerificarAsignarRecursos/VerificarAsignarRecursos.service</target.uri>
@@ -126,14 +137,6 @@
   <wire>
     <source.uri>DisenoPrototipoProductosServicios/DesarrollarEspecificacionesDiseno.reference</source.uri>
     <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
-  </wire>
-  <wire>
-    <source.uri>DesarrollarEspecificacionesDiseno.service</source.uri>
-    <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
-  </wire>
-  <wire>
-    <source.uri>VerificarAsignarRecursos.service</source.uri>
-    <target.uri>VerificarAsignarRecursos/VerificarAsignarRecursos.service</target.uri>
   </wire>
   <wire>
     <source.uri>DisenoPrototipoProductosServicios/ConstruirProbarPrototipo.reference</source.uri>
@@ -144,7 +147,19 @@
     <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
   </wire>
   <wire>
+    <source.uri>VerificarAsignarRecursos/NotificationService.ACT28384423356278</source.uri>
+    <target.uri>BPM-NotificationService</target.uri>
+  </wire>
+  <wire>
     <source.uri>DisenoPrototipoProductosServicios.service</source.uri>
     <target.uri>DisenoPrototipoProductosServicios/DisenoPrototipoProductosServicios.service</target.uri>
+  </wire>
+  <wire>
+    <source.uri>DesarrollarEspecificacionesDiseno.service</source.uri>
+    <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
+  </wire>
+  <wire>
+    <source.uri>VerificarAsignarRecursos.service</source.uri>
+    <target.uri>VerificarAsignarRecursos/VerificarAsignarRecursos.service</target.uri>
   </wire>
 </composite>

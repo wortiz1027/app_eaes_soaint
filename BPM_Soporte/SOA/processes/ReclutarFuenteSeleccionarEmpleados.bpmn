@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <bpmn:definitions fileRevision="20120601" version="12.1.3" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmnext="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC">
-    <bpmn:process processType="Public" isExecutable="true" name="DisenoPrototipoProductosServicios" id="DisenoPrototipoProductosServicios">
+    <bpmn:process processType="Public" isExecutable="true" name="ReclutarFuenteSeleccionarEmpleados" id="ReclutarFuenteSeleccionarEmpleados">
         <bpmn:extensionElements>
             <bpmnext:OracleExtensions>
                 <bpmnext:FeatureSet>
@@ -12,25 +12,19 @@
                     <bpmnext:StringFeature value="" name="ANALYTICS_VIEW_IDENTIFIER"/>
                     <bpmnext:StringFeature value="" name="AUTHOR"/>
                     <bpmnext:StringFeature value="default" name="GreedyExecutionMode"/>
-                    <bpmnext:StringFeature value="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios" name="NAMESPACE"/>
+                    <bpmnext:StringFeature value="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados" name="NAMESPACE"/>
                     <bpmnext:StringFeature value="PROJECT_DEFAULT" name="generatesEvents"/>
                     <bpmnext:StringFeature value="HORIZONTAL_LAYOUT" name="process-layout"/>
-                    <bpmnext:StringFeature value="0.737" name="scale"/>
+                    <bpmnext:StringFeature value="0.998" name="scale"/>
                     <bpmnext:StringFeature value="REGULAR" name="sealType"/>
                 </bpmnext:FeatureSet>
                 <bpmnext:Localization/>
                 <bpmnext:Conversations>
-                    <bpmnext:Conversation id="CONVERSATION283686118966" type="define_interface">
+                    <bpmnext:Conversation id="CONVERSATION283867605539" type="define_interface">
                         <bpmnext:DefineInterfaceConversationDefinition exposeSOAPService="true"/>
                     </bpmnext:Conversation>
-                    <bpmnext:Conversation id="CONVERSATION283686794862" type="process_call">
-                        <bpmnext:ProcessCallConversationDefinition process="VerificarAsignarRecursos"/>
-                    </bpmnext:Conversation>
-                    <bpmnext:Conversation id="CONVERSATION283688714245" type="process_call">
-                        <bpmnext:ProcessCallConversationDefinition process="DesarrollarEspecificacionesDiseno"/>
-                    </bpmnext:Conversation>
-                    <bpmnext:Conversation id="CONVERSATION283690436529" type="process_call">
-                        <bpmnext:ProcessCallConversationDefinition process="ConstruirProbarPrototipo"/>
+                    <bpmnext:Conversation id="CONVERSATION283872285759" type="process_call">
+                        <bpmnext:ProcessCallConversationDefinition process="FiltradoSeleccionCandidatos"/>
                     </bpmnext:Conversation>
                 </bpmnext:Conversations>
                 <bpmnext:ApplicationInfo>
@@ -48,126 +42,98 @@
             </bpmnext:OracleExtensions>
         </bpmn:extensionElements>
         <bpmn:laneSet>
-            <bpmn:lane name="Arquitecto" id="lane1">
+            <bpmn:lane name="Reclutamiento" id="lane0">
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes backgroundColor="-1761607681">
                             <bpmnext:Position x="0" y="0"/>
-                            <bpmnext:Size width="200" height="0"/>
+                            <bpmnext:Size width="384" height="0"/>
                         </bpmnext:GraphicsAttributes>
-                        <bpmnext:LaneAttributes roleId="Arquitecto"/>
+                        <bpmnext:LaneAttributes roleId="Reclutamiento"/>
                         <bpmnext:FeatureSet/>
                     </bpmnext:OracleExtensions>
                 </bpmn:extensionElements>
             </bpmn:lane>
-            <bpmn:lane name="Funcional de Negocio" id="lane2">
+            <bpmn:lane name="Contratacion" id="lane1">
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes backgroundColor="-1761607681">
-                            <bpmnext:Position x="200" y="0"/>
+                            <bpmnext:Position x="384" y="0"/>
                             <bpmnext:Size width="200" height="0"/>
                         </bpmnext:GraphicsAttributes>
-                        <bpmnext:LaneAttributes roleId="FuncionaldeNegocio"/>
-                        <bpmnext:FeatureSet/>
-                    </bpmnext:OracleExtensions>
-                </bpmn:extensionElements>
-            </bpmn:lane>
-            <bpmn:lane name="Equipo de Desarrollo" id="lane3">
-                <bpmn:extensionElements>
-                    <bpmnext:OracleExtensions>
-                        <bpmnext:GraphicsAttributes backgroundColor="-1761607681">
-                            <bpmnext:Position x="400" y="0"/>
-                            <bpmnext:Size width="200" height="0"/>
-                        </bpmnext:GraphicsAttributes>
-                        <bpmnext:LaneAttributes roleId="EquipodeDesarrollo"/>
-                        <bpmnext:FeatureSet/>
-                    </bpmnext:OracleExtensions>
-                </bpmn:extensionElements>
-            </bpmn:lane>
-            <bpmn:lane name="AutomaticHandler" id="lane4">
-                <bpmn:extensionElements>
-                    <bpmnext:OracleExtensions>
-                        <bpmnext:GraphicsAttributes backgroundColor="-1761607681">
-                            <bpmnext:Position x="600" y="0"/>
-                            <bpmnext:Size width="0" height="0"/>
-                        </bpmnext:GraphicsAttributes>
-                        <bpmnext:LaneAttributes roleId="AutomaticHandler"/>
+                        <bpmnext:LaneAttributes roleId="Contratacion"/>
                         <bpmnext:FeatureSet/>
                     </bpmnext:OracleExtensions>
                 </bpmn:extensionElements>
             </bpmn:lane>
         </bpmn:laneSet>
-        <bpmn:sendTask isForCompensation="false" name="[BPM] Llamar Verificar y Asignar Recursos " id="ACT2836865969540">
+        <bpmn:sendTask isForCompensation="false" name="[BPM] Llamada Proceso de Reclutamiento" id="ACT28386829646719">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="302" y="100"/>
+                        <bpmnext:Position x="221" y="153"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
-                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="true" name="isDraft"/>
                         <bpmnext:BooleanFeature value="false" name="inputValidation"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
                         <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <bpmnext:StringFeature value="Arquitecto" name="lane"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
                         <bpmnext:StringFeature value="Begin Level" name="level"/>
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">[BPM] Llamar Verificar y Asignar Recursos </bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en">[BPM] Llamada Proceso de Reclutamiento</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283686794862">
-                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28368672472543"/>
-                    </bpmnext:Conversational>
+                    <bpmnext:Conversational/>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:sendTask>
-        <bpmn:receiveTask instantiate="false" isForCompensation="false" name="[BPM] Esperar Verificar y Asignar Recursos" id="ACT28368667881648">
+        <bpmn:receiveTask instantiate="false" isForCompensation="false" name="[BPM] Espera Proceso de Reclutamiento" id="ACT28386830803914">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="484" y="100"/>
+                        <bpmnext:Position x="394" y="153"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
-                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="true" name="isDraft"/>
                         <bpmnext:BooleanFeature value="false" name="outputValidation"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
                         <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <bpmnext:StringFeature value="Arquitecto" name="lane"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
                         <bpmnext:StringFeature value="Begin Level" name="level"/>
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">[BPM] Esperar Verificar y Asignar Recursos</bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en">[BPM] Espera Proceso de Reclutamiento</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283686794862">
-                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28368672472582"/>
-                    </bpmnext:Conversational>
+                    <bpmnext:Conversational/>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:receiveTask>
-        <bpmn:sendTask isForCompensation="false" name="[BPM] Llamar Desarrollar Especificaciones de Diseño" id="ACT28368829295746">
+        <bpmn:sendTask isForCompensation="false" name="[BPM] Llamado Proceso de Filtrado y Selección" id="ACT28386868195893">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="699" y="300"/>
+                        <bpmnext:Position x="668" y="291"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -181,14 +147,14 @@
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">[BPM] Llamar Desarrollar Especificaciones de Diseño</bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en">[BPM] Llamado Proceso de Filtrado y Selección</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283688714245">
-                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28368848979520"/>
+                    <bpmnext:Conversational conversation="CONVERSATION283872285759">
+                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28386996861791"/>
                     </bpmnext:Conversational>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
@@ -196,11 +162,11 @@
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:sendTask>
-        <bpmn:receiveTask instantiate="false" isForCompensation="false" name="[BPM] Esperar Desarrollar Especificaciones de Diseño" id="ACT28368830599513">
+        <bpmn:receiveTask instantiate="false" isForCompensation="false" name="[BPM] Espera Proceso de Filtrado y Selección" id="ACT28386875437350">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="850" y="300"/>
+                        <bpmnext:Position x="809" y="289"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -214,14 +180,14 @@
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">[BPM] Esperar Desarrollar Especificaciones de Diseño</bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en">[BPM] Espera Proceso de Filtrado y Selección</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283688714245">
-                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28368848979642"/>
+                    <bpmnext:Conversational conversation="CONVERSATION283872285759">
+                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28386996861761"/>
                     </bpmnext:Conversational>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
@@ -229,15 +195,15 @@
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:receiveTask>
-        <bpmn:sendTask isForCompensation="false" name="[BPM] Llamar Contruir y Probar Prototipo" id="ACT28369012975080">
+        <bpmn:sendTask isForCompensation="false" name="[BPM] Llamado Proceso de Contratación" id="ACT28386880799062">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1041" y="504"/>
+                        <bpmnext:Position x="1034" y="478"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
-                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="true" name="isDraft"/>
                         <bpmnext:BooleanFeature value="false" name="inputValidation"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
                         <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -247,30 +213,28 @@
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">[BPM] Llamar Contruir y Probar Prototipo</bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en">[BPM] Llamado Proceso de Contratación</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283690436529">
-                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28369031028274"/>
-                    </bpmnext:Conversational>
+                    <bpmnext:Conversational/>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:sendTask>
-        <bpmn:receiveTask instantiate="false" isForCompensation="false" name="[BPM] Esperar Contruir y Probar Prototipo" id="ACT28369016538323">
+        <bpmn:receiveTask instantiate="false" isForCompensation="false" name="[BPM] Espera Proceso de Contratación" id="ACT28386883879181">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1201" y="504"/>
+                        <bpmnext:Position x="1194" y="478"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
-                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="true" name="isDraft"/>
                         <bpmnext:BooleanFeature value="false" name="outputValidation"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
                         <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -280,26 +244,24 @@
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">[BPM] Esperar Contruir y Probar Prototipo</bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en">[BPM] Espera Proceso de Contratación</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283690436529">
-                        <bpmnext:ProcessCallConversationalDefinition targetConversational="EVT28369031028295"/>
-                    </bpmnext:Conversational>
+                    <bpmnext:Conversational/>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:receiveTask>
-        <bpmn:startEvent isInterrupting="false" name="inicio" id="EVT28368611896577">
+        <bpmn:startEvent isInterrupting="false" name="inicio" id="EVT28386760553972">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="95" y="100"/>
+                        <bpmnext:Position x="83" y="153"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -308,7 +270,7 @@
                         <bpmnext:BooleanFeature value="false" name="outputValidation"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
                         <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <bpmnext:StringFeature value="Arquitecto" name="lane"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
                         <bpmnext:StringFeature value="Begin Level" name="level"/>
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </bpmnext:FeatureSet>
@@ -320,8 +282,8 @@
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283686118966">
-                        <bpmnext:DefineInterfaceConversationalDefinition definedOperationName="inicioDisenoPrototipoProductosServicios"/>
+                    <bpmnext:Conversational conversation="CONVERSATION283867605539">
+                        <bpmnext:DefineInterfaceConversationalDefinition definedOperationName="inicioReclutarFuenteSeleccionarEmpleados"/>
                     </bpmnext:Conversational>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
@@ -330,11 +292,11 @@
             <bpmn:outputSet/>
             <bpmn:messageEventDefinition/>
         </bpmn:startEvent>
-        <bpmn:endEvent name="Fin" id="EVT28368611896672">
+        <bpmn:endEvent name="Fin" id="EVT28386760553956">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1337" y="504"/>
+                        <bpmnext:Position x="1315" y="476"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -342,7 +304,7 @@
                         <bpmnext:BooleanFeature value="false" name="isDraft"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
                         <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <bpmnext:StringFeature value="Arquitecto" name="lane"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
                         <bpmnext:StringFeature value="Begin Level" name="level"/>
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </bpmnext:FeatureSet>
@@ -354,8 +316,8 @@
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION283686118966">
-                        <bpmnext:DefineInterfaceConversationalDefinition definedOperationName="finDisenoPrototipoProductosServicios"/>
+                    <bpmnext:Conversational conversation="CONVERSATION283867605539">
+                        <bpmnext:DefineInterfaceConversationalDefinition definedOperationName="finReclutarFuenteSeleccionarEmpleados"/>
                     </bpmnext:Conversational>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
@@ -364,11 +326,11 @@
             <bpmn:inputSet/>
             <bpmn:messageEventDefinition/>
         </bpmn:endEvent>
-        <bpmn:exclusiveGateway gatewayDirection="Unspecified" name="¿Existen recursos disponibles?" id="GTW28368988897231">
+        <bpmn:exclusiveGateway gatewayDirection="Unspecified" name="¿Existe personal para filtrado y selección?" id="GTW28386854088693">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="699" y="96"/>
+                        <bpmnext:Position x="552" y="154"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -380,7 +342,7 @@
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">¿Existen recursos disponibles?</bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en">¿Existe personal para filtrado y selección?</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
@@ -390,7 +352,33 @@
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:exclusiveGateway>
-        <bpmn:sequenceFlow sourceRef="EVT28368611896577" targetRef="ACT2836865969540" name="sf28368611896690" id="sf28368611896690">
+        <bpmn:exclusiveGateway gatewayDirection="Unspecified" name="¿Existe personal para contratar?" id="GTW28386885665597">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:GraphicsAttributes>
+                        <bpmnext:Position x="945" y="290"/>
+                    </bpmnext:GraphicsAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
+                        <bpmnext:StringFeature value="[]" name="TagFeature"/>
+                        <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
+                        <bpmnext:StringFeature value="Begin Level" name="level"/>
+                        <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </bpmnext:FeatureSet>
+                    <bpmnext:Localization>
+                        <bpmnext:Label>
+                            <bpmnext:LocalizedContent language="en">¿Existe personal para contratar?</bpmnext:LocalizedContent>
+                        </bpmnext:Label>
+                        <bpmnext:Description>
+                            <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
+                        </bpmnext:Description>
+                    </bpmnext:Localization>
+                    <bpmnext:FlowNodeProperties/>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:exclusiveGateway>
+        <bpmn:sequenceFlow sourceRef="EVT28386760553972" targetRef="ACT28386829646719" name="sf28386760553998" id="sf28386760553998">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>
@@ -402,7 +390,7 @@
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT2836865969540" targetRef="ACT28368667881648" name="sf28368667568511" id="sf28368667568511">
+        <bpmn:sequenceFlow sourceRef="ACT28386829646719" targetRef="ACT28386830803914" name="sf28386830482023" id="sf28386830482023">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>
@@ -414,77 +402,34 @@
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT28368667881648" targetRef="GTW28368988897231" name="sf28368669398166" id="sf28368669398166">
+        <bpmn:sequenceFlow sourceRef="ACT28386830803914" targetRef="GTW28386854088693" name="sf28386831048253" id="sf28386831048253">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes/>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <bpmnext:StringFeature value="STRAIGHT" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="GTW28386854088693" targetRef="EVT28386760553956" name="sf28386856664339" id="sf28386856664339">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="495" y="98"/>
+                        <bpmnext:Positions x="1314" y="390"/>
                     </bpmnext:SequenceFlowAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="495,98" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT28368829295746" targetRef="ACT28368830599513" name="sf28368829573777" id="sf28368829573777">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes/>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <bpmnext:StringFeature value="STRAIGHT" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT28368830599513" targetRef="ACT28369012975080" name="sf28368830989468" id="sf28368830989468">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="927" y="404"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="927,404" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="GTW28368988897231" targetRef="ACT28368829295746" name="sf28368991645017" id="sf28368991645017">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes/>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <bpmnext:StringFeature value="STRAIGHT" name="routing"/>
-                        <bpmnext:StringFeature value="Si" name="userName"/>
-                        <bpmnext:IntegerFeature value="0" name="order"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="GTW28368988897231" targetRef="EVT28368611896672" name="sf28368993743858" id="sf28368993743858">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="1334" y="403"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="1334,403" name="curve"/>
+                        <bpmnext:StringFeature value="1314,390" name="curve"/>
                         <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                         <bpmnext:StringFeature value="No" name="userName"/>
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT28369012975080" targetRef="ACT28369016538323" name="sf28369015956473" id="sf28369015956473">
+        <bpmn:sequenceFlow sourceRef="GTW28386854088693" targetRef="ACT28386868195893" name="sf28386872303193" id="sf28386872303193">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>
@@ -492,11 +437,41 @@
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
                         <bpmnext:StringFeature value="-2147483648,-2147483648" name="curve"/>
                         <bpmnext:StringFeature value="STRAIGHT" name="routing"/>
+                        <bpmnext:IntegerFeature value="0" name="order"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT28386868195893" targetRef="ACT28386875437350" name="sf28386876963973" id="sf28386876963973">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="717" y="289"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="717,289" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT28369016538323" targetRef="EVT28368611896672" name="sf28369017591471" id="sf28369017591471">
+        <bpmn:sequenceFlow sourceRef="ACT28386875437350" targetRef="GTW28386885665597" name="sf28386885377579" id="sf28386885377579">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="860" y="287"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="860,287" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="GTW28386885665597" targetRef="ACT28386880799062" name="sf28386889978847" id="sf28386889978847">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>
@@ -504,6 +479,52 @@
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
                         <bpmnext:StringFeature value="-2147483648,-2147483648" name="curve"/>
                         <bpmnext:StringFeature value="STRAIGHT" name="routing"/>
+                        <bpmnext:StringFeature value="" name="userName"/>
+                        <bpmnext:IntegerFeature value="0" name="order"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="GTW28386885665597" targetRef="EVT28386760553956" name="sf28386890523282" id="sf28386890523282">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="1314" y="430"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="1314,430" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <bpmnext:StringFeature value="No" name="userName"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT28386880799062" targetRef="ACT28386883879181" name="sf28386893489448" id="sf28386893489448">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="1119" y="478"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="1119,478" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT28386883879181" targetRef="EVT28386760553956" name="sf28386898917535" id="sf28386898917535">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="1209" y="477"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="1209,477" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>

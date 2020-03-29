@@ -27,6 +27,10 @@
          <ns3:name>BPM_Estrategico.Equipo de Desarrollo</ns3:name>
          <ns0:processRole id="EquipodeDesarrollo" name="Equipo de Desarrollo"/>
       </ns0:applicationRole>
+      <ns0:applicationRole id="BPM_Estrategico.Juridico" isProcessRole="true">
+         <ns3:name>BPM_Estrategico.Juridico</ns3:name>
+         <ns0:processRole id="Juridico" name="Juridico"/>
+      </ns0:applicationRole>
    </ns0:applicationRoles>
    <ns0:applicationRoleOrgUnitCalendarAssociations/>
    <ns0:participantPropertiesList/>
