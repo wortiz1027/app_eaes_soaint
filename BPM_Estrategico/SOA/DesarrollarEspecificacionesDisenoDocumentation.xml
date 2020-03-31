@@ -4,33 +4,9 @@
    <component name="DesarrollarEspecificacionesDiseno">
       <topicDocumentations>
          <topicDocumentation name="DesarrollarEspecificacionesDiseno"/>
-         <topicDocumentation name="EVT28368848979520">
-            <labels>
-               <label locale="en">Inicio</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="EVT28368848979642">
-            <labels>
-               <label locale="en">Fin</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
          <topicDocumentation name="ACT28368892709155">
             <labels>
                <label locale="en">Definición de Especificaciones de Diseño</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="GTW28368937769096">
-            <labels>
-               <label locale="en">¿Revisiones externas obligatorias y opcionales?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -47,6 +23,30 @@
          <topicDocumentation name="ACT28368973764674">
             <labels>
                <label locale="en">Diseñar productos/servicios</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28368848979520">
+            <labels>
+               <label locale="en">Inicio</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28368848979642">
+            <labels>
+               <label locale="en">Fin</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW28368937769096">
+            <labels>
+               <label locale="en">¿Revisiones externas obligatorias y opcionales?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>

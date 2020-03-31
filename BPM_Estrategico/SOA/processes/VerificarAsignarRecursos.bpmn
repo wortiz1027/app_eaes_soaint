@@ -104,9 +104,10 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
-                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                     </bpmnext:FeatureSet>
-                    <bpmnext:HumanTask/>
+                    <bpmnext:HumanTask>
+                        <bpmnext:humanTaskRef refType="namespaced" name="HT_SolicitarRecursos" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Estrategico/HT_SolicitarRecursos" elementType="TYPE" implementationType="humanTask"/>
+                    </bpmnext:HumanTask>
                     <bpmnext:Localization>
                         <bpmnext:Label>
                             <bpmnext:LocalizedContent language="en">Solicitar recursos</bpmnext:LocalizedContent>
@@ -119,7 +120,36 @@
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:ioSpecification/>
+            <bpmn:ioSpecification>
+                <bpmn:dataInput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataOutput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:dataOutput name="outcome" id="outcome">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:inputSet id="ACT28383726529356_uniqueInputSet">
+                    <bpmn:dataInputRefs>execData</bpmn:dataInputRefs>
+                </bpmn:inputSet>
+                <bpmn:outputSet id="ACT28383726529356_uniqueOutputSet">
+                    <bpmn:dataOutputRefs>execData</bpmn:dataOutputRefs>
+                    <bpmn:dataOutputRefs>outcome</bpmn:dataOutputRefs>
+                </bpmn:outputSet>
+            </bpmn:ioSpecification>
             <bpmn:resourceRole name="Gerente" id="lane1"/>
         </bpmn:userTask>
         <bpmn:userTask isForCompensation="false" name="Evaluar y Asignar recurso a la gestión del prototipado" id="ACT28384350446571">

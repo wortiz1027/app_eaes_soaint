@@ -4,22 +4,6 @@
    <component name="ConstruirProbarPrototipo">
       <topicDocumentations>
          <topicDocumentation name="ConstruirProbarPrototipo"/>
-         <topicDocumentation name="EVT28369031028274">
-            <labels>
-               <label locale="en">Inicio</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="EVT28369031028295">
-            <labels>
-               <label locale="en">Fin</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
          <topicDocumentation name="ACT28369058318193">
             <labels>
                <label locale="en">Construir prototipos/prueba de conceptos</label>
@@ -27,19 +11,6 @@
             <descriptions>
                <description locale="en"></description>
             </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="GTW28369068691558">
-            <labels>
-               <label locale="en">¿Acción a seguir?</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="GTW28369083597969">
-            <labels>
-               <label locale="en">InclusiveGateway</label>
-            </labels>
          </topicDocumentation>
          <topicDocumentation name="ACT28369085274950">
             <labels>
@@ -72,6 +43,35 @@
             <descriptions>
                <description locale="en"></description>
             </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28369031028274">
+            <labels>
+               <label locale="en">Inicio</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28369031028295">
+            <labels>
+               <label locale="en">Fin</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW28369068691558">
+            <labels>
+               <label locale="en">¿Acción a seguir?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW28369083597969">
+            <labels>
+               <label locale="en">InclusiveGateway</label>
+            </labels>
          </topicDocumentation>
          <topicDocumentation name="sf2836903102824"/>
          <topicDocumentation name="sf2836905942253"/>

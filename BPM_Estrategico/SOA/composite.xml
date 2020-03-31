@@ -21,7 +21,18 @@
           location="WSDLs/ConstruirProbarPrototipo.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
           location="oramds:/soa/shared/workflow/NotificationService.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
+          location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl" importType="wsdl"/>
   <service name="DisenoPrototipoProductosServicios.service_2"
+           ui:wsdlLocation="WSDLs/DisenoPrototipoProductosServicios.wsdl">
+    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortType)"
+                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortTypeCallBack)"/>
+    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPort)"/>
+    <callback>
+      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPortTypeCallBack_pt)"/>
+    </callback>
+  </service>
+  <service name="DisenoPrototipoProductosServicios.service"
            ui:wsdlLocation="WSDLs/DisenoPrototipoProductosServicios.wsdl">
     <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortType)"
                     callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortTypeCallBack)"/>
@@ -36,15 +47,6 @@
     <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.endpoint(ConstruirProbarPrototipo.service/ConstruirProbarPrototipoPort)"/>
     <callback>
       <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.endpoint(ConstruirProbarPrototipo.service/ConstruirProbarPrototipoPortTypeCallBack_pt)"/>
-    </callback>
-  </service>
-  <service name="DisenoPrototipoProductosServicios.service"
-           ui:wsdlLocation="WSDLs/DisenoPrototipoProductosServicios.wsdl">
-    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortType)"
-                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.interface(DisenoPrototipoProductosServiciosPortTypeCallBack)"/>
-    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPort)"/>
-    <callback>
-      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios#wsdl.endpoint(DisenoPrototipoProductosServicios.service/DisenoPrototipoProductosServiciosPortTypeCallBack_pt)"/>
     </callback>
   </service>
   <service name="DesarrollarEspecificacionesDiseno.service"
@@ -102,6 +104,11 @@
                  ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
         <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
       </reference>
+      <reference name="HumanTasks.HT_SolicitarRecursos.reference"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
     </componentType>
   </component>
   <component name="DesarrollarEspecificacionesDiseno">
@@ -113,6 +120,21 @@
                         callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/desarrollarEspecificacionesDiseno#wsdl.interface(DesarrollarEspecificacionesDisenoPortTypeCallBack)"/>
         <property name="bpm.generated.service.reference" type="xs:string" many="false">DesarrollarEspecificacionesDiseno.service</property>
       </service>
+      <reference name="HumanTasks.HT_DefinicionEspecificacionDiseno.reference"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
+      <reference name="HumanTasks.HT_ConcluirRevisiones.reference"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
+      <reference name="HumanTasks.HT_DisenarProductos.reference"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
     </componentType>
   </component>
   <component name="ConstruirProbarPrototipo">
@@ -122,6 +144,84 @@
         <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.interface(ConstruirProbarPrototipoPortType)"
                         callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/construirProbarPrototipo#wsdl.interface(ConstruirProbarPrototipoPortTypeCallBack)"/>
         <property name="bpm.generated.service.reference" type="xs:string" many="false">ConstruirProbarPrototipo.service</property>
+      </service>
+      <reference name="HumanTasks.HT_ConstruirPrototiposPruebasConceptos.reference"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
+      <reference name="HumanTasks.HT_ValidarProblemasCalidad.reference"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
+      <reference name="HumanTasks.HT_RealizarPruebasInternasProducto.reference"
+                 ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
+    </componentType>
+  </component>
+  <component name="HT_ConstruirPrototiposPruebasConceptos">
+    <implementation.workflow src="HumanTasks/HT_ConstruirPrototiposPruebasConceptos.task"/>
+    <componentType>
+      <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </service>
+    </componentType>
+  </component>
+  <component name="HT_ValidarProblemasCalidad">
+    <implementation.workflow src="HumanTasks/HT_ValidarProblemasCalidad.task"/>
+    <componentType>
+      <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </service>
+    </componentType>
+  </component>
+  <component name="HT_RealizarPruebasInternasProducto">
+    <implementation.workflow src="HumanTasks/HT_RealizarPruebasInternasProducto.task"/>
+    <componentType>
+      <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </service>
+    </componentType>
+  </component>
+  <component name="HT_DefinicionEspecificacionDiseno">
+    <implementation.workflow src="HumanTasks/HT_DefinicionEspecificacionDiseno.task"/>
+    <componentType>
+      <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </service>
+    </componentType>
+  </component>
+  <component name="HT_ConcluirRevisiones">
+    <implementation.workflow src="HumanTasks/HT_ConcluirRevisiones.task"/>
+    <componentType>
+      <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </service>
+    </componentType>
+  </component>
+  <component name="HT_DisenarProductos">
+    <implementation.workflow src="HumanTasks/HT_DisenarProductos.task"/>
+    <componentType>
+      <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </service>
+    </componentType>
+  </component>
+  <component name="HT_SolicitarRecursos">
+    <implementation.workflow src="HumanTasks/HT_SolicitarRecursos.task"/>
+    <componentType>
+      <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                        callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
       </service>
     </componentType>
   </component>
@@ -143,10 +243,6 @@
     <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
   </wire>
   <wire>
-    <source.uri>ConstruirProbarPrototipo.service</source.uri>
-    <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
-  </wire>
-  <wire>
     <source.uri>VerificarAsignarRecursos/NotificationService.ACT28384423356278</source.uri>
     <target.uri>BPM-NotificationService</target.uri>
   </wire>
@@ -155,11 +251,43 @@
     <target.uri>DisenoPrototipoProductosServicios/DisenoPrototipoProductosServicios.service</target.uri>
   </wire>
   <wire>
+    <source.uri>ConstruirProbarPrototipo/HumanTasks.HT_ConstruirPrototiposPruebasConceptos.reference</source.uri>
+    <target.uri>HT_ConstruirPrototiposPruebasConceptos/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ConstruirProbarPrototipo/HumanTasks.HT_ValidarProblemasCalidad.reference</source.uri>
+    <target.uri>HT_ValidarProblemasCalidad/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ConstruirProbarPrototipo/HumanTasks.HT_RealizarPruebasInternasProducto.reference</source.uri>
+    <target.uri>HT_RealizarPruebasInternasProducto/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ConstruirProbarPrototipo.service</source.uri>
+    <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
+  </wire>
+  <wire>
+    <source.uri>DesarrollarEspecificacionesDiseno/HumanTasks.HT_DefinicionEspecificacionDiseno.reference</source.uri>
+    <target.uri>HT_DefinicionEspecificacionDiseno/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>DesarrollarEspecificacionesDiseno/HumanTasks.HT_ConcluirRevisiones.reference</source.uri>
+    <target.uri>HT_ConcluirRevisiones/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>DesarrollarEspecificacionesDiseno/HumanTasks.HT_DisenarProductos.reference</source.uri>
+    <target.uri>HT_DisenarProductos/TaskService</target.uri>
+  </wire>
+  <wire>
     <source.uri>DesarrollarEspecificacionesDiseno.service</source.uri>
     <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
   </wire>
   <wire>
     <source.uri>VerificarAsignarRecursos.service</source.uri>
     <target.uri>VerificarAsignarRecursos/VerificarAsignarRecursos.service</target.uri>
+  </wire>
+  <wire>
+    <source.uri>VerificarAsignarRecursos/HumanTasks.HT_SolicitarRecursos.reference</source.uri>
+    <target.uri>HT_SolicitarRecursos/TaskService</target.uri>
   </wire>
 </composite>

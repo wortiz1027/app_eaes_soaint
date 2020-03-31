@@ -85,7 +85,9 @@
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
                     </bpmnext:FeatureSet>
-                    <bpmnext:HumanTask/>
+                    <bpmnext:HumanTask>
+                        <bpmnext:humanTaskRef refType="namespaced" name="HT_ConstruirPrototiposPruebasConceptos" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Estrategico/HT_ConstruirPrototiposPruebasConceptos" elementType="TYPE" implementationType="humanTask"/>
+                    </bpmnext:HumanTask>
                     <bpmnext:Localization>
                         <bpmnext:Label>
                             <bpmnext:LocalizedContent language="en">Construir prototipos/prueba de conceptos</bpmnext:LocalizedContent>
@@ -98,7 +100,36 @@
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:ioSpecification/>
+            <bpmn:ioSpecification>
+                <bpmn:dataInput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataOutput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:dataOutput name="outcome" id="outcome">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:inputSet id="ACT28369058318193_uniqueInputSet">
+                    <bpmn:dataInputRefs>execData</bpmn:dataInputRefs>
+                </bpmn:inputSet>
+                <bpmn:outputSet id="ACT28369058318193_uniqueOutputSet">
+                    <bpmn:dataOutputRefs>execData</bpmn:dataOutputRefs>
+                    <bpmn:dataOutputRefs>outcome</bpmn:dataOutputRefs>
+                </bpmn:outputSet>
+            </bpmn:ioSpecification>
             <bpmn:resourceRole name="Equipo de Desarrollo" id="lane0"/>
         </bpmn:userTask>
         <bpmn:serviceTask isForCompensation="false" name="Desarrollar y examinar la producción de prototipos y/o el proceso de servicio de envío" id="ACT28369085274950">
@@ -154,7 +185,9 @@
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
                     </bpmnext:FeatureSet>
-                    <bpmnext:HumanTask/>
+                    <bpmnext:HumanTask>
+                        <bpmnext:humanTaskRef refType="namespaced" name="HT_ValidarProblemasCalidad" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Estrategico/HT_ValidarProblemasCalidad" elementType="TYPE" implementationType="humanTask"/>
+                    </bpmnext:HumanTask>
                     <bpmnext:Localization>
                         <bpmnext:Label>
                             <bpmnext:LocalizedContent language="en">Validar problemas de calidad y confiabilidad</bpmnext:LocalizedContent>
@@ -167,7 +200,36 @@
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:ioSpecification/>
+            <bpmn:ioSpecification>
+                <bpmn:dataInput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataOutput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:dataOutput name="outcome" id="outcome">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:inputSet id="ACT28369088066075_uniqueInputSet">
+                    <bpmn:dataInputRefs>execData</bpmn:dataInputRefs>
+                </bpmn:inputSet>
+                <bpmn:outputSet id="ACT28369088066075_uniqueOutputSet">
+                    <bpmn:dataOutputRefs>execData</bpmn:dataOutputRefs>
+                    <bpmn:dataOutputRefs>outcome</bpmn:dataOutputRefs>
+                </bpmn:outputSet>
+            </bpmn:ioSpecification>
             <bpmn:resourceRole name="Funcional de Negocio" id="lane1"/>
         </bpmn:userTask>
         <bpmn:businessRuleTask isForCompensation="false" name="[BR] Validar Acción a Seguir" id="ACT28369096720278">
@@ -222,7 +284,9 @@
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
                     </bpmnext:FeatureSet>
-                    <bpmnext:HumanTask/>
+                    <bpmnext:HumanTask>
+                        <bpmnext:humanTaskRef refType="namespaced" name="HT_RealizarPruebasInternasProducto" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Estrategico/HT_RealizarPruebasInternasProducto" elementType="TYPE" implementationType="humanTask"/>
+                    </bpmnext:HumanTask>
                     <bpmnext:Localization>
                         <bpmnext:Label>
                             <bpmnext:LocalizedContent language="en">Realizar pruebas internas de producto/servicio y evaluar viabilidad</bpmnext:LocalizedContent>
@@ -235,7 +299,36 @@
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:ioSpecification/>
+            <bpmn:ioSpecification>
+                <bpmn:dataInput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataOutput name="execData" id="execData">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="task" namespace="http://xmlns.oracle.com/bpel/workflow/task" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:dataOutput name="outcome" id="outcome">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:inputSet id="ACT28369133775635_uniqueInputSet">
+                    <bpmn:dataInputRefs>execData</bpmn:dataInputRefs>
+                </bpmn:inputSet>
+                <bpmn:outputSet id="ACT28369133775635_uniqueOutputSet">
+                    <bpmn:dataOutputRefs>execData</bpmn:dataOutputRefs>
+                    <bpmn:dataOutputRefs>outcome</bpmn:dataOutputRefs>
+                </bpmn:outputSet>
+            </bpmn:ioSpecification>
             <bpmn:resourceRole name="Equipo de Desarrollo" id="lane0"/>
         </bpmn:userTask>
         <bpmn:startEvent isInterrupting="false" name="Inicio" id="EVT28369031028274">
