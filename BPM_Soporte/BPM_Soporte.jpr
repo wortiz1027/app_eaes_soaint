@@ -94,6 +94,7 @@
          <string v="BPM"/>
          <string v="SOA"/>
          <string v="XML"/>
+         <string v="XML_SCHEMA"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
@@ -312,4 +313,5 @@
          </list>
       </hash>
    </hash>
+   <value n="SCA_WORKFLOW_FOLDER_PROPERTY_NAME" v="HumanTasks/"/>
 </jpr:project>

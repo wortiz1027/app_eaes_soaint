@@ -283,11 +283,11 @@
     <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
   </wire>
   <wire>
-    <source.uri>VerificarAsignarRecursos.service</source.uri>
-    <target.uri>VerificarAsignarRecursos/VerificarAsignarRecursos.service</target.uri>
-  </wire>
-  <wire>
     <source.uri>VerificarAsignarRecursos/HumanTasks.HT_SolicitarRecursos.reference</source.uri>
     <target.uri>HT_SolicitarRecursos/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>VerificarAsignarRecursos.service</source.uri>
+    <target.uri>VerificarAsignarRecursos/VerificarAsignarRecursos.service</target.uri>
   </wire>
 </composite>

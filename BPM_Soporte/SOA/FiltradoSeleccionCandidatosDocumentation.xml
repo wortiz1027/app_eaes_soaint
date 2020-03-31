@@ -4,22 +4,6 @@
    <component name="FiltradoSeleccionCandidatos">
       <topicDocumentations>
          <topicDocumentation name="FiltradoSeleccionCandidatos"/>
-         <topicDocumentation name="EVT28386996861791">
-            <labels>
-               <label locale="en">Inicio</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="EVT28386996861761">
-            <labels>
-               <label locale="en">Fin</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
          <topicDocumentation name="ACT28387008326651">
             <labels>
                <label locale="en">Evaluar Curriculum</label>
@@ -44,14 +28,6 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="GTW28387090376047">
-            <labels>
-               <label locale="en">¿Existen candidatos a ser evaluados?</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
          <topicDocumentation name="ACT2838712871657">
             <labels>
                <label locale="en">[BPM] Llamado Proceso de Notificación</label>
@@ -63,6 +39,30 @@
          <topicDocumentation name="ACT28387132326025">
             <labels>
                <label locale="en">[BPM] Espera Proceso de Notificación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28386996861791">
+            <labels>
+               <label locale="en">Inicio</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28386996861761">
+            <labels>
+               <label locale="en">Fin</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW28387090376047">
+            <labels>
+               <label locale="en">¿Existen candidatos a ser evaluados?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
