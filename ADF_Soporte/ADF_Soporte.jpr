@@ -76,7 +76,7 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
       <string v="oracle.bpm.fusion.studio.BPMProjectSettings/bpmProjectsProcessesContentSet"/>
    </list>
-   <value n="defaultPackage" v="co.edu.javeriana.vistas"/>
+   <value n="defaultPackage" v="co.edu.javeriana"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="ADF_FACES"/>
@@ -93,7 +93,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="app_eaes_soaint_ADF_Vistas_webapp">
+         <hash n="app_eaes_soaint_ADF_Soporte_webapp">
             <hash n="appletArchives"/>
             <hash n="appletFiles">
                <value n="autoInclude" v="true"/>
@@ -104,7 +104,7 @@
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
-            <value n="enterpriseAppName" v="app_eaes_soaint_ADF_Vistas_webapp"/>
+            <value n="enterpriseAppName" v="app_eaes_soaint_ADF_Soporte_webapp"/>
             <hash n="fileGroups">
                <list n="groups">
                   <hash>
@@ -163,18 +163,18 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/app_eaes_soaint_ADF_Vistas_webapp.war"/>
+            <url n="jarURL" path="deploy/app_eaes_soaint_ADF_Soporte_webapp.war"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.war.WarProfile"/>
-            <value n="profileName" v="app_eaes_soaint_ADF_Vistas_webapp"/>
+            <value n="profileName" v="app_eaes_soaint_ADF_Soporte_webapp"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="app_eaes_soaint_ADF_Vistas_webapp"/>
+         <string v="app_eaes_soaint_ADF_Soporte_webapp"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="app_eaes_soaint-ADF_Vistas-webapp"/>
-      <value n="j2eeWebContextRoot" v="app_eaes_soaint-ADF_Vistas-context-root"/>
+      <value n="j2eeWebAppName" v="app_eaes_soaint-ADF_Soporte-webapp"/>
+      <value n="j2eeWebContextRoot" v="app_eaes_soaint-ADF_Soporte-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
