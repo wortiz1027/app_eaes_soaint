@@ -175,11 +175,11 @@
     <target.uri>HT_EntrevistarCandidatos/TaskService</target.uri>
   </wire>
   <wire>
-    <source.uri>FiltradoSeleccionCandidatos.service</source.uri>
-    <target.uri>FiltradoSeleccionCandidatos/FiltradoSeleccionCandidatos.service</target.uri>
-  </wire>
-  <wire>
     <source.uri>FiltradoSeleccionCandidatos/HumanTasks.HT_EvaluarSeleccionarCandidato.reference</source.uri>
     <target.uri>HT_EvaluarSeleccionarCandidato/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>FiltradoSeleccionCandidatos.service</source.uri>
+    <target.uri>FiltradoSeleccionCandidatos/FiltradoSeleccionCandidatos.service</target.uri>
   </wire>
 </composite>
