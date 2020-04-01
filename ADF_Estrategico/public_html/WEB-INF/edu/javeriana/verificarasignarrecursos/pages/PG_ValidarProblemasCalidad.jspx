@@ -85,6 +85,14 @@
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:panelBox>
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                                <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
+                                            cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
+                                    <af:panelGroupLayout id="pgl123"  styleClass="sinBorders" halign="center" layout="vertical">
+                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"/>
+                                    </af:panelGroupLayout>
+                                </af:dialog>
+                            </af:popup>
                         </af:panelGroupLayout>
                     </f:facet>
                     <f:facet name="footer">
