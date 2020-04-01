@@ -175,13 +175,10 @@
     <target.uri>HT_EvaluarSeleccionarCandidato/TaskService</target.uri>
   </wire>
   <wire>
-<<<<<<< HEAD
     <source.uri>FiltradoSeleccionCandidatos/HumanTasks.HT_EvaluarCurriculum.reference</source.uri>
     <target.uri>HT_EvaluarCurriculum/TaskService</target.uri>
   </wire>
   <wire>
-=======
->>>>>>> ba001d0c75428f436682013d5c9fa93a3d06bb75
     <source.uri>FiltradoSeleccionCandidatos.service</source.uri>
     <target.uri>FiltradoSeleccionCandidatos/FiltradoSeleccionCandidatos.service</target.uri>
   </wire>
