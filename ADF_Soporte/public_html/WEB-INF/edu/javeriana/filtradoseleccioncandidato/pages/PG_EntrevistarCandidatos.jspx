@@ -3,12 +3,12 @@
           xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
-        <af:document title="PG_EvaluarCurriculum" id="d1">
+        <af:document title="PG_EntrevistarCandidatos.jspx" id="d1">
             <af:form id="f1">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
                     <f:facet name="content">
-                        <af:panelGroupLayout id="pgl1" layout="vertical" inlineStyle="padding-right:20px">
+                    <af:panelGroupLayout id="pgl1" layout="vertical" inlineStyle="padding-right:20px">
                             <af:panelGroupLayout id="pgl2" styleClass="sinBorders">
                                 <af:panelBox text="#{soporteBundle.TITLE_CANDIDATO}" disclosed="true" id="sdh1">
                                     <af:panelGroupLayout id="pgl4" styleClass="sinBorders">
@@ -70,16 +70,18 @@
                             <af:spacer width="1" height="5" id="s1"/>
                             <af:panelGroupLayout id="pgl6" styleClass="sinBorders">
                                 <af:panelBox text="#{soporteBundle.TITLE_ENTREVISTA}" disclosed="true" id="pb1" styleClass="sinBorders">
-                                    <af:panelGroupLayout id="pgl5" styleClass="sinBorders">
+                                    <af:panelGroupLayout id="pgl5" styleClass="sinBorders" layout="vertical">
                                         <af:panelFormLayout id="pfl1" maxColumns="1" rows="2" styleClass="sinBorders">
-                                            <af:selectOneRadio label="#{soporteBundle.LABEL_DEBE_ENTREVISTA}" id="sor1"
+                                            <af:selectOneRadio label="#{soporteBundle.LABEL_EVALUAR_SELECCION}" id="sor1"
                                                                layout="horizontal">
                                                 <af:selectItem label="#{soporteBundle.OPTION_SI}" id="si1"/>
                                                 <af:selectItem label="#{soporteBundle.OPTION_NO}" id="si2"/>
                                             </af:selectOneRadio>
                                         </af:panelFormLayout>
+                                        <af:panelFormLayout id="pfl4" maxColumns="1" rows="2" styleClass="sinBorders" labelAlignment="top">
+                                            <af:inputText label="#{soporteBundle.LABEL_OBSERVACIONES}" id="it9"/>
+                                        </af:panelFormLayout>
                                     </af:panelGroupLayout>
-                                    <af:inputDate label="#{soporteBundle.LABEL_FECHA_REALIZACION}" id="id1"/>
                                 </af:panelBox>
                             </af:panelGroupLayout>
                         </af:panelGroupLayout>
