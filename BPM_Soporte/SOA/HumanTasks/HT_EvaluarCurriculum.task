@@ -2,7 +2,7 @@
 <taskDefinition targetNamespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Soporte/HT_EvaluarCurriculum" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:task="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpel/workflow/taskDefinition" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions">
    <name>HT_EvaluarCurriculum</name>
    <id/>
-   <title type="STATIC"><value></value></title>
+   <title type="STATIC"><value>Evaluar Curriculum</value></title>
    <priority>3</priority>
    <process processId="" processVersion=""/>
    <routingSlip routingType="TEMPLATE" xmlns="http://xmlns.oracle.com/bpel/workflow/routingSlip">

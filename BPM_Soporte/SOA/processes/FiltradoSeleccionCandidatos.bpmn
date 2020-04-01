@@ -155,6 +155,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                     </bpmnext:FeatureSet>
                     <bpmnext:HumanTask>
                         <bpmnext:humanTaskRef refType="namespaced" name="HT_EntrevistarCandidatos" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Soporte/HT_EntrevistarCandidatos" elementType="TYPE" implementationType="humanTask"/>
@@ -223,6 +224,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                     </bpmnext:FeatureSet>
                     <bpmnext:HumanTask>
                         <bpmnext:humanTaskRef refType="namespaced" name="HT_EvaluarSeleccionarCandidato" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Soporte/HT_EvaluarSeleccionarCandidato" elementType="TYPE" implementationType="humanTask"/>
