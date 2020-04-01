@@ -20,4 +20,4 @@
         <TaskFlowId>HT_EntrevistarCandidatos</TaskFlowId>
         <TaskFlowFileName>WEB-INF/edu/javeriana/filtradoseleccioncandidato/taskflows/HT_EntrevistarCandidatos.xml</TaskFlowFileName>
     </hwTaskFlow>
-</hwTaskFlows>
+<hwTaskFlow><WorkflowName>HT_EvaluarSeleccionarCandidato</WorkflowName><TaskDefinitionNamespace>http://xmlns.oracle.com/app_eaes_soaint/BPM_Soporte/HT_EvaluarSeleccionarCandidato</TaskDefinitionNamespace><TaskFlowId>HT_EvaluarSeleccionarCandidato</TaskFlowId><TaskFlowFileName>WEB-INF/edu/javeriana/filtradoseleccioncandidato/taskflows/HT_EvaluarSeleccionarCandidato.xml</TaskFlowFileName></hwTaskFlow></hwTaskFlows>
