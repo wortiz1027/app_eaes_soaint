@@ -261,15 +261,7 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-<<<<<<< HEAD
-            <value n="id" v="JPS Designtime"/>
-=======
-            <value n="id" v="Adf_lookandfeel.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Adf_configuracion.jar"/>
->>>>>>> ba001d0c75428f436682013d5c9fa93a3d06bb75
+            <value n="id" v="ADF_LookAndFeel.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -291,6 +283,15 @@
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Adf_configuracion.jar"/>
                <value n="id" v="Adf_configuracion.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_LookAndFeel/deploy/ADF_LookAndFeel.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF_LookAndFeel.jar"/>
+               <value n="id" v="ADF_LookAndFeel.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -369,15 +370,7 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-<<<<<<< HEAD
-            <value n="id" v="JPS Designtime"/>
-=======
-            <value n="id" v="Adf_lookandfeel.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Adf_configuracion.jar"/>
->>>>>>> ba001d0c75428f436682013d5c9fa93a3d06bb75
+            <value n="id" v="ADF_LookAndFeel.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
