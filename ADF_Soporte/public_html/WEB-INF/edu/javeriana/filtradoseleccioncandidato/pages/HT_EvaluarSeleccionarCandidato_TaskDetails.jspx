@@ -3,12 +3,72 @@
           xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
-        <af:document title="HT_EvaluarSeleccionarCandidato_TaskDetails.jspx" id="d1">
+        <af:document title="#{soporteBundle.TITULO_EVALUAR_SELECCIONAR_CANDIDATOS}" id="d1">
             <af:form id="f1">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
-                    <f:facet name="content"/>
-                    <f:facet name="footer"/>
+                    <f:facet name="content">
+                        <af:panelGroupLayout id="pgl1" halign="center" layout="vertical" styleClass="sinBorders"
+                                             inlineStyle="padding-right: 25px;">
+                            <af:panelBox text="#{soporteBundle.TITULO_CANDIDATOS}" id="pb1">
+                                <af:panelGroupLayout id="pgl2"  halign="center" layout="vertical"
+                                                     styleClass="sinBorders" inlineStyle="padding: 20px;">
+                                    <af:table var="row" rowBandingInterval="0" id="t1"
+                                              styleClass="contentTable AFStretchWidth">
+                                        <af:column sortable="false" headerText="#{soporteBundle.TITLE_CANDIDATO}" id="c1" width="250%">
+                                            <af:outputText value="#{row.col1}" id="ot1"/>
+                                        </af:column>
+                                        <af:column sortable="false" headerText="#{soporteBundle.COLUMNA_ACCIONES}" id="c2">
+                                            <af:panelGroupLayout id="pgl4" styleClass="sinBorders" halign="center" layout="vertical">
+                                                <af:button text="#{soporteBundle.BUTTON_VER}" id="b1" icon="/images/ico-documento.png"/>
+                                            </af:panelGroupLayout>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                            <af:spacer width="10" height="10" id="s1"/>
+                            <af:panelBox text="#{soporteBundle.TITLE_ENTREVISTA}" id="pb2">
+                                <af:panelGroupLayout id="pgl3"  halign="center" layout="vertical"
+                                                     styleClass="sinBorders">
+                                    <af:panelGroupLayout id="pgl5"  halign="center" layout="vertical"
+                                                         styleClass="sinBorders">
+                                        <af:panelGroupLayout id="pgl6" halign="center" layout="vertical"
+                                                             styleClass="sinBorders">
+                                            <af:panelFormLayout id="pfl1"  labelAlignment="top"
+                                                                styleClass="sinBorders stretchedForm">
+                                                <af:inputText label="#{soporteBundle.LABEL_OBSERVACIONES}" id="it1" rows="7"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                    <af:panelGroupLayout id="pgl7"  halign="center" layout="vertical"
+                                                         styleClass="sinBorders">
+                                        <af:panelGroupLayout id="pgl8" halign="center" layout="vertical"
+                                                             styleClass="sinBorders">
+                                            <af:panelFormLayout id="pfl2" halign="center" layout="vertical"
+                                                                styleClass="sinBorders stretchedForm">
+                                                <af:selectBooleanRadio label="#{soporteBundle.RADIO_APROBADO}"
+                                                                       id="sbr2"/>
+                                                <af:selectBooleanRadio label="#{soporteBundle.RADIO_RECHAZADO}"
+                                                                       id="sbr1"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="footer">
+                        <af:panelGroupLayout id="pgl9" halign="right" layout="vertical"
+                                                         styleClass="sinBorders">
+                            <af:button text="#{soporteBundle.BOTON_ENVIAR}" id="b2"/>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    
+                    <f:attribute name="titulo"  value="#{soporteBundle.TITULO_EVALUAR_SELECCIONAR_CANDIDATOS}"/>
+                    <f:attribute name="fecha"   value=""/>
+                    <f:attribute name="login"   value=""/>
+                    <f:attribute name="nombre"  value=""/>
+                    <f:attribute name="version" value="#{soporteBundle.VERSION}"/>
                 </af:pageTemplate>
             </af:form>
         </af:document>
