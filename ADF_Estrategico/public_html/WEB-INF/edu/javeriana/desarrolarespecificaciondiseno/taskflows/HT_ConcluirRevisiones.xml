@@ -233,6 +233,11 @@
       <managed-bean-class>oracle.bpel.services.workflow.worklist.adf.CommentBean</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__57">
+      <managed-bean-name>mbConcluirRevisiones</managed-bean-name>
+      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbConcluirRevisiones</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
     <view id="PG_ConcluirRevisiones">
       <page>/WEB-INF/edu/javeriana/desarrolarespecificaciondiseno/pages/PG_ConcluirRevisiones.jspx</page>
