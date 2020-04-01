@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="HT_ValidarProblemasCalidad">
-    <default-activity>HT_ValidarProblemasCalidad_TaskDetails_jspx</default-activity>
+    <default-activity>HT_ValidarProblemasCalidad</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
@@ -239,8 +239,8 @@
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
-    <view id="HT_ValidarProblemasCalidad_TaskDetails_jspx">
-      <page>/HT_ValidarProblemasCalidad_TaskDetails.jspx</page>
+    <view id="HT_ValidarProblemasCalidad">
+      <page>/WEB-INF/edu/javeriana/verificarasignarrecursos/pages/PG_ValidarProblemasCalidad.jspx</page>
     </view>
     <task-flow-return id="taskReturn">
       <outcome>

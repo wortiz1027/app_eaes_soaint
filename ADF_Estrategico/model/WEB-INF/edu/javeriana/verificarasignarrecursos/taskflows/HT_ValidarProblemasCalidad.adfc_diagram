@@ -99,17 +99,17 @@
    <View
       id="View9">
       <property
-         name="activityId">HT_ValidarProblemasCalidad_TaskDetails_jspx</property>
+         name="activityId">HT_ValidarProblemasCalidad</property>
       <property
          name="x">167.72266</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>HT_ValidarProblemasCalidad_TaskDetails_jspx&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>HT_ValidarProblemasCalidad&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">98.79883</property>
+         name="y">96.69531</property>
       <property
-         name="page">/HT_ValidarProblemasCalidad_TaskDetails.jspx</property>
+         name="page">/WEB-INF/edu/javeriana/verificarasignarrecursos/pages/PG_ValidarProblemasCalidad.jspx</property>
       <property
          name="exceptionHandler">false</property>
    </View>

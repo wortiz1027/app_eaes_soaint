@@ -88,6 +88,8 @@
          <string v="ADF_FACES"/>
          <string v="ADFc"/>
          <string v="ADFm"/>
+         <string v="HTML"/>
+         <string v="JAVASCRIPT"/>
          <string v="JSF"/>
          <string v="JSP"/>
          <string v="Java"/>
@@ -383,6 +385,14 @@
             <value n="id" v="BC4J Security"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
@@ -528,10 +538,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="ADF_Library_Dependencies.library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF Faces Databinding Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -541,6 +547,14 @@
          </hash>
          <hash>
             <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Resource Bundle Support"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -827,6 +841,17 @@
             <value n="tldURL" v="@project@../../../app/product/fmw/soa/soa/modules/oracle.soa.worklist_11.1.1/adflibWorklistComponents.jar!/META-INF/worklistComponents.tld"/>
             <value n="URI" v="http://xmlns.oracle.com/bpel/workflow/worklist"/>
             <value n="version" v="1.0"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="ADF Data Visualization"/>
+               <value n="version" v="1.1"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="ADF Data Visualization"/>
+            <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view/dvt-faces.jar!/META-INF/bi.tld"/>
+            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
+            <value n="version" v="1.1"/>
          </hash>
       </list>
    </hash>

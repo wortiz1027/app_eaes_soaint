@@ -10,6 +10,10 @@
       <base-name>oracle.bpel.services.workflow.worklist.resources.worklist</base-name>
       <var>resources</var>
     </resource-bundle>
+    <resource-bundle>
+      <base-name>edu.javeriana.verificarasignarrecursos.bundles.EstrategicoBundle</base-name>
+      <var>estrategicoBundle</var>
+    </resource-bundle>
   </application>
   <converter>
     <converter-id>dateTimeConvertor</converter-id>
