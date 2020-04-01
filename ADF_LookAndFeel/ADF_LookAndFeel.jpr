@@ -93,8 +93,16 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
+<<<<<<< HEAD
          <hash n="ADF_LookAndFeel">
             <value n="adflib-connectionDetails" v="true"/>
+=======
+         <hash n="adf_lookandfeel">
+            <value n="adflib-connectionDetails" v="true"/>
+            <list n="adflib-excludedConnections">
+               <string v="|"/>
+            </list>
+>>>>>>> ba001d0c75428f436682013d5c9fa93a3d06bb75
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
             </hash>
@@ -127,6 +135,7 @@
                   </hash>
                </list>
             </hash>
+<<<<<<< HEAD
             <url n="jarURL" path="deploy/ADF_LookAndFeel.jar"/>
             <hash n="LibraryDependencies"/>
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
@@ -135,6 +144,16 @@
       </hash>
       <list n="profileList">
          <string v="ADF_LookAndFeel"/>
+=======
+            <url n="jarURL" path="deploy/adf_lookandfeel.jar"/>
+            <hash n="LibraryDependencies"/>
+            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+            <value n="profileName" v="adf_lookandfeel"/>
+         </hash>
+      </hash>
+      <list n="profileList">
+         <string v="adf_lookandfeel"/>
+>>>>>>> ba001d0c75428f436682013d5c9fa93a3d06bb75
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">

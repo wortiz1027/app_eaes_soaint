@@ -328,11 +328,20 @@
             <value n="id" v="Resource Bundle Support"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Adf_lookandfeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Adf_configuracion.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
+<<<<<<< HEAD
                   <url path="../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.soa.worklist_11.1.1/adflibWorklistComponents.jar" jar-entry=""/>
                </list>
                <value n="description" v="Library1"/>
@@ -345,6 +354,22 @@
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF_LookAndFeel.jar"/>
                <value n="id" v="ADF_LookAndFeel.jar"/>
+=======
+                  <url path="../ADF_LookAndFeel/deploy/adf_lookandfeel.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Adf_lookandfeel.jar"/>
+               <value n="id" v="Adf_lookandfeel.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_Configuracion/deploy/adf_configuracion.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Adf_configuracion.jar"/>
+               <value n="id" v="Adf_configuracion.jar"/>
+>>>>>>> ba001d0c75428f436682013d5c9fa93a3d06bb75
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -488,6 +513,14 @@
          </hash>
          <hash>
             <value n="id" v="Resource Bundle Support"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Adf_lookandfeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Adf_configuracion.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="adf_soporteBundle"
+           value="#{adfBundle['edu.javeriana.filtradoseleccioncandidato.bundles.SoporteBundle']}"/>
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="PG_EvaluarCurriculum" id="d1">
+            <af:form id="f1">
+                <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
+                    <f:facet name="header"/>
+                    <f:facet name="content">
+                        <af:panelGroupLayout id="pgl1" layout="vertical">
+                            <af:panelGroupLayout id="pgl2">
+                                <af:showDetailHeader text="#{soporteBundle.TITLE_CANDIDATO}" disclosed="true" id="sdh1">
+                                    <af:panelGroupLayout id="pgl4">
+                                        <af:table var="candidato" rowBandingInterval="0" id="t1">
+                                            <af:column sortable="false"
+                                                       headerText="#{soporteBundle.TITLE_CANDIDATO}" id="c1">
+                                                <af:outputText value="#{row.col1}" id="ot1"/>
+                                            </af:column>
+                                            <af:column sortable="false" headerText="" id="c2">
+                                                <af:button text="#{soporteBundle.BUTTON_VER}" id="b1"/>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
+                                </af:showDetailHeader>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl3">
+                                <af:showDetailHeader text="#{soporteBundle.TITLE_ENTREVISTA}" disclosed="true" id="sdh2">
+                                    <af:panelGroupLayout id="pgl5">
+                                        <af:panelFormLayout id="pfl1" maxColumns="1" rows="2">
+                                            <af:selectOneRadio label="#{soporteBundle.LABEL_DEBE_ENTREVISTA}" id="sor1" layout="horizontal">
+                                                <af:selectItem label="#{soporteBundle.OPTION_SI}" id="si1"/>
+                                                <af:selectItem label="#{soporteBundle.OPTION_NO}" id="si2"/>
+                                            </af:selectOneRadio>
+                                        </af:panelFormLayout>
+                                    </af:panelGroupLayout>
+                                    <af:inputDate label="#{soporteBundle.LABEL_FECHA_REALIZACION}" id="id1"/>
+                                </af:showDetailHeader>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="footer"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>
