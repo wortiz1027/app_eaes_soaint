@@ -84,7 +84,12 @@
                             </af:panelGroupLayout>
                         </af:panelGroupLayout>
                     </f:facet>
-                    <f:facet name="footer"/>
+                    <f:facet name="footer">
+                        <af:panelGroupLayout id="pgl9" halign="right" layout="vertical"
+                                                         styleClass="sinBorders">
+                            <af:button text="#{soporteBundle.BOTON_ENVIAR}" id="b2"/>
+                        </af:panelGroupLayout>
+                    </f:facet>
                 </af:pageTemplate>
             </af:form>
         </af:document>
