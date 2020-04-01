@@ -92,6 +92,12 @@
                             <af:button text="#{soporteBundle.BOTON_ENVIAR}" id="b2"/>
                         </af:panelGroupLayout>
                     </f:facet>
+                    
+                     <f:attribute name="titulo"  value="#{soporteBundle.TITULO_ENTREVISTAR_CANDIDATO}"/>
+                    <f:attribute name="fecha"   value=""/>
+                    <f:attribute name="login"   value=""/>
+                    <f:attribute name="nombre"  value=""/>
+                    <f:attribute name="version" value="#{soporteBundle.VERSION}"/>
                 </af:pageTemplate>
             </af:form>
         </af:document>
