@@ -235,11 +235,11 @@
     </managed-bean>
     <managed-bean id="__57">
       <managed-bean-name>mbValidarProblemasCalidad</managed-bean-name>
-      <managed-bean-class></managed-bean-class>
-      <managed-bean-scope>request</managed-bean-scope>
+      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbValidarProblemasCalidad</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
-    <view id="HT_ValidarProblemasCalidad">
+    <view id="PG_ValidarProblemasCalidad">
       <page>/WEB-INF/edu/javeriana/verificarasignarrecursos/pages/PG_ValidarProblemasCalidad.jspx</page>
     </view>
     <task-flow-return id="taskReturn">

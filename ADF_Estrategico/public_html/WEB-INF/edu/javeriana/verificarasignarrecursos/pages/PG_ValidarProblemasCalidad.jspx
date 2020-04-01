@@ -7,13 +7,60 @@
             <af:form id="f1">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
-                    <f:facet name="content"/>
+                    <f:facet name="content">
+                        <af:panelGroupLayout id="pgl1" halign="center" layout="vertical"
+                                             styleClass="padding-right: 25px;">
+                            <af:panelBox text="PanelBox1" id="pb1">
+                                <af:panelGroupLayout id="pgl2"  halign="center" layout="vertical"
+                                                     styleClass="sinBorders" inlineStyle="padding: 20px;">
+                                    <af:panelGroupLayout id="pgl3" layout="vertical" halign="center" styleClass="row sinBorders">
+                                        <af:panelGroupLayout id="pgl4" styleClass="sinBorders col-xs-6" layout="vertical" halign="center">
+                                            <af:panelFormLayout id="pfl1" styleClass="sinBorders stretchedForm" labelAlignment="top">
+                                                <af:inputText label="Label 1" id="it1"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl5" styleClass="sinBorders col-xs-6" layout="vertical" halign="center">
+                                            <af:panelFormLayout id="pfl2" styleClass="sinBorders stretchedForm" labelAlignment="top">
+                                                <af:inputText label="Label 2" id="it2"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                    <af:spacer width="10" height="10" id="s1"/>
+                                    <af:panelGroupLayout id="pgl6" styleClass="row sinBorders"  halign="center" layout="vertical">
+                                        <af:panelGroupLayout id="pgl7" styleClass="sinBorders col-xs-12"  halign="center" layout="vertical">
+                                            <af:panelFormLayout id="pfl3" styleClass="sinBorders stretchedForm" labelAlignment="top">
+                                                <af:inputText label="Label 3" id="it3" rows="7"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                    <af:spacer width="10" height="10" id="s2"/>
+                                    <af:panelGroupLayout id="pgl8" styleClass="row sinBorders"  halign="center" layout="vertical">
+                                        <af:panelGroupLayout id="pgl9" styleClass="sinBorders col-xs-4"  halign="center" layout="vertical">
+                                            <af:panelFormLayout id="pfl4" styleClass="sinBorders stretchedForm" labelAlignment="top">
+                                                <af:inputText label="Label 4" id="it4"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl10" styleClass="sinBorders col-xs-4"  halign="center" layout="vertical">
+                                            <af:panelFormLayout id="pfl6" styleClass="sinBorders stretchedForm" labelAlignment="top">
+                                                <af:inputDate label="Label 1" id="id1"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl11" styleClass="sinBorders col-xs-4"  halign="center" layout="vertical">
+                                            <af:panelFormLayout id="pfl5" styleClass="sinBorders stretchedForm" labelAlignment="top">
+                                                <af:inputDate label="Label 2" id="id2"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:panelGroupLayout>
+                    </f:facet>
                     <f:facet name="footer"/>
                     
                     <f:attribute name="titulo"  value="#{estrategicoBundle.TITULO_PANTALLA}"/>
-                    <f:attribute name="fecha"   value="#{pageFlowScope.mbRevisarCTYL.datosProceso.fecha}"/>
-                    <f:attribute name="login"   value="#{pageFlowScope.mbRevisarCTYL.usuario.userLogin}"/>
-                    <f:attribute name="nombre"  value="#{pageFlowScope.mbRevisarCTYL.usuario.nombreUsuario}"/>
+                    <f:attribute name="fecha"   value="#{pageFlowScope.mbValidarProblemasCalidad.datosProceso.fecha}"/>
+                    <f:attribute name="login"   value="#{pageFlowScope.mbValidarProblemasCalidad.usuario.userLogin}"/>
+                    <f:attribute name="nombre"  value="#{pageFlowScope.mbValidarProblemasCalidad.usuario.nombreUsuario}"/>
                     <f:attribute name="version" value="#{estrategicoBundle.VERSION}"/>
                 </af:pageTemplate>
             </af:form>

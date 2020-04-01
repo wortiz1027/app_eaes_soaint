@@ -96,23 +96,6 @@
       <property
          name="exceptionHandler">false</property>
    </TaskFlowReturn>
-   <View
-      id="View9">
-      <property
-         name="activityId">HT_ValidarProblemasCalidad</property>
-      <property
-         name="x">167.72266</property>
-      <property
-         name="start">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>HT_ValidarProblemasCalidad&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">96.69531</property>
-      <property
-         name="page">/WEB-INF/edu/javeriana/verificarasignarrecursos/pages/PG_ValidarProblemasCalidad.jspx</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule10">
       <property
@@ -224,4 +207,19 @@
       <property
          name="sdm:polyPoints">R61,203.72266,836.9541,428.1328,970.6035,T50</property>
    </ControlFlowCase>
+   <View
+      id="View21">
+      <property
+         name="activityId">PG_ValidarProblemasCalidad</property>
+      <property
+         name="x">104.70801</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PG_ValidarProblemasCalidad&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">71.79883</property>
+      <property
+         name="page">/WEB-INF/edu/javeriana/verificarasignarrecursos/pages/PG_ValidarProblemasCalidad.jspx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>
