@@ -353,15 +353,6 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../ADF_LookAndFeel/deploy/ADF_LookAndFeel.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="ADF_LookAndFeel.jar"/>
-               <value n="id" v="ADF_LookAndFeel.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
                   <url path="../../../app/product/fmw/soa/soa/modules/oracle.soa.worklist_11.1.1/adflibWorklistComponents.jar" jar-entry=""/>
                </list>
                <value n="description" v="Library1"/>
@@ -374,6 +365,15 @@
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Adf_configuracion.jar1"/>
                <value n="id" v="Adf_configuracion.jar1"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_LookAndFeel/deploy/ADF_LookAndFeel.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF_LookAndFeel.jar"/>
+               <value n="id" v="ADF_LookAndFeel.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
