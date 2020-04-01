@@ -81,6 +81,17 @@
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+                                <af:dialog id="d3" title="#{estrategicoBundle.TITULO_VISOR_DOCUMENTO}">
+                                    <af:panelGroupLayout id="pgl144" halign="center" layout="vertical" styleClass="sinBorders" inlineStyle="padding: 15px;">
+                                        <af:panelGroupLayout id="pgl24" layout="vertical" halign="center" styleClass="sinBorders">
+                                          <af:inlineFrame id="if14" source="#{pageFlowScope.mbVisorDocumentos.visor.urlDocumento}"
+                                                          inlineStyle="height:#{pageFlowScope.mbVisorDocumentos.visor.alto}px; width:#{pageFlowScope.mbVisorDocumentos.visor.ancho}px;"
+                                                          shortDesc="#{estrategicoBundle.LABEL_SHORT_DESC}"/>
+                                        </af:panelGroupLayout>
+                                      </af:panelGroupLayout>
+                                </af:dialog>
+                            </af:popup>
                         </af:panelGroupLayout>
                     </f:facet>
                     <f:facet name="footer">
