@@ -263,10 +263,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_LookAndFeel.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="BPM Task Flow"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -320,6 +316,18 @@
          </hash>
          <hash>
             <value n="id" v="Adf_configuracion.jar1"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_LookAndFeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Collections 3.1"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -436,10 +444,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_LookAndFeel.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="BPM Task Flow"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -497,6 +501,22 @@
          </hash>
          <hash>
             <value n="id" v="Adf_configuracion.jar1"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_LookAndFeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Collections 3.1"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <url n="id" path="ADF_Library_Dependencies.library"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

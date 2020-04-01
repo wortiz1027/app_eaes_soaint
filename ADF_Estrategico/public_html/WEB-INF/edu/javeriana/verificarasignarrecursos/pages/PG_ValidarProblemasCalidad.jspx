@@ -3,7 +3,7 @@
           xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
-        <af:document title="PG_ValidarProblemasCalidad" id="d1">
+        <af:document title="#{estrategicoBundle.PANEL_TITULO_INFORMACION_PROTOTIPO}" id="d1">
             <af:form id="f1">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
