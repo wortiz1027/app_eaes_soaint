@@ -150,7 +150,7 @@
       <property
          name="y">97.74707</property>
       <property
-         name="page">/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/HT_EvaluarSeleccionarCandidato_TaskDetails.jspx</property>
+         name="page">/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/PG_EvaluarSeleccionarCandidato.jspx</property>
       <property
          name="exceptionHandler">false</property>
    </View>

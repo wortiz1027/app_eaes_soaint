@@ -233,9 +233,14 @@
       <managed-bean-class>oracle.bpel.services.workflow.worklist.adf.CommentBean</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__57">
+      <managed-bean-name>mbEvaluarSeleccionarCandidato</managed-bean-name>
+      <managed-bean-class>edu.javeriana.filtradoseleccioncandidato.beans.MbEvaluarSeleccionarCandidato</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
     <view id="PG_EvaluarSeleccionarCandidato">
-      <page>/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/HT_EvaluarSeleccionarCandidato_TaskDetails.jspx</page>
+      <page>/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/PG_EvaluarSeleccionarCandidato.jspx</page>
     </view>
     <task-flow-return id="taskReturn">
       <outcome>
