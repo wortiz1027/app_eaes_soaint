@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="windows-1252" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="HT_ConcluirRevisiones">
-    <default-activity>PG_ConcluirRevisiones</default-activity>
+  <task-flow-definition id="HT_RealizarPruebasInternasProducto">
+    <default-activity>PG_RealizarPruebasInternasProducto</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
@@ -234,13 +234,13 @@
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean id="__57">
-      <managed-bean-name>mbConcluirRevisiones</managed-bean-name>
-      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbConcluirRevisiones</managed-bean-class>
+      <managed-bean-name>mbRealizarPruebasInternasProducto</managed-bean-name>
+      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbRealizarPruebasInternasProducto</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
-    <view id="PG_ConcluirRevisiones">
-      <page>/WEB-INF/edu/javeriana/desarrolarespecificaciondiseno/pages/PG_ConcluirRevisiones.jspx</page>
+    <view id="PG_RealizarPruebasInternasProducto">
+      <page>/WEB-INF/edu/javeriana/construirprobarprototipo/pages/PG_RealizarPruebasInternasProducto.jspx</page>
     </view>
     <task-flow-return id="taskReturn">
       <outcome>
@@ -249,22 +249,22 @@
     </task-flow-return>
     <task-flow-return id="taskFlowRefresh">
       <outcome>
-        <name>refresh</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="previousTaskFlow">
       <outcome>
-        <name>previous</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="nextTaskFlow">
       <outcome>
-        <name>next</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="taskFlowCompleted">
       <outcome>
-        <name>new</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <control-flow-rule id="__29">

@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="HT_RealizarPruebasInternasProducto">
-    <default-activity>PG_RealizarPruebasInternasProducto</default-activity>
+  <task-flow-definition id="HT_ValidarProblemasCalidad">
+    <default-activity>HT_ValidarProblemasCalidad</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
@@ -182,7 +182,7 @@
     </managed-bean>
     <managed-bean id="__46">
       <managed-bean-name>readDocumentBean</managed-bean-name>
-      <managed-bean-class>oracle.bpel.services.workflow.worklist.adf.ReadDocumentBean</managed-bean-class>
+      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbValidarProblemasCalidad</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <managed-bean id="__47">
@@ -234,13 +234,13 @@
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean id="__57">
-      <managed-bean-name>mbRealizarPruebasInternasProducto</managed-bean-name>
-      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbRealizarPruebasInternasProducto</managed-bean-class>
+      <managed-bean-name>mbValidarProblemasCalidad</managed-bean-name>
+      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbValidarProblemasCalidad</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
-    <view id="PG_RealizarPruebasInternasProducto">
-      <page>/WEB-INF/edu/javeriana/verificarasignarrecursos/pages/PG_RealizarPruebasInternasProducto.jspx</page>
+    <view id="PG_ValidarProblemasCalidad">
+      <page>/WEB-INF/edu/javeriana/construirprobarprototipo/pages/PG_ValidarProblemasCalidad.jspx</page>
     </view>
     <task-flow-return id="taskReturn">
       <outcome>

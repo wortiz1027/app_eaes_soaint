@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="HT_ConstruirPrototiposPruebasConceptos">
-    <default-activity>PG_ConstruirPrototiposPruebasConceptos</default-activity>
+  <task-flow-definition id="HT_ConcluirRevisiones">
+    <default-activity>PG_ConcluirRevisiones</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
@@ -234,13 +234,13 @@
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean id="__57">
-      <managed-bean-name>mbConstruirPrototipoPruebasConcepto</managed-bean-name>
-      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbConstruirPrototipoPruebasConcepto</managed-bean-class>
+      <managed-bean-name>mbConcluirRevisiones</managed-bean-name>
+      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbConcluirRevisiones</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
-    <view id="PG_ConstruirPrototiposPruebasConceptos">
-      <page>/WEB-INF/edu/javeriana/verificarasignarrecursos/pages/PG_ConstruirPrototiposPruebasConceptos.jspx</page>
+    <view id="PG_ConcluirRevisiones">
+      <page>/WEB-INF/edu/javeriana/desarrollarespecificaciondiseno/pages/PG_ConcluirRevisiones.jspx</page>
     </view>
     <task-flow-return id="taskReturn">
       <outcome>

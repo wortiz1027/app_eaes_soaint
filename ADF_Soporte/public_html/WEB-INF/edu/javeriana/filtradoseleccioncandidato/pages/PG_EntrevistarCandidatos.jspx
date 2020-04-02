@@ -20,7 +20,9 @@
                                             </af:column>
                                             <af:column sortable="false" headerText="" id="c2" width="10%">
                                                 <af:button text="#{soporteBundle.BUTTON_VER}" id="b1"
+                                                           icon="/images/ico-documento.png"
                                                            styleClass="tamanioauto2"/>
+                                                           
                                             </af:column>
                                         </af:table>
                                     </af:panelGroupLayout>

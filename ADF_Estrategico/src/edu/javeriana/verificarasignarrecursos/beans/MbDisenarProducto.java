@@ -1,10 +1,5 @@
 package edu.javeriana.verificarasignarrecursos.beans;
 
-<<<<<<< HEAD
-public class MbRealizarPruebasInternasProducto {
-    public MbRealizarPruebasInternasProducto() {
-        super();
-=======
 import co.edu.javeriana.configuracion.contextual.event.ProcessContextualEventInterface;
 import co.edu.javeriana.configuracion.extend.AbstractBPMManageBeanBase;
 
@@ -12,11 +7,11 @@ import java.io.Serializable;
 
 import javax.faces.event.ActionEvent;
 
-public class MbRealizarPruebasInternasProducto extends AbstractBPMManageBeanBase implements Serializable, ProcessContextualEventInterface {
+public class MbDisenarProducto extends AbstractBPMManageBeanBase implements Serializable, ProcessContextualEventInterface {
     @SuppressWarnings("compatibility:7424524058483809606")
     private static final long serialVersionUID = 1L;
 
-    public MbRealizarPruebasInternasProducto() {       
+    public MbDisenarProducto() {       
     }
 
     @Override
@@ -94,6 +89,5 @@ public class MbRealizarPruebasInternasProducto extends AbstractBPMManageBeanBase
     public void processOnLoad(Object object, Object object2) {
         // TODO Implement this method
 
->>>>>>> 2345a02cf98b045f0d036025a622e2fd52d62f4e
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="HT_DefinicionEspecificacionDiseno">
-    <default-activity>PG_DefinicionEspecificacionDiseno</default-activity>
+  <task-flow-definition id="HT_DisenarProductos">
+    <default-activity>PG_DisenarProductos</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
@@ -233,14 +233,9 @@
       <managed-bean-class>oracle.bpel.services.workflow.worklist.adf.CommentBean</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
-    <managed-bean id="__57">
-      <managed-bean-name>mbDefinicionEspecificacionDiseno</managed-bean-name>
-      <managed-bean-class>edu.javeriana.verificarasignarrecursos.beans.MbDefinicionEspecificacionDiseno</managed-bean-class>
-      <managed-bean-scope>pageFlow</managed-bean-scope>
-    </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
-    <view id="PG_DefinicionEspecificacionDiseno">
-      <page>/WEB-INF/edu/javeriana/definicionespecificaciondiseno/pages/PG_DefinicionEspecificacionDiseno.jspx</page>
+    <view id="PG_DisenarProductos">
+      <page>/WEB-INF/edu/javeriana/desarrollarespecificaciondiseno/pages/PG_DisenarProductos.jspx</page>
     </view>
     <task-flow-return id="taskReturn">
       <outcome>
@@ -249,22 +244,22 @@
     </task-flow-return>
     <task-flow-return id="taskFlowRefresh">
       <outcome>
-        <name>refresh</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="previousTaskFlow">
       <outcome>
-        <name>previous</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="nextTaskFlow">
       <outcome>
-        <name>next</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="taskFlowCompleted">
       <outcome>
-        <name>new</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <control-flow-rule id="__29">
