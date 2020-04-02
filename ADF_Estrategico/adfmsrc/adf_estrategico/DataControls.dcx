@@ -109,4 +109,20 @@
                       DocumentStoreConfiguration="false"/>
     </Source>
   </AdapterDataControl>
+  <AdapterDataControl id="ADF_Estrategico_HT_RealizarPruebasInternasProducto"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ADF_Estrategico_HT_RealizarPruebasInternasProducto"
+                      BeanClass="ADF_Estrategico_HT_RealizarPruebasInternasProducto"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/Proyectos/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_RealizarPruebasInternasProductoWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../BPM_Estrategico/SOA/HumanTasks/HT_RealizarPruebasInternasProducto.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
 </DataControlConfigs>
