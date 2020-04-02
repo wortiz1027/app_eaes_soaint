@@ -235,7 +235,7 @@
     </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
     <view id="PG_EvaluarSeleccionarCandidato">
-      <page>/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/HT_EvaluarSeleccionarCandidato_TaskDetails.jspx</page>
+      <page>/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/PG_EvaluarSeleccionarCandidato.jspx</page>
     </view>
     <task-flow-return id="taskReturn">
       <outcome>
