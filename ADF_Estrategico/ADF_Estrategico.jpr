@@ -315,11 +315,27 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Adf_configuracion.jar1"/>
+            <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Collections 3.1"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_Configuracion.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
             <value n="id" v="ADF_LookAndFeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_Model.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF DVT Core Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -352,20 +368,36 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../ADF_Configuracion/deploy/adf_configuracion.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Adf_configuracion.jar1"/>
-               <value n="id" v="Adf_configuracion.jar1"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
                   <url path="../ADF_LookAndFeel/deploy/ADF_LookAndFeel.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF_LookAndFeel.jar"/>
                <value n="id" v="ADF_LookAndFeel.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.soa.worklist_11.1.1/adflibWorklistComponents.jar" jar-entry=""/>
+               </list>
+               <value n="description" v="Library2"/>
+               <value n="id" v="Library2"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_Model/deploy/ADF_Model.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF_Model.jar"/>
+               <value n="id" v="ADF_Model.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_Configuracion/deploy/ADF_Configuracion.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF_Configuracion.jar"/>
+               <value n="id" v="ADF_Configuracion.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -492,15 +524,31 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Adf_configuracion.jar1"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <url n="id" path="ADF_Library_Dependencies.library"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Collections 3.1"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_Configuracion.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="ADF_LookAndFeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_Model.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF DVT Core Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -629,6 +677,16 @@
             <value n="taglibURL" v="@oracle.home@../soa/plugins/jdeveloper/integration/lib/bpm-workflow-datacontrol.jar!/META-INF/workflow.taglib.xml"/>
             <value n="URI" v="http://xmlns.oracle.com/bpel/workflow/workflow-taglib.tld"/>
             <value n="version" v="1.0"/>
+         </hash>
+         <hash>
+            <value n="libraries" v="ADF Faces Components"/>
+            <value n="name" v="worklistComponents"/>
+            <value n="prefix" v="wlc"/>
+            <value n="runInEditor" v="true"/>
+            <value n="showInPalette" v="true"/>
+            <value n="taglibURL" v="@project@../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.soa.worklist_11.1.1/adflibWorklistComponents.jar!/META-INF/worklistcomponents.taglib.xml"/>
+            <value n="URI" v="http://xmlns.oracle.com/bpel/workflow/worklist"/>
+            <value n="version" v="2.0"/>
          </hash>
       </list>
    </hash>
@@ -798,6 +856,17 @@
             <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view/dvt-faces.jar!/META-INF/bi.tld"/>
             <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
             <value n="version" v="1.1"/>
+         </hash>
+         <hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="libraries" v="Library2"/>
+            <value n="name" v="worklistComponents"/>
+            <value n="prefix" v="wlc"/>
+            <value n="runInEditor" v="true"/>
+            <value n="showInPalette" v="true"/>
+            <value n="tldURL" v="@project@../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.soa.worklist_11.1.1/adflibWorklistComponents.jar!/META-INF/worklistComponents.tld"/>
+            <value n="URI" v="http://xmlns.oracle.com/bpel/workflow/worklist"/>
+            <value n="version" v="1.0"/>
          </hash>
       </list>
    </hash>

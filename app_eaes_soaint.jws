@@ -28,6 +28,7 @@
       <hash><url n="URL" path="ADF_Configuracion/ADF_Configuracion.jpr"/></hash>
       <hash><url n="URL" path="ADF_Estrategico/ADF_Estrategico.jpr"/></hash>
       <hash><url n="URL" path="ADF_LookAndFeel/ADF_LookAndFeel.jpr"/></hash>
+      <hash><url n="URL" path="ADF_Model/ADF_Model.jpr"/></hash>
       <hash><url n="URL" path="ADF_Soporte/ADF_Soporte.jpr"/></hash>
       <hash><url n="URL" path="BPM_Estrategico/BPM_Estrategico.jpr"/></hash>
       <hash><url n="URL" path="BPM_Soporte/BPM_Soporte.jpr"/></hash>
