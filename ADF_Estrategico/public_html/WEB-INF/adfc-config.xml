@@ -141,4 +141,50 @@
       <to-activity-id>Empty1_jspx</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__37">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__38">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__39">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__40">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__41">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__42">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__43">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__44">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__45">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__46">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__47">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__48">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
 </adfc-config>
