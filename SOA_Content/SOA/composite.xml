@@ -11,6 +11,15 @@
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/"
            xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
+  <import namespace="http://www.stellent.com/Search/" location="oramds:/apps/resources/SOA/WSDLs/Search.wsdl"
+          importType="wsdl"/>
   <property name="productVersion" type="xs:string" many="false">12.2.1.3.0.170820</property>
   <property name="compositeID" type="xs:string" many="false">ac01944a-c7c3-4aca-add8-1d0483ba7e41</property>
+  <reference name="WS_Search" ui:wsdlLocation="oramds:/apps/resources/SOA/WSDLs/Search.wsdl">
+    <interface.wsdl interface="http://www.stellent.com/Search/#wsdl.interface(SearchSoap)"/>
+    <binding.ws port="http://www.stellent.com/Search/#wsdl.endpoint(Search/SearchSoap)"
+                location="oramds:/apps/resources/SOA/WSDLs/Search.wsdl" soapVersion="1.1">
+      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+    </binding.ws>
+  </reference>
 </composite>
