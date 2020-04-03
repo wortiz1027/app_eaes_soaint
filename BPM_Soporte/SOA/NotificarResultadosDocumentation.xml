@@ -4,22 +4,6 @@
    <component name="NotificarResultados">
       <topicDocumentations>
          <topicDocumentation name="NotificarResultados"/>
-         <topicDocumentation name="EVT2838714200318">
-            <labels>
-               <label locale="en">Inicio</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="EVT28387142003192">
-            <labels>
-               <label locale="en">Fin</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
          <topicDocumentation name="ACT28387160029957">
             <labels>
                <label locale="en">[SW] Obtener Resultados Candidatos</label>
@@ -31,6 +15,22 @@
          <topicDocumentation name="ACT28387168041289">
             <labels>
                <label locale="en">Notificar Resultados Candidatos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT28387192038333">
+            <labels>
+               <label locale="en">[NT] Notificar Rechazo del Candidato</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT28387197704111">
+            <labels>
+               <label locale="en">[NT] Notificar Aceptación del Candidato</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -62,22 +62,6 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT28387192038333">
-            <labels>
-               <label locale="en">[NT] Notificar Rechazo del Candidato</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT28387197704111">
-            <labels>
-               <label locale="en">[NT] Notificar Aceptación del Candidato</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
          <topicDocumentation name="sf28387168147746"/>
          <topicDocumentation name="sf28387183814575">
             <labels>
@@ -98,6 +82,22 @@
             </descriptions>
          </topicDocumentation>
          <topicDocumentation name="sf28387199679987"/>
+         <topicDocumentation name="EVT2838714200318">
+            <labels>
+               <label locale="en">Inicio</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28387142003192">
+            <labels>
+               <label locale="en">Fin</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="sf28387142003251"/>
          <topicDocumentation name="sf28387164677969"/>
          <topicDocumentation name="sf28387168147744"/>

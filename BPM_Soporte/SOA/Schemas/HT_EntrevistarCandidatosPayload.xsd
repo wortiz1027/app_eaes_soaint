@@ -1,6 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0">
+   <import namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" schemaLocation="oramds:/apps/resources/BPM/SCHEMAs/Soporte/Soporte.xsd"/>
    <complexType name="HT_EntrevistarCandidatosPayloadType">
-      <sequence/>
+      <sequence>
+         <element ref="ns0:FiltradoSeleccionCandidato"/>
+      </sequence>
    </complexType>
 </schema>
