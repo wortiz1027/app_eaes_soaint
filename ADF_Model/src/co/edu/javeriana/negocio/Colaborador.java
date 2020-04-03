@@ -3,9 +3,10 @@ package co.edu.javeriana.negocio;
 import co.edu.javeriana.comun.TipoComun;
 
 public class Colaborador extends Persona {
-    @SuppressWarnings("compatibility:-6838652694449206429")
+    @SuppressWarnings("compatibility:5091127268150149933")
     private static final long serialVersionUID = 1L;
     private TipoComun rol;
+    private boolean asignado;
     
     public Colaborador() {
         super();
@@ -18,5 +19,13 @@ public class Colaborador extends Persona {
 
     public TipoComun getRol() {
         return rol;
+    }
+
+    public void setAsignado(boolean asignado) {
+        this.asignado = asignado;
+    }
+
+    public boolean isAsignado() {
+        return asignado;
     }
 }
