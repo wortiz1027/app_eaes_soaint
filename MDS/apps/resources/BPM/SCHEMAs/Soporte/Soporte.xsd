@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:probpmrecl="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"
+            targetNamespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" 
+            elementFormDefault="qualified">
+    <xsd:complexType name="CandidatoType">
+        <xsd:sequence>
+            <xsd:element name="correoElectronico" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+            <xsd:element name="resultado" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CandidatosType">
+        <xsd:sequence>
+            <xsd:element name="Candidato" maxOccurs="unbounded" type="probpmrecl:CandidatoType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FiltradoSeleccionCandidatoType">
+        <xsd:sequence>
+            <xsd:element name="existenCandidatosAEvaluar" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ReclutamientoFuenteSeleccionEmpleadosType">
+        <xsd:sequence>
+            <xsd:element name="existePersonalParaSeleccionFiltrado" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+            <xsd:element name="existePersonalParaContratar" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="Candidatos" type="probpmrecl:CandidatosType">
+        <xsd:annotation>
+            <xsd:documentation>A sample element</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="FiltradoSeleccionCandidato" type="probpmrecl:FiltradoSeleccionCandidatoType"/>
+    <xsd:element name="ReclutamientoFuenteSeleccionEmpleados"
+                 type="probpmrecl:ReclutamientoFuenteSeleccionEmpleadosType"/>
+</xsd:schema>

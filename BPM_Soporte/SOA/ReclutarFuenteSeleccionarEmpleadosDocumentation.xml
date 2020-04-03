@@ -4,22 +4,6 @@
    <component name="ReclutarFuenteSeleccionarEmpleados">
       <topicDocumentations>
          <topicDocumentation name="ReclutarFuenteSeleccionarEmpleados"/>
-         <topicDocumentation name="EVT28386760553972">
-            <labels>
-               <label locale="en">inicio</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="EVT28386760553956">
-            <labels>
-               <label locale="en">Fin</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
          <topicDocumentation name="ACT28386829646719">
             <labels>
                <label locale="en">[BPM] Llamada Proceso de Reclutamiento</label>
@@ -31,14 +15,6 @@
          <topicDocumentation name="ACT28386830803914">
             <labels>
                <label locale="en">[BPM] Espera Proceso de Reclutamiento</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="GTW28386854088693">
-            <labels>
-               <label locale="en">¿Existe personal para filtrado y selección?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -76,6 +52,30 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="EVT28386760553972">
+            <labels>
+               <label locale="en">inicio</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT28386760553956">
+            <labels>
+               <label locale="en">Fin</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW28386854088693">
+            <labels>
+               <label locale="en">¿Existe personal para filtrado y selección?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="GTW28386885665597">
             <labels>
                <label locale="en">¿Existe personal para contratar?</label>
@@ -95,7 +95,14 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="sf28386872303193"/>
+         <topicDocumentation name="sf28386872303193">
+            <labels>
+               <label locale="en"></label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="sf28386876963973"/>
          <topicDocumentation name="sf28386885377579"/>
          <topicDocumentation name="sf28386889978847">

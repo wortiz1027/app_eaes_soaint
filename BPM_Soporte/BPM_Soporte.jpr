@@ -86,7 +86,13 @@
    </hash>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
-         <list n="url-path"/>
+         <list n="pattern-filters">
+            <string v="+Comun.xsd"/>
+            <string v="+Soporte.xsd"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+         </list>
       </hash>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">

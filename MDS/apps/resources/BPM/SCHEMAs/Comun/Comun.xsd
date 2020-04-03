@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:utilbpmcom="http://xmlns.javeriana.edu/edu/schemas/util/comunes/v1.0"
+            targetNamespace="http://xmlns.javeriana.edu/edu/schemas/util/comunes/v1.0" 
+            elementFormDefault="qualified">
+  <xsd:complexType name="DatosProcesoType">
+    <xsd:sequence>
+      <xsd:element name="titulo" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+	  <xsd:element name="tipoRespuesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+      <xsd:element name="idReferencia" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DatosProces" type="utilbpmcom:DatosProcesoType">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

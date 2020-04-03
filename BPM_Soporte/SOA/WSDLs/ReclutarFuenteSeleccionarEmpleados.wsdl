@@ -15,7 +15,9 @@
             </xsd:element>
             <xsd:element name="finReclutarFuenteSeleccionarEmpleadosResponse">
                 <xsd:complexType>
-                    <xsd:sequence/>
+                    <xsd:sequence>
+                        <xsd:element name="tipoRespuesta" type="xsd:string"/>
+                    </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
         </xsd:schema>
