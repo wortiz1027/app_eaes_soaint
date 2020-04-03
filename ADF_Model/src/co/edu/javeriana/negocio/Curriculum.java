@@ -3,14 +3,15 @@ package co.edu.javeriana.negocio;
 import java.io.Serializable;
 
 public class Curriculum implements Serializable {
-    @SuppressWarnings("compatibility:-7747261074357219671")
+    @SuppressWarnings("compatibility:-2729851536011804468")
     private static final long serialVersionUID = 1L;
     private Candidato candidato;
-    private String idDoc;
+    private Documento documento;
     
     public Curriculum() {
         super();
         this.candidato = new Candidato();
+        this.documento = new Documento();
     }
 
     public void setCandidato(Candidato candidato) {
@@ -21,11 +22,11 @@ public class Curriculum implements Serializable {
         return candidato;
     }
 
-    public void setIdDoc(String idDoc) {
-        this.idDoc = idDoc;
+    public void setDocumento(Documento documento) {
+        this.documento = documento;
     }
 
-    public String getIdDoc() {
-        return idDoc;
+    public Documento getDocumento() {
+        return documento;
     }
 }
