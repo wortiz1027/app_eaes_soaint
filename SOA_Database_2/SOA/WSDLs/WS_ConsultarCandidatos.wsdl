@@ -15,7 +15,7 @@
     <wsdl:types>
      <schema xmlns="http://www.w3.org/2001/XMLSchema">
        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/WS_ConsultarCandidatos"
-               schemaLocation="../Schemas/WS_ConsultarCandidatos_sp.xsd" />
+               schemaLocation="oramds:/apps/resources/SOA/SCHEMAs/WS_ConsultarCandidatos_sp.xsd" />
      </schema>
     </wsdl:types>
     <wsdl:message name="args_in_msg">
