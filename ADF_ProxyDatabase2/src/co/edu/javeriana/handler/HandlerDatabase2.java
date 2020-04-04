@@ -8,11 +8,11 @@ import javax.xml.ws.handler.soap.SOAPMessageContext;
 
 import oracle.adf.share.logging.ADFLogger;
 
-public class HandlerDatabase extends HandlerMessageProxyService {
+public class HandlerDatabase2 extends HandlerMessageProxyService {
     
-    public static final ADFLogger LOGGER = ADFLogger.createADFLogger(HandlerDatabase.class);
+    public static final ADFLogger LOGGER = ADFLogger.createADFLogger(HandlerDatabase2.class);
     
-    public HandlerDatabase() {
+    public HandlerDatabase2() {
         super();
     }
     
@@ -23,4 +23,5 @@ public class HandlerDatabase extends HandlerMessageProxyService {
         LOGGER.end(Level.FINEST, this.getClass().getName()+".handleMessage");
         return Boolean.TRUE;
     }
+    
 }
