@@ -5,17 +5,24 @@
 <!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
 <!--####                                                                                ####-->
 <!--########################################################################################-->
-<wsdl:definitions targetNamespace="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos" xmlns:tns="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" >
+<wsdl:definitions targetNamespace="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos" xmlns:tns6="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"  xmlns:tns="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos"  xmlns:tns7="http://xmlns.javeriana.edu/edu/schemas/util/comunes/v1.0"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" >
     <wsdl:types>
         <xsd:schema targetNamespace="http://xmlns.javeriana.com/bpmn/bpmnProcess/verificarAsignarRecursos">
+            <xsd:import namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" schemaLocation="oramds:/apps/resources/BPM/SCHEMAs/Misional/Misional.xsd"/>
+            <xsd:import namespace="http://xmlns.javeriana.edu/edu/schemas/util/comunes/v1.0" schemaLocation="oramds:/apps/resources/BPM/SCHEMAs/Comun/Comun.xsd"/>
             <xsd:element name="inicioVerificarAsignarRecursos">
                 <xsd:complexType>
-                    <xsd:sequence/>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:Solicitud"/>
+                    </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
             <xsd:element name="finVerificarAsignarRecursosResponse">
                 <xsd:complexType>
-                    <xsd:sequence/>
+                    <xsd:sequence>
+                        <xsd:element ref="tns7:DatosProcesoMisional"/>
+                        <xsd:element ref="tns6:Solicitud"/>
+                    </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
         </xsd:schema>
