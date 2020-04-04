@@ -27,6 +27,10 @@
           location="WSDLs/WS_UpdateObsEstadoEntrevista.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_updateobsestentrevista"
           location="WSDLs/bpel_updateobsestentrevista.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsProtRecomendaciones"
+          location="WSDLs/WS_ConsProtRecomendaciones.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consprotrecomendaciones"
+          location="WSDLs/bpel_consprotrecomendaciones.wsdl" importType="wsdl"/>
   <service name="bpel_consultacandidatos_client_ep" ui:wsdlLocation="WSDLs/bpel_consultacandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.interface(bpel_consultacandidatos)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.endpoint(bpel_consultacandidatos_client_ep/bpel_consultacandidatos_pt)"/>
@@ -42,6 +46,10 @@
   <service name="bpel_updateobsestentrevista_client_ep" ui:wsdlLocation="WSDLs/bpel_updateobsestentrevista.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_updateobsestentrevista#wsdl.interface(bpel_updateobsestentrevista)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_updateobsestentrevista#wsdl.endpoint(bpel_updateobsestentrevista_client_ep/bpel_updateobsestentrevista_pt)"/>
+  </service>
+  <service name="bpel_consprotrecomendaciones_client_ep" ui:wsdlLocation="WSDLs/bpel_consprotrecomendaciones.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consprotrecomendaciones#wsdl.interface(bpel_consprotrecomendaciones)"/>
+    <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consprotrecomendaciones#wsdl.endpoint(bpel_consprotrecomendaciones_client_ep/bpel_consprotrecomendaciones_pt)"/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.3.0.170820</property>
   <property name="compositeID" type="xs:string" many="false">6f06d15a-e2f2-47a6-b106-0b160e02ce59</property>
@@ -93,6 +101,18 @@
     </componentType>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
   </component>
+  <component name="bpel_consprotrecomendaciones" version="2.0">
+    <implementation.bpel src="BPEL/bpel_consprotrecomendaciones.bpel"/>
+    <componentType>
+      <service name="bpel_consprotrecomendaciones_client" ui:wsdlLocation="WSDLs/bpel_consprotrecomendaciones.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consprotrecomendaciones#wsdl.interface(bpel_consprotrecomendaciones)"/>
+      </service>
+      <reference name="WS_ConsProtRecomendaciones" ui:wsdlLocation="WSDLs/WS_ConsProtRecomendaciones.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsProtRecomendaciones#wsdl.interface(WS_ConsProtRecomendaciones_ptt)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+  </component>
   <reference name="WS_ConsultarCandidatos" ui:wsdlLocation="WSDLs/WS_ConsultarCandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCandidatos#wsdl.interface(WS_ConsultarCandidatos_ptt)"/>
     <binding.jca config="Adapters/WS_ConsultarCandidatos_db.jca"/>
@@ -120,6 +140,14 @@
   <reference name="WS_UpdateObsEstadoEntrevista" ui:wsdlLocation="WSDLs/WS_UpdateObsEstadoEntrevista.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_UpdateObsEstadoEntrevista#wsdl.interface(WS_UpdateObsEstadoEntrevista_ptt)"/>
     <binding.jca config="Adapters/WS_UpdateObsEstadoEntrevista_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:int" many="false" override="may">120</property>
+  </reference>
+  <reference name="WS_ConsProtRecomendaciones" ui:wsdlLocation="WSDLs/WS_ConsProtRecomendaciones.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsProtRecomendaciones#wsdl.interface(WS_ConsProtRecomendaciones_ptt)"/>
+    <binding.jca config="Adapters/WS_ConsProtRecomendaciones_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
     <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
@@ -156,5 +184,13 @@
   <wire>
     <source.uri>bpel_updateobsestentrevista/WS_UpdateObsEstadoEntrevista</source.uri>
     <target.uri>WS_UpdateObsEstadoEntrevista</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_consprotrecomendaciones_client_ep</source.uri>
+    <target.uri>bpel_consprotrecomendaciones/bpel_consprotrecomendaciones_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_consprotrecomendaciones/WS_ConsProtRecomendaciones</source.uri>
+    <target.uri>WS_ConsProtRecomendaciones</target.uri>
   </wire>
 </composite>
