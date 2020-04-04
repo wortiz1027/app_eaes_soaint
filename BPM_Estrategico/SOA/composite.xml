@@ -323,12 +323,12 @@
     <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
   </wire>
   <wire>
-    <source.uri>ConstruirProbarPrototipo.service</source.uri>
-    <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
-  </wire>
-  <wire>
     <source.uri>VerificarAsignarRecursos/Services.Externals.SW_ProcesoReclutamiento.reference</source.uri>
     <target.uri>SW_ProcesoReclutamiento</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ConstruirProbarPrototipo.service</source.uri>
+    <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
   </wire>
   <wire>
     <source.uri>VerificarAsignarRecursos.service</source.uri>

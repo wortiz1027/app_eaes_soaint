@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bpmn:definitions fileRevision="20120601" version="12.1.3" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmnext="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC">
+<bpmn:definitions fileRevision="20120601" version="12.1.3" xmlns="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmnext="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns3="http://www.omg.org/spec/BPMN/20100524/DI">
     <bpmn:process processType="Public" isExecutable="true" name="ConstruirProbarPrototipo" id="ConstruirProbarPrototipo">
         <bpmn:extensionElements>
             <bpmnext:OracleExtensions>
@@ -89,6 +89,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                     </bpmnext:FeatureSet>
                     <bpmnext:HumanTask>
                         <bpmnext:humanTaskRef refType="namespaced" name="HT_ConstruirPrototiposPruebasConceptos" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Estrategico/HT_ConstruirPrototiposPruebasConceptos" elementType="TYPE" implementationType="humanTask"/>
@@ -333,6 +334,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                     </bpmnext:FeatureSet>
                     <bpmnext:HumanTask>
                         <bpmnext:humanTaskRef refType="namespaced" name="HT_ValidarProblemasCalidad" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Estrategico/HT_ValidarProblemasCalidad" elementType="TYPE" implementationType="humanTask"/>
@@ -576,6 +578,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                     </bpmnext:FeatureSet>
                     <bpmnext:HumanTask>
                         <bpmnext:humanTaskRef refType="namespaced" name="HT_RealizarPruebasInternasProducto" namespace="http://xmlns.oracle.com/app_eaes_soaint/BPM_Estrategico/HT_RealizarPruebasInternasProducto" elementType="TYPE" implementationType="humanTask"/>

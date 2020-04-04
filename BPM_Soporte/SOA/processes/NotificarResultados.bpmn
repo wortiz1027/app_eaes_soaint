@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bpmn:definitions fileRevision="20120601" version="12.1.3" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmnext="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC">
+<bpmn:definitions fileRevision="20120601" version="12.1.3" xmlns="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmnext="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns3="http://www.omg.org/spec/BPMN/20100524/DI">
     <bpmn:process processType="Public" isExecutable="true" name="NotificarResultados" id="NotificarResultados">
         <bpmn:extensionElements>
             <bpmnext:OracleExtensions>
@@ -132,7 +132,7 @@
                 </bpmn:loopCardinality>
                 <bpmn:completionCondition xsi:type="bpmn:tFormalExpression"/>
             </bpmn:loopCharacteristics>
-            <bpmn:serviceTask implementation="NotificationService.ACT28387192038333" operationRef="sendEmailNotification" isForCompensation="false" name="[NT] Notificar Rechazo del Candidato" id="ACT28387192038333" xmlns="">
+            <bpmn:serviceTask implementation="NotificationService.ACT28387192038333" operationRef="sendEmailNotification" isForCompensation="false" name="[NT] Notificar Rechazo del Candidato" id="ACT28387192038333" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns="">
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
@@ -353,7 +353,7 @@ Departamento de RRHH - SOAINT.'
                     </bpmn:assignment>
                 </bpmn:dataInputAssociation>
             </bpmn:serviceTask>
-            <bpmn:serviceTask implementation="NotificationService.ACT28387197704111" operationRef="sendEmailNotification" isForCompensation="false" name="[NT] Notificar Aceptación del Candidato" id="ACT28387197704111" xmlns="">
+            <bpmn:serviceTask implementation="NotificationService.ACT28387197704111" operationRef="sendEmailNotification" isForCompensation="false" name="[NT] Notificar Aceptación del Candidato" id="ACT28387197704111" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns="">
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
