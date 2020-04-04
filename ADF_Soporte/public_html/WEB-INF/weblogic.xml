@@ -37,8 +37,4 @@
    <library-ref xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <library-name>adf.oracle.domain.webapp</library-name>
   </library-ref>
-   <security-role-assignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <role-name>valid-users</role-name>
-    <principal-name>users</principal-name>
-  </security-role-assignment>
 </weblogic-web-app>

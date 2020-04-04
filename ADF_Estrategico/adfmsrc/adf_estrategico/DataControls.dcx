@@ -27,7 +27,7 @@
                       xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
       <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
-                      SchemaLocation="file:/C:/Proyectos Javeriana/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_DefinicionEspecificacionDisenoWorkflowTask.xsd"
+                      SchemaLocation="file:/C:/Proyectos/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_DefinicionEspecificacionDisenoWorkflowTask.xsd"
                       RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
                       taskLoc="../BPM_Estrategico/SOA/HumanTasks/HT_DefinicionEspecificacionDiseno.task"
                       InitiationTask="false" DocumentStoreConfiguration="false"/>
@@ -43,7 +43,7 @@
                       xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
       <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
-                      SchemaLocation="file:/C:/Proyectos Javeriana/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_ConcluirRevisionesWorkflowTask.xsd"
+                      SchemaLocation="file:/C:/Proyectos/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_ConcluirRevisionesWorkflowTask.xsd"
                       RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
                       taskLoc="../BPM_Estrategico/SOA/HumanTasks/HT_ConcluirRevisiones.task" InitiationTask="false"
                       DocumentStoreConfiguration="false"/>
@@ -57,7 +57,7 @@
                       BeanClass="ADF_Estrategico_HT_SolicitarRecursos" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
       <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
-                      SchemaLocation="file:/C:/Users/brian/OneDrive/Documentos/Javeriana/Procesos de Negocio/Proyecto Final/Git4/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_SolicitarRecursosWorkflowTask.xsd"
+                      SchemaLocation="file:/C:/Proyectos/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_SolicitarRecursosWorkflowTask.xsd"
                       RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
                       taskLoc="../BPM_Estrategico/SOA/HumanTasks/HT_SolicitarRecursos.task" InitiationTask="false"
                       DocumentStoreConfiguration="false"/>
@@ -73,7 +73,7 @@
                       xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
       <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
-                      SchemaLocation="file:/C:/Users/brian/OneDrive/Documentos/Javeriana/Procesos de Negocio/Proyecto Final/Git4/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_EvaluarAsignarRecursoPrototipadoWorkflowTask.xsd"
+                      SchemaLocation="file:/C:/Proyectos/app_eaes_soaint/BPM_Estrategico/SOA/Schemas/HT_EvaluarAsignarRecursoPrototipadoWorkflowTask.xsd"
                       RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
                       taskLoc="../BPM_Estrategico/SOA/HumanTasks/HT_EvaluarAsignarRecursoPrototipado.task"
                       InitiationTask="false" DocumentStoreConfiguration="false"/>
