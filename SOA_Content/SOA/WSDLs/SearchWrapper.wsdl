@@ -8,7 +8,7 @@
      xmlns:s0="http://www.stellent.com/Search/"
      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
     >
-    <plnk:partnerLinkType name="WS_Search">
+    <plnk:partnerLinkType name="WS_AdvanceSearch">
         <plnk:role name="SearchSoap" portType="s0:SearchSoap"/>
     </plnk:partnerLinkType>
     <wsdl:import namespace="http://www.stellent.com/Search/" location="oramds:/apps/resources/SOA/WSDLs/Search.wsdl"/>

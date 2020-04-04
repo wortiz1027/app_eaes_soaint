@@ -3,24 +3,23 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Oracle JDeveloper BPEL Designer 
   
-  Created: Fri Apr 03 08:57:52 COT 2020
+  Created: Sat Apr 04 01:11:06 COT 2020
   Author:  negro
   Type: BPEL 2.0 Process
   Purpose: Synchronous BPEL Process
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -->
-<process name="bpel_consulta_wcc"
-               targetNamespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_consulta_wcc"
+<process name="bpel_AdvanceSearch"
+               targetNamespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch"
                xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-               xmlns:client="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_consulta_wcc"
+               xmlns:client="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch"
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:ui="http://xmlns.oracle.com/soa/designer"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
          xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-         xmlns:ns1="http://www.stellent.com/Search/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:ns2="http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0">
+         xmlns:ns1="http://www.stellent.com/Search/">
 
-    <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_consulta_wcc" location="../WSDLs/bpel_consulta_wcc.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch" location="../WSDLs/bpel_AdvanceSearch.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         PARTNERLINKS                                                      
@@ -33,8 +32,8 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="bpel_consulta_wcc_client" partnerLinkType="client:bpel_consulta_wcc" myRole="bpel_consulta_wccProvider"/>
-    <partnerLink name="WS_Search" partnerLinkType="ns1:WS_Search" partnerRole="SearchSoap"/>
+    <partnerLink name="bpel_advancesearch_client" partnerLinkType="client:bpel_AdvanceSearch" myRole="bpel_AdvanceSearchProvider"/>
+    <partnerLink name="WS_AdvanceSearch" partnerLinkType="ns1:WS_AdvanceSearch" partnerRole="SearchSoap"/>
   </partnerLinks>
 
   <!-- 
@@ -45,12 +44,12 @@
   -->
   <variables>
     <!-- Reference to the message passed as input during initiation -->
-    <variable name="inputVariable" messageType="client:bpel_consulta_wccRequestMessage"/>
+    <variable name="inputVariable" messageType="client:bpel_AdvanceSearchRequestMessage"/>
 
     <!-- Reference to the message that will be returned to the requester-->
-    <variable name="outputVariable" messageType="client:bpel_consulta_wccResponseMessage"/>
-    <variable name="Ink_consultar_wcc_input" messageType="ns1:QuickSearchSoapIn"/>
-    <variable name="Ink_consultar_wcc_output" messageType="ns1:QuickSearchSoapOut"/>
+    <variable name="outputVariable" messageType="client:bpel_AdvanceSearchResponseMessage"/>
+    <variable name="Ink_AdvanceSearch_inputVariable" messageType="ns1:AdvancedSearchSoapIn"/>
+    <variable name="Ink_AdvanceSearch_outputVariable" messageType="ns1:AdvancedSearchSoapOut"/>
   </variables>
 
   <!-- 
@@ -62,39 +61,30 @@
   -->
   <sequence name="main">
 
-    <!-- Receive input from requestor. (Note: This maps to operation defined in bpel_consulta_wcc.wsdl) -->
-    <receive name="receiveInput" partnerLink="bpel_consulta_wcc_client" portType="client:bpel_consulta_wcc" operation="process" variable="inputVariable" createInstance="yes"/>
-    <assign name="Set_Request">
-      <copy>
-        <from>$inputVariable.payload/ns2:queryText</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_consultar_wcc_input.parameters/ns1:queryText</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:property/ns2:name</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_consultar_wcc_input.parameters/ns1:extraProps/ns1:property/ns1:name</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:property/ns2:value</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_consultar_wcc_input.parameters/ns1:extraProps/ns1:property/ns1:value</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:property</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_consultar_wcc_input.parameters/ns1:extraProps/ns1:property</to>
-      </copy>
-    </assign>
-    <invoke name="Ink_consultar_wcc" partnerLink="WS_Search" portType="ns1:SearchSoap"
-            operation="QuickSearch" inputVariable="Ink_consultar_wcc_input" outputVariable="Ink_consultar_wcc_output"
-            bpelx:invokeAsDetail="no"/>
-    <assign name="T1_Response_Search">
+    <!-- Receive input from requestor. (Note: This maps to operation defined in bpel_AdvanceSearch.wsdl) -->
+    <receive name="receiveInput" partnerLink="bpel_advancesearch_client" portType="client:bpel_AdvanceSearch" operation="process" variable="inputVariable" createInstance="yes"/>
+    <assign name="T2_Request_AdvanceSearch">
       <bpelx:annotation>
         <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
       </bpelx:annotation>
       <copy>
-        <from>ora:doXSLTransformForDoc("../Transformations/T1_Response_Search.xsl", $Ink_consultar_wcc_output.parameters)</from>
+        <from>ora:doXSLTransformForDoc("../Transformations/T2_Request_AdvanceSearch.xsl", $inputVariable.payload)</from>
+        <to variable="Ink_AdvanceSearch_inputVariable" part="parameters"/>
+      </copy>
+    </assign>
+    <invoke name="Ink_AdvanceSearch" partnerLink="WS_AdvanceSearch"
+            portType="ns1:SearchSoap" operation="AdvancedSearch" inputVariable="Ink_AdvanceSearch_inputVariable"
+            outputVariable="Ink_AdvanceSearch_outputVariable" bpelx:invokeAsDetail="no"/>
+    <assign name="T3_Response_AdvanceSearch">
+      <bpelx:annotation>
+        <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from>ora:doXSLTransformForDoc("../Transformations/T3_Response_AdvanceSearch.xsl", $Ink_AdvanceSearch_outputVariable.parameters)</from>
         <to variable="outputVariable" part="payload"/>
       </copy>
     </assign>
     <!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="bpel_consulta_wcc_client" portType="client:bpel_consulta_wcc" operation="process" variable="outputVariable"/>
+    <reply name="replyOutput" partnerLink="bpel_advancesearch_client" portType="client:bpel_AdvanceSearch" operation="process" variable="outputVariable"/>
   </sequence>
 </process>

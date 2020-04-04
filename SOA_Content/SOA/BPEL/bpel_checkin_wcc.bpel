@@ -65,54 +65,13 @@
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in bpel_checkin_wcc.wsdl) -->
     <receive name="receiveInput" partnerLink="bpel_checkin_wcc_client" portType="client:bpel_checkin_wcc" operation="process" variable="inputVariable" createInstance="yes"/>
-    <assign name="Set_Request">
+    <assign name="T1_Request_Checkin">
+      <bpelx:annotation>
+        <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+      </bpelx:annotation>
       <copy>
-        <from>$inputVariable.payload/ns2:dDocName</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:dDocName</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:titulo</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:dDocTitle</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:tipo</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:dDocType</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:autor</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:dDocAuthor</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:grupoSeguridad</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:dSecurityGroup</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:cuenta</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:dDocAccount</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:archivoPrimario</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:primaryFile</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:archivoPrimario/ns2:nombreArchivo</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:primaryFile/ns1:fileName</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:archivoPrimario/ns2:contenidoArchivo</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:primaryFile/ns1:fileContent</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:customDocMetaData</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:CustomDocMetaData</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:customDocMetaData/ns2:name</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:CustomDocMetaData/ns1:property/ns1:name</to>
-      </copy>
-      <copy>
-        <from>$inputVariable.payload/ns2:customDocMetaData/ns2:value</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_input.parameters/ns1:CustomDocMetaData/ns1:property/ns1:value</to>
+        <from>ora:doXSLTransformForDoc("../Transformations/T1_Request_Checkin.xsl", $inputVariable.payload)</from>
+        <to variable="Ink_checkin_wcc_input" part="parameters"/>
       </copy>
     </assign>
     <invoke name="Ink_checkin_wcc" partnerLink="WS_Checkin" portType="ns1:CheckInSoap"
@@ -120,32 +79,28 @@
             bpelx:invokeAsDetail="no"/>
     <assign name="Set_Response">
       <copy>
-        <from>$outputVariable.payload/ns2:dID</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dID</to>
+        <from>$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dID</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:dID</to>
       </copy>
       <copy>
-        <from>$outputVariable.payload/ns2:revision</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dRevisionID</to>
+        <from>$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dRevisionID</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:revision</to>
       </copy>
       <copy>
-        <from>$outputVariable.payload/ns2:idRevision</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dRevClassID</to>
+        <from>$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dRevClassID</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:idRevision</to>
       </copy>
       <copy>
-        <from>$outputVariable.payload/ns2:labelrevision</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dRevLabel</to>
+        <from>$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:dRevLabel</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:labelrevision</to>
       </copy>
       <copy>
-        <from>$outputVariable.payload/ns2:status</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:StatusInfo</to>
+        <from>$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:StatusInfo/ns1:statusCode</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:status/ns2:codigo</to>
       </copy>
       <copy>
-        <from>$outputVariable.payload/ns2:status/ns2:codigo</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:StatusInfo/ns1:statusCode</to>
-      </copy>
-      <copy>
-        <from>$outputVariable.payload/ns2:status/ns2:mensaje</from>
-        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:StatusInfo/ns1:statusMessage</to>
+        <from>$Ink_checkin_wcc_output.parameters/ns1:CheckInUniversalResult/ns1:StatusInfo/ns1:statusMessage</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns2:status/ns2:mensaje</to>
       </copy>
     </assign>
     <!-- Generate reply to synchronous request -->
