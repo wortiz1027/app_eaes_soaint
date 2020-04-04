@@ -21,6 +21,11 @@
   <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch"
           location="WSDLs/bpel_AdvanceSearch.wsdl" importType="wsdl"/>
   <import namespace="http://www.stellent.com/Search/" location="WSDLs/SearchWrapper.wsdl" importType="wsdl"/>
+  <import namespace="http://www.stellent.com/GetFile/" location="oramds:/apps/resources/SOA/WSDLs/GetFile.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_GetFile"
+          location="WSDLs/bpel_GetFile.wsdl" importType="wsdl"/>
+  <import namespace="http://www.stellent.com/GetFile/" location="WSDLs/GetFileWrapper.wsdl" importType="wsdl"/>
   <service name="bpel_checkin_wcc_client_ep" ui:wsdlLocation="WSDLs/bpel_checkin_wcc.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_checkin_wcc#wsdl.interface(bpel_checkin_wcc)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_checkin_wcc#wsdl.endpoint(bpel_checkin_wcc_client_ep/bpel_checkin_wcc_pt)"/>
@@ -28,6 +33,10 @@
   <service name="bpel_advancesearch_client_ep" ui:wsdlLocation="WSDLs/bpel_AdvanceSearch.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch#wsdl.interface(bpel_AdvanceSearch)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch#wsdl.endpoint(bpel_advancesearch_client_ep/bpel_AdvanceSearch_pt)"/>
+  </service>
+  <service name="bpel_getfile_client_ep" ui:wsdlLocation="WSDLs/bpel_GetFile.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_GetFile#wsdl.interface(bpel_GetFile)"/>
+    <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_GetFile#wsdl.endpoint(bpel_getfile_client_ep/bpel_GetFile_pt)"/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.3.0.170820</property>
   <property name="compositeID" type="xs:string" many="false">ac01944a-c7c3-4aca-add8-1d0483ba7e41</property>
@@ -55,6 +64,18 @@
     </componentType>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
   </component>
+  <component name="bpel_GetFile" version="2.0">
+    <implementation.bpel src="BPEL/bpel_GetFile.bpel"/>
+    <componentType>
+      <service name="bpel_getfile_client" ui:wsdlLocation="WSDLs/bpel_GetFile.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_GetFile#wsdl.interface(bpel_GetFile)"/>
+      </service>
+      <reference name="WS_GetFile" ui:wsdlLocation="WSDLs/GetFileWrapper.wsdl">
+        <interface.wsdl interface="http://www.stellent.com/GetFile/#wsdl.interface(GetFileSoap)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+  </component>
   <reference name="WS_Checkin" ui:wsdlLocation="oramds:/apps/resources/SOA/WSDLs/CheckIn.wsdl">
     <interface.wsdl interface="http://www.stellent.com/CheckIn/#wsdl.interface(CheckInSoap)"/>
     <binding.ws port="http://www.stellent.com/CheckIn/#wsdl.endpoint(CheckIn/CheckInSoap)"
@@ -68,6 +89,15 @@
     <interface.wsdl interface="http://www.stellent.com/Search/#wsdl.interface(SearchSoap)"/>
     <binding.ws port="http://www.stellent.com/Search/#wsdl.endpoint(Search/SearchSoap)"
                 location="oramds:/apps/resources/SOA/WSDLs/Search.wsdl" soapVersion="1.1">
+      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      <property name="oracle.webservices.auth.username" type="xs:string" many="false">weblogic</property>
+      <property name="oracle.webservices.auth.password" type="xs:string" many="false">welcome1</property>
+    </binding.ws>
+  </reference>
+  <reference name="WS_GetFile" ui:wsdlLocation="oramds:/apps/resources/SOA/WSDLs/GetFile.wsdl">
+    <interface.wsdl interface="http://www.stellent.com/GetFile/#wsdl.interface(GetFileSoap)"/>
+    <binding.ws port="http://www.stellent.com/GetFile/#wsdl.endpoint(GetFile/GetFileSoap)"
+                location="oramds:/apps/resources/SOA/WSDLs/GetFile.wsdl" soapVersion="1.1">
       <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
       <property name="oracle.webservices.auth.username" type="xs:string" many="false">weblogic</property>
       <property name="oracle.webservices.auth.password" type="xs:string" many="false">welcome1</property>
@@ -88,5 +118,13 @@
   <wire>
     <source.uri>bpel_AdvanceSearch/WS_AdvanceSearch</source.uri>
     <target.uri>WS_AdvanceSearch</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_getfile_client_ep</source.uri>
+    <target.uri>bpel_GetFile/bpel_getfile_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_GetFile/WS_GetFile</source.uri>
+    <target.uri>WS_GetFile</target.uri>
   </wire>
 </composite>
