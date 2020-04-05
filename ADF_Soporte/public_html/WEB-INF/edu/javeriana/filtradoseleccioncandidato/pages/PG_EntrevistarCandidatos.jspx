@@ -75,13 +75,15 @@
                                     <af:panelGroupLayout id="pgl5" styleClass="sinBorders" layout="vertical">
                                         <af:panelFormLayout id="pfl1" maxColumns="1" rows="2" styleClass="sinBorders">
                                             <af:selectOneRadio label="#{soporteBundle.LABEL_EVALUAR_SELECCION}" id="sor1"
-                                                               layout="horizontal">
+                                                               layout="horizontal"
+                                                               value="{pageFlowScope.mbEntrevistarCandidatos.entrevista.seDebeEvaluarParaSeleccion}">
                                                 <af:selectItem label="#{soporteBundle.OPTION_SI}" id="si1"/>
                                                 <af:selectItem label="#{soporteBundle.OPTION_NO}" id="si2"/>
                                             </af:selectOneRadio>
                                         </af:panelFormLayout>
                                         <af:panelFormLayout id="pfl4" maxColumns="1" rows="2" styleClass="sinBorders" labelAlignment="top">
-                                            <af:inputText label="#{soporteBundle.LABEL_OBSERVACIONES}" id="it9"/>
+                                            <af:inputText label="#{soporteBundle.LABEL_OBSERVACIONES}" id="it9"
+                                                          value="{pageFlowScope.mbEntrevistarCandidatos.entrevista.observacion}"/>
                                         </af:panelFormLayout>
                                     </af:panelGroupLayout>
                                 </af:panelBox>

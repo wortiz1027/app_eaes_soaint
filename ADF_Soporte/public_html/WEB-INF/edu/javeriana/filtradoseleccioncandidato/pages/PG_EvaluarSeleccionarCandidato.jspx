@@ -36,7 +36,8 @@
                                                              styleClass="sinBorders">
                                             <af:panelFormLayout id="pfl1"  labelAlignment="top"
                                                                 styleClass="sinBorders stretchedForm">
-                                                <af:inputText label="#{soporteBundle.LABEL_OBSERVACIONES}" id="it1" rows="7"/>
+                                                <af:inputText label="#{soporteBundle.LABEL_OBSERVACIONES}" id="it1" rows="7"
+                                                              value="#{pageFlowScope.mbEvaluarSeleccionarCandidato.entrevista.observacion}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>
@@ -47,9 +48,11 @@
                                             <af:panelFormLayout id="pfl2" halign="center" layout="vertical"
                                                                 styleClass="sinBorders stretchedForm">
                                                 <af:selectBooleanRadio label="#{soporteBundle.RADIO_APROBADO}"
-                                                                       id="sbr2"/>
+                                                                       id="sbr2"
+                                                                       value="#{pageFlowScope.mbEvaluarSeleccionarCandidato.entrevista.aprobado}"/>
                                                 <af:selectBooleanRadio label="#{soporteBundle.RADIO_RECHAZADO}"
-                                                                       id="sbr1"/>
+                                                                       id="sbr1"
+                                                                       value="#{pageFlowScope.mbEvaluarSeleccionarCandidato.entrevista.rechazado}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>

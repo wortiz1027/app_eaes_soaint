@@ -73,13 +73,15 @@
                                     <af:panelGroupLayout id="pgl5" styleClass="sinBorders">
                                         <af:panelFormLayout id="pfl1" maxColumns="1" rows="2" styleClass="sinBorders">
                                             <af:selectOneRadio label="#{soporteBundle.LABEL_DEBE_ENTREVISTA}" id="sor1"
-                                                               layout="horizontal">
+                                                               layout="horizontal"
+                                                               value="#{pageFlowScope.mbEvaluarCurriculum.entrevista.seDebeEntrevistar}">
                                                 <af:selectItem label="#{soporteBundle.OPTION_SI}" id="si1"/>
                                                 <af:selectItem label="#{soporteBundle.OPTION_NO}" id="si2"/>
                                             </af:selectOneRadio>
                                         </af:panelFormLayout>
                                     </af:panelGroupLayout>
-                                    <af:inputDate label="#{soporteBundle.LABEL_FECHA_REALIZACION}" id="id1"/>
+                                    <af:inputDate label="#{soporteBundle.LABEL_FECHA_REALIZACION}" id="id1"
+                                                  value="#{pageFlowScope.mbEvaluarCurriculum.entrevista.fechaRealizacion}"/>
                                 </af:panelBox>
                             </af:panelGroupLayout>
                         </af:panelGroupLayout>
