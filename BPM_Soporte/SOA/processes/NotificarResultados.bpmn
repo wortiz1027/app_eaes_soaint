@@ -241,33 +241,6 @@
                     <bpmn:extensionElements>
                         <bpmnext:OracleExtensions/>
                     </bpmn:extensionElements>
-                    <bpmn:targetRef>fromAccount</bpmn:targetRef>
-                    <bpmn:assignment>
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                        <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'reclutamiento.colombia@soaint.com'
-                            <bpmn:extensionElements>
-                                <bpmnext:OracleExtensions>
-                                    <bpmnext:Expression mode="text"/>
-                                </bpmnext:OracleExtensions>
-                            </bpmn:extensionElements>
-                        </bpmn:from>
-                        <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('fromAccount')
-                            <bpmn:extensionElements>
-                                <bpmnext:OracleExtensions>
-                                    <bpmnext:Expression mode="simple"/>
-                                </bpmnext:OracleExtensions>
-                            </bpmn:extensionElements>
-                        </bpmn:to>
-                    </bpmn:assignment>
-                </bpmn:dataInputAssociation>
-                <bpmn:dataInputAssociation>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions/>
-                    </bpmn:extensionElements>
                     <bpmn:targetRef>body</bpmn:targetRef>
                     <bpmn:assignment>
                         <bpmn:extensionElements>
@@ -344,6 +317,33 @@ Departamento de RRHH - SOAINT.'
                             </bpmn:extensionElements>
                         </bpmn:from>
                         <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('to')
+                            <bpmn:extensionElements>
+                                <bpmnext:OracleExtensions>
+                                    <bpmnext:Expression mode="simple"/>
+                                </bpmnext:OracleExtensions>
+                            </bpmn:extensionElements>
+                        </bpmn:to>
+                    </bpmn:assignment>
+                </bpmn:dataInputAssociation>
+                <bpmn:dataInputAssociation>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions/>
+                    </bpmn:extensionElements>
+                    <bpmn:targetRef>fromAccount</bpmn:targetRef>
+                    <bpmn:assignment>
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                        <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'eaes.procesos@gmail.com'
+                            <bpmn:extensionElements>
+                                <bpmnext:OracleExtensions>
+                                    <bpmnext:Expression mode="text"/>
+                                </bpmnext:OracleExtensions>
+                            </bpmn:extensionElements>
+                        </bpmn:from>
+                        <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('fromAccount')
                             <bpmn:extensionElements>
                                 <bpmnext:OracleExtensions>
                                     <bpmnext:Expression mode="simple"/>
@@ -522,33 +522,6 @@ Departamento de RRHH - SOAINT.'
                     <bpmn:extensionElements>
                         <bpmnext:OracleExtensions/>
                     </bpmn:extensionElements>
-                    <bpmn:targetRef>fromAccount</bpmn:targetRef>
-                    <bpmn:assignment>
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                        <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'reclutamiento.colombia@soaint.com'
-                            <bpmn:extensionElements>
-                                <bpmnext:OracleExtensions>
-                                    <bpmnext:Expression mode="text"/>
-                                </bpmnext:OracleExtensions>
-                            </bpmn:extensionElements>
-                        </bpmn:from>
-                        <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('fromAccount')
-                            <bpmn:extensionElements>
-                                <bpmnext:OracleExtensions>
-                                    <bpmnext:Expression mode="simple"/>
-                                </bpmnext:OracleExtensions>
-                            </bpmn:extensionElements>
-                        </bpmn:to>
-                    </bpmn:assignment>
-                </bpmn:dataInputAssociation>
-                <bpmn:dataInputAssociation>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions/>
-                    </bpmn:extensionElements>
                     <bpmn:sourceRef>doSolicitud</bpmn:sourceRef>
                     <bpmn:targetRef>to</bpmn:targetRef>
                     <bpmn:assignment>
@@ -565,6 +538,33 @@ Departamento de RRHH - SOAINT.'
                             </bpmn:extensionElements>
                         </bpmn:from>
                         <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('to')
+                            <bpmn:extensionElements>
+                                <bpmnext:OracleExtensions>
+                                    <bpmnext:Expression mode="simple"/>
+                                </bpmnext:OracleExtensions>
+                            </bpmn:extensionElements>
+                        </bpmn:to>
+                    </bpmn:assignment>
+                </bpmn:dataInputAssociation>
+                <bpmn:dataInputAssociation>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions/>
+                    </bpmn:extensionElements>
+                    <bpmn:targetRef>fromAccount</bpmn:targetRef>
+                    <bpmn:assignment>
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                        <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'eaes.procesos@gmail.com'
+                            <bpmn:extensionElements>
+                                <bpmnext:OracleExtensions>
+                                    <bpmnext:Expression mode="text"/>
+                                </bpmnext:OracleExtensions>
+                            </bpmn:extensionElements>
+                        </bpmn:from>
+                        <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('fromAccount')
                             <bpmn:extensionElements>
                                 <bpmnext:OracleExtensions>
                                     <bpmnext:Expression mode="simple"/>
