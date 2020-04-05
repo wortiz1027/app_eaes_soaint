@@ -88,7 +88,8 @@
       <hash n="resourcesContentSet">
          <list n="pattern-filters">
             <string v="+Comun.xsd"/>
-            <string v="+Soporte.xsd"/>
+            <!--string v="+Soporte.xsd"/-->
+			<string v="+Misional.xsd"/>
          </list>
          <list n="url-path">
             <url path="."/>
