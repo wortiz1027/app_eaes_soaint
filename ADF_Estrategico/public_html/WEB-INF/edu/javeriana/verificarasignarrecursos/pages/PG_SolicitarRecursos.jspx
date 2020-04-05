@@ -19,14 +19,16 @@
                                                              layout="vertical" halign="center">
                                             <af:panelFormLayout id="pfl1" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
-                                                <af:inputText label="#{estrategicoBundle.LABEL_TITULO}" id="it1" disabled="true"/>
+                                                <af:inputText label="#{estrategicoBundle.LABEL_TITULO}" id="it1" disabled="true"
+                                                              value="#{pageFlowScope.mbSolicitarRecursos.prototipo.titulo}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                         <af:panelGroupLayout id="pgl5" styleClass="sinBorders col-xs-6"
                                                              layout="vertical" halign="center">
                                             <af:panelFormLayout id="pfl2" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
-                                                <af:inputText label="#{estrategicoBundle.LABEL_TIPO}" id="it2" disabled="true"/>
+                                                <af:inputText label="#{estrategicoBundle.LABEL_TIPO}" id="it2" disabled="true"
+                                                              value="#{pageFlowScope.mbSolicitarRecursos.prototipo.tipo.valor}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>
@@ -38,7 +40,8 @@
                                             <af:panelFormLayout id="pfl3" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
                                                 <af:inputText label="#{estrategicoBundle.LABEL_DETALLE}" id="it3"
-                                                              rows="7" disabled="true"/>
+                                                              rows="7" disabled="true"
+                                                              value="#{pageFlowScope.mbSolicitarRecursos.prototipo.detalle}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>
@@ -53,7 +56,8 @@
                                             <af:panelFormLayout id="pfl4" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
                                                 <af:inputText label="#{estrategicoBundle.LABEL_CONOCIMIENTOS}" id="it4"
-                                                              rows="7"/>
+                                                              rows="7"
+                                                              value="#{pageFlowScope.mbSolicitarRecursos.prototipo.conocimiento}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>

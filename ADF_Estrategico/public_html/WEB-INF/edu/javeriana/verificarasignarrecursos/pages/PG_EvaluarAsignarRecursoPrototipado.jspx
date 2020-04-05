@@ -20,7 +20,8 @@
                                             <af:panelFormLayout id="pfl1" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
                                                 <af:inputText label="#{estrategicoBundle.LABEL_TITULO}" id="it1"
-                                                              disabled="true"/>
+                                                              disabled="true"
+                                                              value="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.prototipo.titulo}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                         <af:panelGroupLayout id="pgl5" styleClass="sinBorders col-xs-6"
@@ -28,7 +29,8 @@
                                             <af:panelFormLayout id="pfl2" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
                                                 <af:inputText label="#{estrategicoBundle.LABEL_TIPO}" id="it2"
-                                                              disabled="true"/>
+                                                              disabled="true"
+                                                              value="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.prototipo.tipo}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>
@@ -40,7 +42,8 @@
                                             <af:panelFormLayout id="pfl3" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
                                                 <af:inputText label="#{estrategicoBundle.LABEL_DETALLE}" id="it3"
-                                                              rows="7" disabled="true"/>
+                                                              rows="7" disabled="true"
+                                                              value="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.prototipo.detalle}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>
@@ -52,21 +55,24 @@
                                             <af:panelFormLayout id="pfl4" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
                                                 <af:inputText label="#{estrategicoBundle.LABEL_PRESUPUESTO}" id="it4"
-                                                              disabled="true"/>
+                                                              disabled="true"
+                                                              value="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.prototipo.presupuesto}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                         <af:panelGroupLayout id="pgl10" styleClass="sinBorders col-xs-4" halign="center"
                                                              layout="vertical">
                                             <af:panelFormLayout id="pfl6" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
-                                                <af:inputDate label="#{estrategicoBundle.LABEL_FECHA_INICIO}" id="id1"/>
+                                                <af:inputDate label="#{estrategicoBundle.LABEL_FECHA_INICIO}" id="id1"
+                                                              value="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.prototipo.fechaInicio}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                         <af:panelGroupLayout id="pgl11" styleClass="sinBorders col-xs-4" halign="center"
                                                              layout="vertical">
                                             <af:panelFormLayout id="pfl5" styleClass="sinBorders stretchedForm"
                                                                 labelAlignment="top">
-                                                <af:inputDate label="#{estrategicoBundle.LABEL_FECHA_FIN}" id="id2"/>
+                                                <af:inputDate label="#{estrategicoBundle.LABEL_FECHA_FIN}" id="id2"
+                                                              value="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.prototipo.fechaFin}"/>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelGroupLayout>
@@ -77,21 +83,25 @@
                                 <af:panelGroupLayout id="pgl13" inlineStyle="padding: 20px;" styleClass="sinBorders"
                                                      halign="center" layout="vertical">
                                     <af:table var="row" rowBandingInterval="0" id="t2"
-                                              styleClass="contentTable AFStretchWidth">
+                                              styleClass="contentTable AFStretchWidth"
+                                              value="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.colaboradores}">
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_ASIGNAR}"
                                                    id="c2" width="10%">
-                                            <af:selectBooleanCheckbox label="#{null}" id="sbc1"/>
+                                            <af:selectBooleanCheckbox id="sbc1"
+                                                                      value="#{row.asignado}"/>
                                         </af:column>
                                         <af:column sortable="false"
                                                    headerText="#{estrategicoBundle.COLUMNA_COLABORADOR}" id="c1"
                                                    width="80%">
-                                            <af:outputText value="#{row.col1}" id="ot1"/>
+                                            <af:outputText value="#{row.primerNombre} #{row.segundoNombre} #{row.primerApellido} #{row.segundoApellido}" id="ot1"/>
                                         </af:column>
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_ACCIONES}"
                                                    id="c3" width="10%">
-                                            <af:panelGroupLayout id="pgl14">
+                                            <af:panelGroupLayout id="pgl14" halign="center"
+                                                             layout="vertical" styleClass="sinBorders">
                                                 <af:button text="#{estrategicoBundle.BOTON_VER}" id="b2"
-                                                           icon="/images/ico-documento.png" styleClass="tamanioauto2"/>
+                                                           icon="/images/ico-documento.png" styleClass="tamanioauto2"
+                                                           actionListener="#{pageFlowScope.mbEvaluarAsignarRecursoPrototipado.onClickVer}"/>
                                             </af:panelGroupLayout>
                                         </af:column>
                                     </af:table>

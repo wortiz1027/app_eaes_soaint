@@ -337,6 +337,7 @@
     <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
   </wire>
   <wire>
+<<<<<<< HEAD
     <source.uri>ConstruirProbarPrototipo/Rules.Co.Edu.Javeriana.Businessrules.ValidarAccionSeguirRule.ValidarAccionASeguirDS.reference</source.uri>
     <target.uri>ValidarAccionSeguirRule/ValidarAccionSeguirRuleDF</target.uri>
   </wire>
@@ -347,6 +348,14 @@
   <wire>
     <source.uri>VerificarAsignarRecursos/Services.Externals.SW_ReclutarFuenteSeleccionarEmpleados.reference</source.uri>
     <target.uri>SW_ReclutarFuenteSeleccionarEmpleados</target.uri>
+=======
+    <source.uri>VerificarAsignarRecursos/Services.Externals.SW_ProcesoReclutamiento.reference</source.uri>
+    <target.uri>SW_ProcesoReclutamiento</target.uri>
+>>>>>>> f4ca072a547209584d293e9e154fe4b3f9bef2b3
+  </wire>
+  <wire>
+    <source.uri>ConstruirProbarPrototipo.service</source.uri>
+    <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
   </wire>
   <wire>
     <source.uri>VerificarAsignarRecursos.service</source.uri>

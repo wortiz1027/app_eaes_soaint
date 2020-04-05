@@ -102,7 +102,7 @@
       <property
          name="y">385.5</property>
       <property
-         name="page">/WEB-INF/edu/javeriana/desarrolarespecificaciondiseno/pages/PG_DisenarProductos.jspx</property>
+         name="page">/WEB-INF/edu/javeriana/desarrollarespecificaciondiseno/pages/PG_DisenarProductos.jspx</property>
       <property
          name="exceptionHandler">false</property>
    </View>

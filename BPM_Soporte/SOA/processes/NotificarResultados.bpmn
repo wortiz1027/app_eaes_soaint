@@ -61,7 +61,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="226" y="241"/>
+                        <bpmnext:Position x="354" y="241"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -93,7 +93,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="792" y="241"/>
+                        <bpmnext:Position x="910" y="242"/>
                         <bpmnext:Size width="809" height="309"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
@@ -136,7 +136,7 @@
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
-                            <bpmnext:Position x="396" y="223"/>
+                            <bpmnext:Position x="399" y="227"/>
                         </bpmnext:GraphicsAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -357,7 +357,7 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
-                            <bpmnext:Position x="397" y="56"/>
+                            <bpmnext:Position x="404" y="60"/>
                         </bpmnext:GraphicsAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -578,7 +578,7 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
-                            <bpmnext:Position x="73" y="145"/>
+                            <bpmnext:Position x="73" y="149"/>
                         </bpmnext:GraphicsAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -605,7 +605,7 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
-                            <bpmnext:Position x="744" y="144"/>
+                            <bpmnext:Position x="724" y="142"/>
                         </bpmnext:GraphicsAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -631,7 +631,7 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
-                            <bpmnext:Position x="213" y="146"/>
+                            <bpmnext:Position x="198" y="149"/>
                         </bpmnext:GraphicsAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -657,7 +657,7 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:GraphicsAttributes>
-                            <bpmnext:Position x="591" y="144"/>
+                            <bpmnext:Position x="587" y="143"/>
                         </bpmnext:GraphicsAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -695,11 +695,11 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:SequenceFlowAttributes>
-                            <bpmnext:Positions x="215" y="217"/>
+                            <bpmnext:Positions x="204" y="229"/>
                         </bpmnext:SequenceFlowAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                            <bpmnext:StringFeature value="215,217" name="curve"/>
+                            <bpmnext:StringFeature value="204,229" name="curve"/>
                             <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                             <bpmnext:StringFeature value="Rechazado" name="userName"/>
                         </bpmnext:FeatureSet>
@@ -722,11 +722,11 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:SequenceFlowAttributes>
-                            <bpmnext:Positions x="525" y="221"/>
+                            <bpmnext:Positions x="590" y="226"/>
                         </bpmnext:SequenceFlowAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                            <bpmnext:StringFeature value="525,221" name="curve"/>
+                            <bpmnext:StringFeature value="590,226" name="curve"/>
                             <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                         </bpmnext:FeatureSet>
                     </bpmnext:OracleExtensions>
@@ -736,11 +736,11 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:SequenceFlowAttributes>
-                            <bpmnext:Positions x="292" y="57"/>
+                            <bpmnext:Positions x="420" y="57"/>
                         </bpmnext:SequenceFlowAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                            <bpmnext:StringFeature value="292,57" name="curve"/>
+                            <bpmnext:StringFeature value="420,57" name="curve"/>
                             <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                             <bpmnext:StringFeature value="Aceptado" name="userName"/>
                             <bpmnext:IntegerFeature value="0" name="order"/>
@@ -759,17 +759,76 @@ Departamento de RRHH - SOAINT.'
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:SequenceFlowAttributes>
-                            <bpmnext:Positions x="590" y="129"/>
+                            <bpmnext:Positions x="588" y="97"/>
                         </bpmnext:SequenceFlowAttributes>
                         <bpmnext:FeatureSet>
                             <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                            <bpmnext:StringFeature value="590,129" name="curve"/>
+                            <bpmnext:StringFeature value="588,97" name="curve"/>
                             <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                         </bpmnext:FeatureSet>
                     </bpmnext:OracleExtensions>
                 </bpmn:extensionElements>
             </bpmn:sequenceFlow>
         </bpmn:subProcess>
+        <bpmn:scriptTask isForCompensation="false" name="[SET] Titulo Instancia" id="ACT28446203582771">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:GraphicsAttributes>
+                        <bpmnext:Position x="206" y="242"/>
+                    </bpmnext:GraphicsAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
+                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="false" name="outputValidation"/>
+                        <bpmnext:StringFeature value="[]" name="TagFeature"/>
+                        <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
+                        <bpmnext:StringFeature value="Begin Level" name="level"/>
+                        <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </bpmnext:FeatureSet>
+                    <bpmnext:Localization>
+                        <bpmnext:Label>
+                            <bpmnext:LocalizedContent language="en">[SET] Titulo Instancia</bpmnext:LocalizedContent>
+                        </bpmnext:Label>
+                        <bpmnext:Description>
+                            <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
+                        </bpmnext:Description>
+                    </bpmnext:Localization>
+                    <bpmnext:FlowNodeProperties/>
+                    <bpmnext:LogHandlers/>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+            <bpmn:ioSpecification/>
+            <bpmn:dataOutputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions>
+                        <bpmnext:OtherRef>doSolicitud</bpmnext:OtherRef>
+                    </bpmnext:OracleExtensions>
+                </bpmn:extensionElements>
+                <bpmn:targetRef>doTituloInstancia</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xpathns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">oraext:setFlowInstanceTitle(oraext:format-string(dvm:lookupValue('oramds:/apps/Resources/BPM/DVM/DVM_Mensajes.dvm', 'CLAVE', 'MENSAJE_PROCESO_NOTIFICAR_RESULTADOS', 'VALOR', 'NODATA'), string(bpmn:getDataObject('doSolicitud')/ns:idSolicitud)))
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('doTituloInstancia')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataOutputAssociation>
+        </bpmn:scriptTask>
         <bpmn:startEvent isInterrupting="false" name="Inicio" id="EVT2838714200318">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
@@ -853,7 +912,7 @@ Departamento de RRHH - SOAINT.'
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1327" y="238"/>
+                        <bpmnext:Position x="1455" y="238"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -956,7 +1015,7 @@ Departamento de RRHH - SOAINT.'
             </bpmn:inputSet>
             <bpmn:messageEventDefinition/>
         </bpmn:endEvent>
-        <bpmn:sequenceFlow sourceRef="EVT2838714200318" targetRef="ACT28387160029957" name="sf28387142003251" id="sf28387142003251">
+        <bpmn:sequenceFlow sourceRef="EVT2838714200318" targetRef="ACT28446203582771" name="sf28387142003251" id="sf28387142003251">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>
@@ -981,6 +1040,18 @@ Departamento de RRHH - SOAINT.'
             </bpmn:extensionElements>
         </bpmn:sequenceFlow>
         <bpmn:sequenceFlow sourceRef="ACT28387168041289" targetRef="EVT28387142003192" name="sf28387168147744" id="sf28387168147744">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes/>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <bpmnext:StringFeature value="STRAIGHT" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT28446203582771" targetRef="ACT28387160029957" name="sf28446204112679" id="sf28446204112679">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>

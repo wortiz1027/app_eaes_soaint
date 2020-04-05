@@ -3,6 +3,8 @@ package edu.javeriana.verificarasignarrecursos.beans;
 import co.edu.javeriana.configuracion.contextual.event.ProcessContextualEventInterface;
 import co.edu.javeriana.configuracion.extend.AbstractBPMManageBeanBase;
 
+import co.edu.javeriana.negocio.Prototipo;
+
 import java.io.Serializable;
 
 import javax.faces.event.ActionEvent;
@@ -10,6 +12,8 @@ import javax.faces.event.ActionEvent;
 public class MbValidarProblemasCalidad extends AbstractBPMManageBeanBase implements Serializable, ProcessContextualEventInterface {
     @SuppressWarnings("compatibility:7424524058483809606")
     private static final long serialVersionUID = 1L;
+
+    private Prototipo prototipo;
 
     public MbValidarProblemasCalidad() {       
     }
@@ -89,5 +93,21 @@ public class MbValidarProblemasCalidad extends AbstractBPMManageBeanBase impleme
     public void processOnLoad(Object object, Object object2) {
         // TODO Implement this method
 
+    }
+    
+    public void setPrototipo(Prototipo prototipo) {
+        this.prototipo = prototipo;
+    }
+
+    public Prototipo getPrototipo() {
+        return prototipo;
+    }
+
+    public void onClickAdjuntar(ActionEvent actionEvent) {
+        // Add event code here...
+    }
+
+    public void onClickVer(ActionEvent actionEvent) {
+        // Add event code here...
     }
 }

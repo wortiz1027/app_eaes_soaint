@@ -15,9 +15,27 @@ public class Entrevista implements Serializable {
     private Date fechaEmisionResultado;
     private String observacion;
     private String resultado;
-    
+
     private Boolean seDebeEntrevistar;
     private Boolean seDebeEvaluarParaSeleccion;
+    private Boolean aprobado;
+
+    public void setAprobado(Boolean aprobado) {
+        this.aprobado = aprobado;
+    }
+
+    public Boolean getAprobado() {
+        return aprobado;
+    }
+
+    public void setRechazado(Boolean rechazado) {
+        this.rechazado = rechazado;
+    }
+
+    public Boolean getRechazado() {
+        return rechazado;
+    }
+    private Boolean rechazado;
     
     public Entrevista() {
         super();
