@@ -90,7 +90,7 @@
                                         <af:column sortable="false"
                                                    headerText="#{estrategicoBundle.COLUMNA_OBSERVACION}" id="c11"
                                                    width="100%">
-                                            <af:outputText value="#{row.nombre}" id="ot2"/>
+                                            <af:outputText value="#{row.observacion}" id="ot2"/>
                                         </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>
