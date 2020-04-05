@@ -2,12 +2,19 @@ package co.edu.javeriana.facade;
 
 import co.edu.javeriana.proxies.consultardocumento.proxy.BpelConsultardocumento;
 import co.edu.javeriana.proxies.consultardocumento.proxy.BpelConsultardocumentoClientEp;
+import co.edu.javeriana.proxies.consultardocumento.types.OutputType;
 import co.edu.javeriana.proxies.consultarprototipo.proxy.BpelConsultarprototipo;
 import co.edu.javeriana.proxies.consultarprototipo.proxy.BpelConsultarprototipoClientEp;
+import co.edu.javeriana.proxies.consultarprototipo.types.PrototipoType;
 import co.edu.javeriana.proxies.insertarcolaborador.proxy.BpelInscolaborador;
 import co.edu.javeriana.proxies.insertarcolaborador.proxy.BpelInscolaboradorClientEp;
+import co.edu.javeriana.proxies.insertarcolaborador.types.InsertarColaboradorType;
 import co.edu.javeriana.proxies.insertarprototipo.proxy.BpelInsertarprototipo;
 import co.edu.javeriana.proxies.insertarprototipo.proxy.BpelInsertarprototipoClientEp;
+
+import co.edu.javeriana.proxies.insertarprototipo.types.InsertarPrototipoType;
+
+import java.math.BigDecimal;
 
 import javax.xml.ws.BindingProvider;
 
@@ -116,19 +123,75 @@ public class FacadeDatabase {
         return port4;
     }
     
-    public static void insertarProtipo() {
-    
+    public static void insertarProtipo(InsertarPrototipoType prototipo, co.edu.javeriana.proxies.insertarprototipo.types.ResponseType response) {
+        //1. contruir el request
+        InsertarPrototipoType rq = new InsertarPrototipoType(); 
+        rq.setConocimientos(prototipo.getConocimientos());
+        rq.setDetalle(prototipo.getDetalle());
+        rq.setEstado(prototipo.getEstado());
+        rq.setFechaFin(prototipo.getFechaFin());
+        rq.setFechaInicio(prototipo.getFechaInicio());
+        rq.setPresupuesto(prototipo.getPresupuesto());
+        rq.setRecomendaciones(prototipo.getRecomendaciones());
+        rq.setTipo(prototipo.getTipo());
+        rq.setTitulo(prototipo.getTitulo());
+        
+        //2. llamar a la operación
+        co.edu.javeriana.proxies.insertarprototipo.types.ResponseType rs = port1.process(rq);
+        
+        //3. construir la salida
+        response.setEjecucion(rs.getEjecucion());
     }
     
-    public static void insertarColaborador() {
-    
+    public static void insertarColaborador(InsertarColaboradorType colaborador, co.edu.javeriana.proxies.insertarcolaborador.types.ResponseType response) {
+        //1. contruir el request
+        InsertarColaboradorType rq = new InsertarColaboradorType(); 
+        rq.setCodigoRol(colaborador.getCodigoRol());
+        rq.setCorreoElectronica(colaborador.getCorreoElectronica());
+        rq.setDisponible(colaborador.getDisponible());
+        rq.setPrimerApellido(colaborador.getPrimerApellido());
+        rq.setPrimerNombre(colaborador.getPrimerNombre());
+        rq.setSegundoApellido(colaborador.getSegundoApellido());
+        rq.setSegundoNombre(colaborador.getSegundoNombre());
+        rq.setTelefono(colaborador.getTelefono());
+        
+        //2. llamar a la operación
+        co.edu.javeriana.proxies.insertarcolaborador.types.ResponseType rs = port2.process(rq);
+        
+        //3. construir la salida
+        response.setEjecucion(rs.getEjecucion());
     }
     
-    public static void consultarPrototipo() {
-    
+    public static void consultarPrototipo(BigDecimal codigoPrototipo, PrototipoType prototipo) {
+        //1. contruir el request
+        co.edu.javeriana.proxies.consultarprototipo.types.InputType rq = new co.edu.javeriana.proxies.consultarprototipo.types.InputType(); 
+        rq.setCodigoPrototipo(codigoPrototipo);
+        
+        //2. llamar a la operación
+        PrototipoType rs = port3.process(rq);
+        
+        //3. construir la salida   
+        prototipo.setCodigoPrototipo(rs.getCodigoPrototipo());
+        prototipo.setConocimientos(rs.getConocimientos());
+        prototipo.setDetalle(rs.getDetalle());
+        prototipo.setEstado(rs.getEstado());
+        prototipo.setFechaCierre(rs.getFechaCierre());
+        prototipo.setFechaInicio(rs.getFechaInicio());
+        prototipo.setPresupuesto(rs.getPresupuesto());
+        prototipo.setTipo(rs.getTipo());
+        prototipo.setTitulo(rs.getTitulo());
+        
     }
     
-    public static void consultarDocumento() {
-    
+    public static void consultarDocumento(BigDecimal codigoCandidato, OutputType documento) {
+        //1. contruir el request
+        co.edu.javeriana.proxies.consultardocumento.types.InputType rq = new co.edu.javeriana.proxies.consultardocumento.types.InputType(); 
+        rq.setCodigoCandidato(codigoCandidato);
+        
+        //2. llamar a la operación
+        OutputType rs = port4.process(rq);
+        
+        //3. construir la salida
+        documento.setCodigoDocumento(rs.getCodigoDocumento());
     }
 }
