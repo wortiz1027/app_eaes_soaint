@@ -319,14 +319,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_Configuracion.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF_LookAndFeel.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="Commons Logging 1.0.4"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -339,7 +331,19 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="ADF_Configuracion.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_LookAndFeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="ADF_Model.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_ProxyDataBase2.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -377,6 +381,15 @@
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF_Model.jar"/>
                <value n="id" v="ADF_Model.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_ProxyDatabase2/deploy/ADF_ProxyDataBase2.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF_ProxyDataBase2.jar"/>
+               <value n="id" v="ADF_ProxyDataBase2.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -507,14 +520,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_Configuracion.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF_LookAndFeel.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="Commons Logging 1.0.4"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -527,7 +532,19 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="ADF_Configuracion.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_LookAndFeel.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="ADF_Model.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_ProxyDataBase2.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

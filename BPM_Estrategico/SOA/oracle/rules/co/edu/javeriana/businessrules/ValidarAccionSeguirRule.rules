@@ -495,20 +495,20 @@
       <RuleFiringLimitError>true</RuleFiringLimitError>
       <UniqueRulesets>false</UniqueRulesets>
     </DecisionFunction>
-    <UpdateNumber>84</UpdateNumber>
-    <ValidationUpdateNumber>84</ValidationUpdateNumber>
+    <UpdateNumber>87</UpdateNumber>
+    <ValidationUpdateNumber>87</ValidationUpdateNumber>
     <UpdateTime>0</UpdateTime>
   </DataModel>
   <RuleSet id="G}-501e1d09:171476656dc:-7bdb">
     <Name>ValidarAccionASeguirRS</Name>
     <Alias>ValidarAccionASeguirRS</Alias>
-    <ValidationUpdateNumber>84</ValidationUpdateNumber>
+    <ValidationUpdateNumber>95</ValidationUpdateNumber>
     <Active>true</Active>
     <CalendarForm>DateTime</CalendarForm>
     <RuleSheet id="G}-7c199a75:17147751df8:-7be3">
       <Name>ValidarAccionASeguirDT</Name>
       <Alias>ValidarAccionASeguirDT</Alias>
-      <ValidationUpdateNumber>84</ValidationUpdateNumber>
+      <ValidationUpdateNumber>95</ValidationUpdateNumber>
       <Priority>medium</Priority>
       <Active>true</Active>
       <CalendarForm>DateTime</CalendarForm>
@@ -530,20 +530,20 @@
       <Dimension id="L}86">
         <IDofSharedBucketSet>B}nil</IDofSharedBucketSet>
         <DimensionNode id="L}88">
-          <BucketIDTable>G}-7c199a75:17147751df8:-7be0</BucketIDTable>
-          <Values>&quot;TIPO1&quot;</Values>
+          <BucketIDTable>G}-20f92a41:1714b7f53f5:-7bef</BucketIDTable>
+          <Values>&quot;PROTOTIPO%20PRELIMINAR%20INTERNO&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
           <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}103">
-          <BucketIDTable>G}-7c199a75:17147751df8:-7bdf</BucketIDTable>
-          <Values>&quot;TIPO2&quot;</Values>
+          <BucketIDTable>G}-20f92a41:1714b7f53f5:-7bee</BucketIDTable>
+          <Values>&quot;PROTOTIPO%20PRELIMINAR%20EXTERNO&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
           <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
         <DimensionNode id="L}113">
-          <BucketIDTable>G}-7c199a75:17147751df8:-7bde</BucketIDTable>
-          <Values>&quot;TIPO3&quot;</Values>
+          <BucketIDTable>G}-20f92a41:1714b7f53f5:-7bed</BucketIDTable>
+          <Values>&quot;PROTOTIPO%20FINAL&quot;</Values>
           <ParentDimensionNode>B}nil</ParentDimensionNode>
           <ChildDimensionNodes></ChildDimensionNodes>
         </DimensionNode>
@@ -573,54 +573,54 @@
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
-          <Bucket id="G}-7c199a75:17147751df8:-7be0">
-            <Name>&quot;TIPO1&quot;</Name>
-            <Alias>&quot;TIPO1&quot;</Alias>
+          <Bucket id="G}-20f92a41:1714b7f53f5:-7bef">
+            <Name>&quot;PROTOTIPO PRELIMINAR INTERNO&quot;</Name>
+            <Alias>&quot;PROTOTIPO PRELIMINAR INTERNO&quot;</Alias>
             <Visible>true</Visible>
-            <CreationUpdateNumber>27</CreationUpdateNumber>
+            <CreationUpdateNumber>86</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
-            <Expression id="L}98">
-              <Value>&quot;TIPO1&quot;</Value>
-              <ResolvedValue>&quot;TIPO1&quot;</ResolvedValue>
+            <Expression id="L}315">
+              <Value>&quot;PROTOTIPO PRELIMINAR INTERNO&quot;</Value>
+              <ResolvedValue>&quot;PROTOTIPO PRELIMINAR INTERNO&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
-          <Bucket id="G}-7c199a75:17147751df8:-7bdf">
-            <Name>&quot;TIPO2&quot;</Name>
-            <Alias>&quot;TIPO2&quot;</Alias>
+          <Bucket id="G}-20f92a41:1714b7f53f5:-7bee">
+            <Name>&quot;PROTOTIPO PRELIMINAR EXTERNO&quot;</Name>
+            <Alias>&quot;PROTOTIPO PRELIMINAR EXTERNO&quot;</Alias>
             <Visible>true</Visible>
-            <CreationUpdateNumber>29</CreationUpdateNumber>
+            <CreationUpdateNumber>87</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
-            <Expression id="L}107">
-              <Value>&quot;TIPO2&quot;</Value>
-              <ResolvedValue>&quot;TIPO2&quot;</ResolvedValue>
+            <Expression id="L}323">
+              <Value>&quot;PROTOTIPO PRELIMINAR EXTERNO&quot;</Value>
+              <ResolvedValue>&quot;PROTOTIPO PRELIMINAR EXTERNO&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
-          <Bucket id="G}-7c199a75:17147751df8:-7bde">
-            <Name>&quot;TIPO3&quot;</Name>
-            <Alias>&quot;TIPO3&quot;</Alias>
+          <Bucket id="G}-20f92a41:1714b7f53f5:-7bed">
+            <Name>&quot;PROTOTIPO FINAL&quot;</Name>
+            <Alias>&quot;PROTOTIPO FINAL&quot;</Alias>
             <Visible>true</Visible>
-            <CreationUpdateNumber>31</CreationUpdateNumber>
+            <CreationUpdateNumber>88</CreationUpdateNumber>
             <Inclusive>false</Inclusive>
             <Otherwise>false</Otherwise>
             <Excluded>false</Excluded>
-            <Expression id="L}117">
-              <Value>&quot;TIPO3&quot;</Value>
-              <ResolvedValue>&quot;TIPO3&quot;</ResolvedValue>
+            <Expression id="L}326">
+              <Value>&quot;PROTOTIPO FINAL&quot;</Value>
+              <ResolvedValue>&quot;PROTOTIPO FINAL&quot;</ResolvedValue>
               <IsConstant>true</IsConstant>
               <ParameterID>B}nil</ParameterID>
             </Expression>
           </Bucket>
           <CalendarForm>Date</CalendarForm>
           <Excluded>false</Excluded>
-          <ValidationUpdateNumber>79</ValidationUpdateNumber>
+          <ValidationUpdateNumber>95</ValidationUpdateNumber>
         </PrivateBucketSet>
         <Expression id="L}87">
           <Value>PrototipoType.tipo.valor</Value>
@@ -764,8 +764,8 @@
     <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
     <CreationUpdateNumber>9</CreationUpdateNumber>
   </RuleSet>
-  <ValidationUpdateNumber>84</ValidationUpdateNumber>
-  <UpdateNumber>84</UpdateNumber>
+  <ValidationUpdateNumber>95</ValidationUpdateNumber>
+  <UpdateNumber>95</UpdateNumber>
   <ResourceBundle>ValidarAccionSeguirRuleTranslations</ResourceBundle>
   <TestModel id="L}3">
     <ValidationUpdateNumber>1</ValidationUpdateNumber>
