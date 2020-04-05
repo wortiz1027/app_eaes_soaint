@@ -7,7 +7,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"/>
-        <Property Name="nextSibling" Value="accionesASeguir"/>
+        <Property Name="nextSibling" Value="prototipo"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Id Solicitud"/>
@@ -28,6 +28,32 @@
       <Property Name="LABEL" Value="Acciones A Seguir"/>
       <Property Name="nillable" Value="false"/>
       <Property Name="originalName" Value="accionesASeguir"/>
+      <Property Name="targetNamespace" Value="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="prototipo" IsCollection="true"
+                     BeanClass="ADF_Estrategico_HT_ConstruirPrototiposPruebasConceptos.PrototipoType"
+                     CollectionBeanClass="ADF_Estrategico_HT_ConstruirPrototiposPruebasConceptos.PrototipoType_prototipo_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"/>
+      <Property Name="nextSibling" Value="accionesASeguir"/>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Prototipo"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="prototipo"/>
+      <Property Name="targetNamespace" Value="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="vacante" IsCollection="true"
+                     BeanClass="ADF_Estrategico_HT_ConstruirPrototiposPruebasConceptos.VacanteType"
+                     CollectionBeanClass="ADF_Estrategico_HT_ConstruirPrototiposPruebasConceptos.VacanteType_vacante_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Vacante"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="vacante"/>
       <Property Name="targetNamespace" Value="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"/>
     </Properties>
   </AccessorAttribute>
