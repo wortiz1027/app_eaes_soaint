@@ -2,6 +2,9 @@ package co.edu.javeriana.facade;
 
 import co.edu.javeriana.proxies.consultarcandidatos.proxy.BpelConsultacandidatos;
 import co.edu.javeriana.proxies.consultarcandidatos.proxy.BpelConsultacandidatosClientEp;
+import co.edu.javeriana.proxies.consultarcandidatos.types.CandidatoType;
+import co.edu.javeriana.proxies.consultarcandidatos.types.CandidatosType;
+import co.edu.javeriana.proxies.consultarcandidatos.types.GenericoType;
 import co.edu.javeriana.proxies.consultarrecomendaciones.proxy.BpelConsprotrecomendaciones;
 import co.edu.javeriana.proxies.consultarrecomendaciones.proxy.BpelConsprotrecomendacionesClientEp;
 import co.edu.javeriana.proxies.insertarentrevista.proxy.BpelInsertarentrevista;
@@ -11,7 +14,10 @@ import co.edu.javeriana.proxies.updateentrevista.proxy.BpelUpdateobsentrevistaCl
 import co.edu.javeriana.proxies.updateestadoentrevista.proxy.BpelUpdateobsestentrevista;
 import co.edu.javeriana.proxies.updateestadoentrevista.proxy.BpelUpdateobsestentrevistaClientEp;
 
+import java.util.List;
+
 import javax.xml.ws.BindingProvider;
+import co.edu.javeriana.negocio.Candidato;
 
 public class FacadeDatabase2 {
     
@@ -61,14 +67,13 @@ public class FacadeDatabase2 {
         return port1;
     }
     
-    public static BpelConsultacandidatosClientEp getServiceConsultarCandidatos() {
+    public static BpelConsultacandidatosClientEp getServiceConsultarCandidatos() {       
         if (service2 == null) {
             service2 = new BpelConsultacandidatosClientEp();
         }
         
         return service2;
     }
-    
     public static BpelConsultacandidatos getPortInsertarColaborador() {
         try {
             if (port2 == null) {
@@ -139,6 +144,32 @@ public class FacadeDatabase2 {
             e.printStackTrace();
         }
         return port5;
+    }
+    
+    //Mis metodos para consumir las operaciones
+    public static void consultarCandidatos(List<Candidato> candidatos, String numero) {
+        //1. contruir el request
+        GenericoType rq = new GenericoType(); 
+        rq.setNumero(numero);
+        
+        //2. llamar a la operación
+        CandidatosType rs = port2.process(rq);
+        
+        //3. construir la salida
+        List<CandidatoType> candidatosType = rs.getCandidatosType();
+        
+        for (CandidatoType candidatoType : candidatosType) {
+            Candidato candidato = new Candidato();
+            candidato.setPrimerNombre(candidatoType.getPrimerNombre());
+            candidato.setSegundoNombre(candidatoType.getSegundoNombre());
+            candidato.setPrimeroApellido(candidatoType.getPrimerApellido());
+            candidato.setSegundoApellido(candidatoType.getSegundoApellido());
+            
+            candidatos.add(candidato);            
+        }//End foreach
+        
+        //4. retornar una respuesta
+        //return candidato;        
     }
     
 }
