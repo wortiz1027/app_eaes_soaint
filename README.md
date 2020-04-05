@@ -76,39 +76,39 @@ Parael desarrollo final de la solucion se decidio estructurar los proyectos en d
 
 A continuacion se ilustran los proyectos adf para la implementacion de las vistas de cada uno de los procesos:
 
-![alt text](images/Proyectos/1_adf_configuracion.png "Proyecto de utilidades y configuracion")
+![alt text](images/Proyectos/1_adf_configuracion.PNG "Proyecto de utilidades y configuracion")
 
-![alt text](images/Proyectos/2_adf_estrategico.png "Proyecto con las vistas del proceso misional")
+![alt text](images/Proyectos/2_adf_estrategico.PNG "Proyecto con las vistas del proceso misional")
 
-![alt text](images/Proyectos/3_adf_lookandfeel.png "Proyecto con los estilos de las vistas")
+![alt text](images/Proyectos/3_adf_lookandfeel.PNG "Proyecto con los estilos de las vistas")
 
-![alt text](images/Proyectos/4_adf_model.png "Proyecto con las definiciones del modelo java de las vistas")
+![alt text](images/Proyectos/4_adf_model.PNG "Proyecto con las definiciones del modelo java de las vistas")
 
-![alt text](images/Proyectos/5_ad_proxy_content.png "Proyecto con cliente web service de los servicios del web center content de oracle")
+![alt text](images/Proyectos/5_ad_proxy_content.PNG "Proyecto con cliente web service de los servicios del web center content de oracle")
 
-![alt text](images/Proyectos/6_adf_proxy_database.png "Proyecto con cliente de web service de los servicios de bases de datos")
+![alt text](images/Proyectos/6_adf_proxy_database.PNG "Proyecto con cliente de web service de los servicios de bases de datos")
 
-![alt text](images/Proyectos/7_adf_proxy_database2.png "Proyecto con cliente de web service de los servicios de bases de datos")
+![alt text](images/Proyectos/7_adf_proxy_database2.PNG "Proyecto con cliente de web service de los servicios de bases de datos")
 
-![alt text](images/Proyectos/8_adf_soporte.png "Proyecto con las vistas del procesos de soporte")
+![alt text](images/Proyectos/8_adf_soporte.PNG "Proyecto con las vistas del procesos de soporte")
 
 ### Proyectos BPM
 
 A continuacion se listan los proyectos con los procesos bpm mejorados(To-Be):
 
-![alt text](images/Proyectos/9_bpm_estrategico.png "Proyecto con el disenio e implementacion del proceso y subprocesos misional")
+![alt text](images/Proyectos/9_bpm_estrategico.PNG "Proyecto con el disenio e implementacion del proceso y subprocesos misional")
 
-![alt text](images/Proyectos/10_bpm_soporte.png "Proyecto con el disenio e implementacion del procesos y subprocesos de soporte")
+![alt text](images/Proyectos/10_bpm_soporte.PNG "Proyecto con el disenio e implementacion del procesos y subprocesos de soporte")
 
 ### Proyectos SOA
 
 A continuacion se listan los proyectos con las implementaciones de los servicios tanto de la base de datos como del gestor documental:
 
-![alt text](images/Proyectos/11_soa_content.png "Proyecto con los servicios de gestion documental")
+![alt text](images/Proyectos/11_soa_content.PNG "Proyecto con los servicios de gestion documental")
 
-![alt text](images/Proyectos/12_soa_database_2.png "Proyecto con los servicios y conexiones a bases de datos 2")
+![alt text](images/Proyectos/12_soa_database_2.PNG "Proyecto con los servicios y conexiones a bases de datos 2")
 
-![alt text](images/Proyectos/13_soa_database.png "Proyecto con los servicios y conexiones a bases de datos 1")
+![alt text](images/Proyectos/13_soa_database.PNG "Proyecto con los servicios y conexiones a bases de datos 1")
 
 ### Vistas
 
