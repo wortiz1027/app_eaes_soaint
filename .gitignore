@@ -40,6 +40,4 @@ buildNumber.properties
 *.git
 *~
 *test*
-*log
 *zip
-!*.bom
