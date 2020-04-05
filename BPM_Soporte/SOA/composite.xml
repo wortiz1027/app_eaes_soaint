@@ -22,25 +22,6 @@
   <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
           location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl" importType="wsdl"/>
   <import namespace="" location="project_properties.wsdl" importType="wsdl"/>
-<<<<<<< HEAD
-  <service name="NotificarResultados.service" ui:wsdlLocation="WSDLs/NotificarResultados.wsdl">
-    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/notificarResultados#wsdl.interface(NotificarResultadosPortType)"
-                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/notificarResultados#wsdl.interface(NotificarResultadosPortTypeCallBack)"/>
-    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/notificarResultados#wsdl.endpoint(NotificarResultados.service/NotificarResultadosPort)"/>
-    <callback>
-      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/notificarResultados#wsdl.endpoint(NotificarResultados.service/NotificarResultadosPortTypeCallBack_pt)"/>
-    </callback>
-  </service>
-  <service name="FiltradoSeleccionCandidatos.service" ui:wsdlLocation="WSDLs/FiltradoSeleccionCandidatos.wsdl">
-    <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos#wsdl.interface(FiltradoSeleccionCandidatosPortType)"
-                    callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos#wsdl.interface(FiltradoSeleccionCandidatosPortTypeCallBack)"/>
-    <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos#wsdl.endpoint(FiltradoSeleccionCandidatos.service/FiltradoSeleccionCandidatosPort)"/>
-    <callback>
-      <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos#wsdl.endpoint(FiltradoSeleccionCandidatos.service/FiltradoSeleccionCandidatosPortTypeCallBack_pt)"/>
-    </callback>
-  </service>
-=======
->>>>>>> f4ca072a547209584d293e9e154fe4b3f9bef2b3
   <service name="ReclutarFuenteSeleccionarEmpleados.service"
            ui:wsdlLocation="WSDLs/ReclutarFuenteSeleccionarEmpleados.wsdl">
     <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados#wsdl.interface(ReclutarFuenteSeleccionarEmpleadosPortType)"
@@ -50,8 +31,6 @@
       <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados#wsdl.endpoint(ReclutarFuenteSeleccionarEmpleados.service/ReclutarFuenteSeleccionarEmpleadosPortTypeCallBack_pt)"/>
     </callback>
   </service>
-<<<<<<< HEAD
-=======
   <service name="FiltradoSeleccionCandidatos.service" ui:wsdlLocation="WSDLs/FiltradoSeleccionCandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos#wsdl.interface(FiltradoSeleccionCandidatosPortType)"
                     callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos#wsdl.interface(FiltradoSeleccionCandidatosPortTypeCallBack)"/>
@@ -68,7 +47,6 @@
       <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/notificarResultados#wsdl.endpoint(NotificarResultados.service/NotificarResultadosPortTypeCallBack_pt)"/>
     </callback>
   </service>
->>>>>>> f4ca072a547209584d293e9e154fe4b3f9bef2b3
   <property name="productVersion" type="xs:string" many="false">12.2.1.3.0.170820</property>
   <property name="compositeID" type="xs:string" many="false">9d17ccaf-8121-4f59-ac39-a078988da4db</property>
   <component name="ReclutarFuenteSeleccionarEmpleados">
@@ -194,25 +172,15 @@
     <target.uri>HT_EvaluarCurriculum/TaskService</target.uri>
   </wire>
   <wire>
-<<<<<<< HEAD
-    <source.uri>NotificarResultados.service</source.uri>
-    <target.uri>NotificarResultados/NotificarResultados.service</target.uri>
-=======
     <source.uri>ReclutarFuenteSeleccionarEmpleados.service</source.uri>
     <target.uri>ReclutarFuenteSeleccionarEmpleados/ReclutarFuenteSeleccionarEmpleados.service</target.uri>
->>>>>>> f4ca072a547209584d293e9e154fe4b3f9bef2b3
   </wire>
   <wire>
     <source.uri>FiltradoSeleccionCandidatos.service</source.uri>
     <target.uri>FiltradoSeleccionCandidatos/FiltradoSeleccionCandidatos.service</target.uri>
   </wire>
   <wire>
-<<<<<<< HEAD
-    <source.uri>ReclutarFuenteSeleccionarEmpleados.service</source.uri>
-    <target.uri>ReclutarFuenteSeleccionarEmpleados/ReclutarFuenteSeleccionarEmpleados.service</target.uri>
-=======
     <source.uri>NotificarResultados.service</source.uri>
     <target.uri>NotificarResultados/NotificarResultados.service</target.uri>
->>>>>>> f4ca072a547209584d293e9e154fe4b3f9bef2b3
   </wire>
 </composite>
