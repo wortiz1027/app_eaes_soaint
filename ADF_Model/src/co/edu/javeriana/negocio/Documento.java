@@ -3,9 +3,11 @@ package co.edu.javeriana.negocio;
 import java.io.Serializable;
 
 public class Documento implements Serializable {
-    @SuppressWarnings("compatibility:3870334208629736879")
+    @SuppressWarnings("compatibility:6437698308472801597")
     private static final long serialVersionUID = 1L;
+
     private String idDoc;
+    private String nombre;
     
     public Documento() {
         super();
@@ -17,5 +19,13 @@ public class Documento implements Serializable {
 
     public String getIdDoc() {
         return idDoc;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

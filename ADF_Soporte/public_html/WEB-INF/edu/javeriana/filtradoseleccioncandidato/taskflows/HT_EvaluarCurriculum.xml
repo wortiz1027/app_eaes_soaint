@@ -238,6 +238,11 @@
       <managed-bean-class>edu.javeriana.filtradoseleccioncandidato.beans.MbEvaluarCurriculum</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__58">
+      <managed-bean-name>mbEvaluarCurriculum</managed-bean-name>
+      <managed-bean-class>edu.javeriana.filtradoseleccioncandidato.beans.MbEvaluarCurriculum</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <finalizer>#{invokeActionBean.invokeScript}</finalizer>
     <view id="PG_EvaluarCurriculum">
       <page>/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/PG_EvaluarCurriculum.jspx</page>

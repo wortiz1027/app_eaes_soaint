@@ -24,8 +24,10 @@
   <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
           location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl" importType="wsdl"/>
   <import namespace="" location="project_properties.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/ValidarAccionSeguirRule/ValidarAccionSeguirRuleDF"
+          location="WSDLs/ValidarAccionSeguirRuleDF.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados"
-          location="http://DESKTOP-6CHAKQH:7003/soa-infra/services/soporte/BPM_Soporte!1.0/WSDLs/ReclutarFuenteSeleccionarEmpleados.wsdl"
+          location="oramds:/apps/resources/BPM/WSDLs/ReclutarFuenteSeleccionarEmpleados.wsdl"
           importType="wsdl"/>
   <service name="DisenoPrototipoProductosServicios.service_2"
            ui:wsdlLocation="WSDLs/DisenoPrototipoProductosServicios.wsdl">
@@ -118,8 +120,8 @@
         <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
                         callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
       </reference>
-      <reference name="Services.Externals.SW_ProcesoReclutamiento.reference"
-                 ui:wsdlLocation="http://DESKTOP-6CHAKQH:7003/soa-infra/services/soporte/BPM_Soporte!1.0/WSDLs/ReclutarFuenteSeleccionarEmpleados.wsdl">
+      <reference name="Services.Externals.SW_ReclutarFuenteSeleccionarEmpleados.reference"
+                 ui:wsdlLocation="oramds:/apps/resources/BPM/WSDLs/ReclutarFuenteSeleccionarEmpleados.wsdl">
         <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados#wsdl.interface(ReclutarFuenteSeleccionarEmpleadosPortType)"
                         callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados#wsdl.interface(ReclutarFuenteSeleccionarEmpleadosPortTypeCallBack)"/>
       </reference>
@@ -173,6 +175,10 @@
                  ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
         <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
                         callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+      </reference>
+      <reference name="Rules.Co.Edu.Javeriana.Businessrules.ValidarAccionSeguirRule.ValidarAccionASeguirDS.reference"
+                 ui:wsdlLocation="WSDLs/ValidarAccionSeguirRuleDF.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/ValidarAccionSeguirRule/ValidarAccionSeguirRuleDF#wsdl.interface(IDecisionService)"/>
       </reference>
     </componentType>
   </component>
@@ -248,13 +254,21 @@
       </service>
     </componentType>
   </component>
+  <component name="ValidarAccionSeguirRule">
+    <implementation.decision src="ValidarAccionSeguirRule.decs"/>
+    <componentType>
+      <service name="ValidarAccionSeguirRuleDF" ui:wsdlLocation="WSDLs/ValidarAccionSeguirRuleDF.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/ValidarAccionSeguirRule/ValidarAccionSeguirRuleDF#wsdl.interface(IDecisionService)"/>
+      </service>
+    </componentType>
+  </component>
   <reference name="BPM-NotificationService" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
     <binding.wsif port="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.endpoint(NotificationService/JavaPort)"
                   location="oramds:/soa/shared/workflow/NotificationService.wsdl"/>
   </reference>
-  <reference name="SW_ProcesoReclutamiento"
-             ui:wsdlLocation="http://DESKTOP-6CHAKQH:7003/soa-infra/services/soporte/BPM_Soporte!1.0/WSDLs/ReclutarFuenteSeleccionarEmpleados.wsdl">
+  <reference name="SW_ReclutarFuenteSeleccionarEmpleados"
+             ui:wsdlLocation="oramds:/apps/resources/BPM/WSDLs/ReclutarFuenteSeleccionarEmpleados.wsdl">
     <interface.wsdl interface="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados#wsdl.interface(ReclutarFuenteSeleccionarEmpleadosPortType)"
                     callbackInterface="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados#wsdl.interface(ReclutarFuenteSeleccionarEmpleadosPortTypeCallBack)"/>
     <binding.ws port="http://xmlns.javeriana.com/bpmn/bpmnProcess/reclutarFuenteSeleccionarEmpleados#wsdl.endpoint(ReclutarFuenteSeleccionarEmpleados.service/ReclutarFuenteSeleccionarEmpleadosPort)"
@@ -323,8 +337,21 @@
     <target.uri>DesarrollarEspecificacionesDiseno/DesarrollarEspecificacionesDiseno.service</target.uri>
   </wire>
   <wire>
+<<<<<<< HEAD
+    <source.uri>ConstruirProbarPrototipo/Rules.Co.Edu.Javeriana.Businessrules.ValidarAccionSeguirRule.ValidarAccionASeguirDS.reference</source.uri>
+    <target.uri>ValidarAccionSeguirRule/ValidarAccionSeguirRuleDF</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ConstruirProbarPrototipo.service</source.uri>
+    <target.uri>ConstruirProbarPrototipo/ConstruirProbarPrototipo.service</target.uri>
+  </wire>
+  <wire>
+    <source.uri>VerificarAsignarRecursos/Services.Externals.SW_ReclutarFuenteSeleccionarEmpleados.reference</source.uri>
+    <target.uri>SW_ReclutarFuenteSeleccionarEmpleados</target.uri>
+=======
     <source.uri>VerificarAsignarRecursos/Services.Externals.SW_ProcesoReclutamiento.reference</source.uri>
     <target.uri>SW_ProcesoReclutamiento</target.uri>
+>>>>>>> f4ca072a547209584d293e9e154fe4b3f9bef2b3
   </wire>
   <wire>
     <source.uri>ConstruirProbarPrototipo.service</source.uri>

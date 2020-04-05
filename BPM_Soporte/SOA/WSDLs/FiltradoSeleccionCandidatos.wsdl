@@ -8,7 +8,7 @@
 <wsdl:definitions targetNamespace="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos" xmlns:tns6="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"  xmlns:tns7="http://xmlns.javeriana.edu/edu/schemas/util/comunes/v1.0"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"  xmlns:tns="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos" >
     <wsdl:types>
         <xsd:schema targetNamespace="http://xmlns.javeriana.com/bpmn/bpmnProcess/filtradoSeleccionCandidatos">
-            <xsd:import namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" schemaLocation="oramds:/apps/resources/BPM/SCHEMAs/Soporte/Soporte.xsd"/>
+            <xsd:import namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" schemaLocation="oramds:/apps/resources/BPM/SCHEMAs/Misional/Misional.xsd"/>
             <xsd:import namespace="http://xmlns.javeriana.edu/edu/schemas/util/comunes/v1.0" schemaLocation="oramds:/apps/resources/BPM/SCHEMAs/Comun/Comun.xsd"/>
             <xsd:element name="inicioFiltradoSeleccionCandidatos">
                 <xsd:complexType>

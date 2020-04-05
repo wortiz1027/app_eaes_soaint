@@ -537,13 +537,16 @@
                         <bpmnext:BooleanFeature value="false" name="inputValidation"/>
                         <bpmnext:BooleanFeature value="false" name="outputValidation"/>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
-                        <bpmnext:BooleanFeature value="true" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
                         <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
                         <bpmnext:StringFeature value="" name="lane"/>
                         <bpmnext:StringFeature value="Begin Level" name="level"/>
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </bpmnext:FeatureSet>
+                    <bpmnext:BusinessRuleTaskData functionName="ValidarAccionASeguirDS">
+                        <bpmnext:businessRuleRef refType="namespaced" name="ValidarAccionSeguirRule" namespace=".Co.Edu.Javeriana.Businessrules" elementType="TYPE" implementationType="businessRule"/>
+                    </bpmnext:BusinessRuleTaskData>
                     <bpmnext:Localization>
                         <bpmnext:Label>
                             <bpmnext:LocalizedContent language="en">[BR] Validar Acción a Seguir</bpmnext:LocalizedContent>
@@ -556,7 +559,84 @@
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:ioSpecification/>
+            <bpmn:ioSpecification>
+                <bpmn:dataInput name="prototipo" id="prototipo">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="Prototipo" namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataOutput name="accionASeguir" id="accionASeguir">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="AccionesASeguir" namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:inputSet id="ACT28369096720278_uniqueInputSet">
+                    <bpmn:dataInputRefs>prototipo</bpmn:dataInputRefs>
+                </bpmn:inputSet>
+                <bpmn:outputSet id="ACT28369096720278_uniqueOutputSet">
+                    <bpmn:dataOutputRefs>accionASeguir</bpmn:dataOutputRefs>
+                </bpmn:outputSet>
+            </bpmn:ioSpecification>
+            <bpmn:dataInputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions/>
+                </bpmn:extensionElements>
+                <bpmn:sourceRef>doPrototipo</bpmn:sourceRef>
+                <bpmn:targetRef>prototipo</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('doPrototipo')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('prototipo')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataInputAssociation>
+            <bpmn:dataOutputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions/>
+                </bpmn:extensionElements>
+                <bpmn:sourceRef>accionASeguir</bpmn:sourceRef>
+                <bpmn:targetRef>doAccionesASeguir</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataOutput('accionASeguir')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('doAccionesASeguir')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataOutputAssociation>
         </bpmn:businessRuleTask>
         <bpmn:userTask isForCompensation="false" name="Realizar pruebas internas de producto/servicio y evaluar viabilidad" id="ACT28369133775635">
             <bpmn:extensionElements>
@@ -1045,7 +1125,7 @@
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:matches(string(bpmn:getDataObject('doSolicitud')/ns:accionesASeguir/ns:desarrollarExaminarProduccionPrototipos), '\s*(?i:true|1)\s*')
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">(bpmn:getDataObject('doAccionesASeguir')/ns:desarrollarExaminarProduccionPrototipos = 'SI')
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:Expression mode="simple"/>
@@ -1090,7 +1170,7 @@
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:matches(string(bpmn:getDataObject('doSolicitud')/ns:accionesASeguir/ns:validarProblemasCalidadYConfiabilidad), '\s*(?i:true|1)\s*')
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">(bpmn:getDataObject('doAccionesASeguir')/ns:validarProblemasCalidadYConfiabilidad = 'SI')
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions>
                         <bpmnext:Expression mode="simple"/>
@@ -1163,6 +1243,24 @@
                 <bpmnext:OracleExtensions>
                     <bpmnext:DataObjectType initialize="true">
                         <bpmnext:TypeRef refType="namespaced" name="Solicitud" namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" elementType="ELEMENT" implementationType="businessObject"/>
+                    </bpmnext:DataObjectType>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:dataObject>
+        <bpmn:dataObject name="doPrototipo" id="doPrototipo">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:DataObjectType initialize="true">
+                        <bpmnext:TypeRef refType="namespaced" name="Prototipo" namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" elementType="ELEMENT" implementationType="businessObject"/>
+                    </bpmnext:DataObjectType>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:dataObject>
+        <bpmn:dataObject name="doAccionesASeguir" id="doAccionesASeguir">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:DataObjectType initialize="true">
+                        <bpmnext:TypeRef refType="namespaced" name="AccionesASeguir" namespace="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" elementType="ELEMENT" implementationType="businessObject"/>
                     </bpmnext:DataObjectType>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>

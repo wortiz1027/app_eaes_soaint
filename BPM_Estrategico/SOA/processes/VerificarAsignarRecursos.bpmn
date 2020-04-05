@@ -28,9 +28,9 @@
                     <bpmnext:Conversation id="CONVERSATION283686724725" type="define_interface">
                         <bpmnext:DefineInterfaceConversationDefinition exposeSOAPService="true"/>
                     </bpmnext:Conversation>
-                    <bpmnext:Conversation id="CONVERSATION284431865104" type="service_call">
+                    <bpmnext:Conversation id="CONVERSATION284465250176" type="service_call">
                         <bpmnext:ServiceCallConversationDefinition>
-                            <bpmnext:serviceRef refType="namespaced" name="SW_ProcesoReclutamiento" namespace="http://xmlns.oracle.com/bpm/interfaceObject/Services/Externals/SW_ProcesoReclutamiento.Interface" elementType="TYPE" implementationType="interfaceObject"/>
+                            <bpmnext:serviceRef refType="namespaced" name="SW_ReclutarFuenteSeleccionarEmpleados" namespace="http://xmlns.oracle.com/bpm/interfaceObject/Services/Externals/SW_ReclutarFuenteSeleccionarEmpleados.Interface" elementType="TYPE" implementationType="interfaceObject"/>
                         </bpmnext:ServiceCallConversationDefinition>
                     </bpmnext:Conversation>
                 </bpmnext:Conversations>
@@ -464,7 +464,7 @@
             </bpmn:dataInputAssociation>
             <bpmn:resourceRole name="Gerente" id="lane1"/>
         </bpmn:userTask>
-        <bpmn:sendTask messageRef="bpmn:Services.Externals.SW_ProcesoReclutamiento" operationRef="bpmn:inicioReclutarFuenteSeleccionarEmpleados" isForCompensation="false" name="[BPM] Llamado Proceso de Reclutamiento" id="ACT28384379939665">
+        <bpmn:sendTask messageRef="bpmn:Services.Externals.SW_ReclutarFuenteSeleccionarEmpleados" operationRef="bpmn:inicioReclutarFuenteSeleccionarEmpleados" isForCompensation="false" name="[BPM] Llamado Proceso de Reclutamiento" id="ACT28384379939665">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
@@ -488,7 +488,7 @@
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION284431865104">
+                    <bpmnext:Conversational conversation="CONVERSATION284465250176">
                         <bpmnext:ServiceCallConversationalDefinition operation="inicioReclutarFuenteSeleccionarEmpleados"/>
                     </bpmnext:Conversational>
                     <bpmnext:FlowNodeProperties/>
@@ -519,14 +519,14 @@
                             <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
                         </bpmnext:OracleExtensions>
                     </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('doSolicitud')/ns:idSolicitud
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('doSolicitud')
                         <bpmn:extensionElements>
                             <bpmnext:OracleExtensions>
                                 <bpmnext:Expression mode="simple"/>
                             </bpmnext:OracleExtensions>
                         </bpmn:extensionElements>
                     </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('inicioReclutarFuenteSeleccionarEmpleados')/ns:Solicitud/ns:idSolicitud
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('inicioReclutarFuenteSeleccionarEmpleados')/ns:Solicitud
                         <bpmn:extensionElements>
                             <bpmnext:OracleExtensions>
                                 <bpmnext:Expression mode="simple"/>
@@ -536,7 +536,7 @@
                 </bpmn:assignment>
             </bpmn:dataInputAssociation>
         </bpmn:sendTask>
-        <bpmn:receiveTask instantiate="false" messageRef="bpmn:Services.Externals.SW_ProcesoReclutamiento.Callback" operationRef="bpmn:finReclutarFuenteSeleccionarEmpleados" isForCompensation="false" name="[BPM] Espera  Proceso de Reclutamiento" id="ACT28384410770643">
+        <bpmn:receiveTask instantiate="false" messageRef="bpmn:Services.Externals.SW_ReclutarFuenteSeleccionarEmpleados.Callback" operationRef="bpmn:finReclutarFuenteSeleccionarEmpleados" isForCompensation="false" name="[BPM] Espera  Proceso de Reclutamiento" id="ACT28384410770643">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
@@ -560,7 +560,7 @@
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION284431865104">
+                    <bpmnext:Conversational conversation="CONVERSATION284465250176">
                         <bpmnext:ServiceCallConversationalDefinition operation="finReclutarFuenteSeleccionarEmpleados"/>
                     </bpmnext:Conversational>
                     <bpmnext:FlowNodeProperties/>
