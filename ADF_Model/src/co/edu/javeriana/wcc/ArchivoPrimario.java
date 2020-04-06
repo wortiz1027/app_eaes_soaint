@@ -7,7 +7,7 @@ public class ArchivoPrimario implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private String nombreArchivo;
-    private String contenidoArchivo;
+    private byte[] contenidoArchivo;
     
     public ArchivoPrimario() {
         super();
@@ -21,11 +21,11 @@ public class ArchivoPrimario implements Serializable {
         return nombreArchivo;
     }
 
-    public void setContenidoArchivo(String contenidoArchivo) {
+    public void setContenidoArchivo(byte[] contenidoArchivo) {
         this.contenidoArchivo = contenidoArchivo;
     }
 
-    public String getContenidoArchivo() {
+    public byte[] getContenidoArchivo() {
         return contenidoArchivo;
     }
 }

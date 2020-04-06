@@ -9,7 +9,7 @@ public class File implements Serializable{
     @SuppressWarnings("compatibility:5917419994899858731")
     private static final long serialVersionUID = 1L;
     
-    private int dID;
+    private Integer dID;
     private String tipoArchivo;
     private List<NameValue> extraProperty;
     
@@ -17,11 +17,11 @@ public class File implements Serializable{
         super();
     }
 
-    public void setDID(int dID) {
+    public void setDID(Integer dID) {
         this.dID = dID;
     }
 
-    public int getDID() {
+    public Integer getDID() {
         return dID;
     }
 

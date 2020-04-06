@@ -1,6 +1,5 @@
 package co.edu.javeriana.facade;
 
-import co.edu.javeriana.negocio.Recomendacion;
 import co.edu.javeriana.proxies.advancese.proxy.BpelAdvanceSearch;
 import co.edu.javeriana.proxies.advancese.proxy.BpelAdvancesearchClientEp;
 import co.edu.javeriana.proxies.advancese.types.AdvancedSearch;
@@ -10,6 +9,7 @@ import co.edu.javeriana.proxies.checkin.proxy.BpelCheckinWcc;
 import co.edu.javeriana.proxies.checkin.proxy.BpelCheckinWccClientEp;
 import co.edu.javeriana.proxies.checkin.types.CheckInUniversal;
 import co.edu.javeriana.proxies.checkin.types.CheckInUniversalResult;
+import co.edu.javeriana.proxies.checkin.types.Property;
 import co.edu.javeriana.proxies.getfile.proxy.BpelGetFile;
 import co.edu.javeriana.proxies.getfile.proxy.BpelGetfileClientEp;
 
@@ -24,7 +24,9 @@ import co.edu.javeriana.wcc.NameValue;
 
 import java.util.List;
 
+import javax.xml.bind.JAXBElement;
 import javax.xml.ws.BindingProvider;
+import javax.xml.namespace.QName;
 
 public class FacadeContent {
     
@@ -104,10 +106,14 @@ public class FacadeContent {
         return port3;
     }
     
+    @SuppressWarnings("unchecked")    
     public static void obtenerArchivo(File file, GetFileResult archivo) {
         //1. contruir el request
-        GetFileByID rq = new GetFileByID(); 
-        rq.setDID(file.getDID());
+        GetFileByID rq = new GetFileByID();
+
+        JAXBElement<Integer> did = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "dID"), Integer.class, file.getDID());
+        
+        rq.setDID(did);
         rq.setTipoArchivo(file.getTipoArchivo());
         
         //2. llamar a la operación
@@ -115,25 +121,25 @@ public class FacadeContent {
         
         //3. construir la salida    
         //archivo.setArchivoDescargado(rs.getGetFileByIDResult().getValue().getArchivoDescargado());
-        archivo.getArchivoDescargado().setContenidoArchivo(rs.getGetFileByIDResult().getValue().getArchivoDescargado().getValue().getContenidoArchivo());
-        archivo.getArchivoDescargado().setNombreArchivo(rs.getGetFileByIDResult().getValue().getArchivoDescargado().getValue().getNombreArchivo());
+        archivo.getArchivoDescargado().setContenidoArchivo(rs.getGetFileByIDResult().getValue().getArchivoDescargado().getValue().getContenidoArchivo().getValue());
+        archivo.getArchivoDescargado().setNombreArchivo(rs.getGetFileByIDResult().getValue().getArchivoDescargado().getValue().getNombreArchivo().getValue());
         
         //Informacion Archivo
         for(FileInfo documentos : rs.getGetFileByIDResult().getValue().getInformacionArhivo()){
 
-            archivo.getInformacionArhivo().setDID(documentos.getDID());
-            archivo.getInformacionArhivo().setDDocName(documentos.getDDocName());
-            archivo.getInformacionArhivo().setTitulo(documentos.getTitulo());
-            archivo.getInformacionArhivo().setTipo(documentos.getTipo());
-            archivo.getInformacionArhivo().setAutor(documentos.getAutor());
-            archivo.getInformacionArhivo().setGrupoSeguridad(documentos.getGrupoSeguridad());
+            archivo.getInformacionArhivo().setDID(documentos.getDID().getValue());
+            archivo.getInformacionArhivo().setDDocName(documentos.getDDocName().getValue());
+            archivo.getInformacionArhivo().setTitulo(documentos.getTitulo().getValue());
+            archivo.getInformacionArhivo().setTipo(documentos.getTipo().getValue());
+            archivo.getInformacionArhivo().setAutor(documentos.getAutor().getValue());
+            archivo.getInformacionArhivo().setGrupoSeguridad(documentos.getGrupoSeguridad().getValue());
             
             break;    
         }        
         
         //Status
-        archivo.getStatus().setCodigo(rs.getGetFileByIDResult().getValue().getStatus().getValue().getCodigo());
-        archivo.getStatus().setMensaje(rs.getGetFileByIDResult().getValue().getStatus().getValue().getMensaje());
+        archivo.getStatus().setCodigo(rs.getGetFileByIDResult().getValue().getStatus().getValue().getCodigo().getValue());
+        archivo.getStatus().setMensaje(rs.getGetFileByIDResult().getValue().getStatus().getValue().getMensaje().getValue());
     }
     
     public static void busquedaAvanzada(String queryText, List<Documento> response) {
@@ -150,30 +156,42 @@ public class FacadeContent {
         for(AdvancedSearchResult listDocumentos : searchResult){
             Documento documento = new Documento();
             
-            documento.setAutor(listDocumentos);
+            //documento.setAutor(listDocumentos);
         }
     }
     
+    @SuppressWarnings("unchecked")
     public static void checkIn(Documento documento, CheckinResult response) {
         //1. contruir el request
         CheckInUniversal rq = new CheckInUniversal(); 
         
-        rq.setAutor(documento.getAutor());
-        rq.setCuenta(documento.getCuenta());
-        rq.setDDocName(documento.getDDocName());
-        rq.setGrupoSeguridad(documento.getGrupoSeguridad());
-        rq.setTipo(documento.getTipo());
-        rq.setTitulo(documento.getTitulo());
-        rq.getArchivoPrimario().getValue().setContenidoArchivo(documento.getArchivoPrimario().getContenidoArchivo());
-        rq.getArchivoPrimario().getValue().setNombreArchivo(documento.getArchivoPrimario().getNombreArchivo());
-        rq.getCustomDocMetaData().add(item);
+        JAXBElement<String> autor     = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "autor"), String.class, documento.getAutor());
+        JAXBElement<String> cuenta    = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "cuenta"), String.class, documento.getCuenta());
+        JAXBElement<String> dDocName  = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "dDocName"), String.class, documento.getDDocName());
+        JAXBElement<String> seguridad = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "grupoSeguridad"), String.class, documento.getGrupoSeguridad());
+        JAXBElement<String> tipo      = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "tipo"), String.class, documento.getTipo());
+        JAXBElement<String> titulo    = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "titulo"), String.class, documento.getTitulo());
+        
+        JAXBElement<String> nombre    = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "nombreArchivo"), String.class, documento.getArchivoPrimario().getNombreArchivo());
+        JAXBElement<byte[]> contenido = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "contenidoArchivo"), byte[].class, documento.getArchivoPrimario().getContenidoArchivo());
+        
+        rq.setAutor(autor);
+        rq.setCuenta(cuenta);
+        rq.setDDocName(dDocName);
+        rq.setGrupoSeguridad(seguridad);
+        rq.setTipo(tipo);
+        rq.setTitulo(titulo);
+        rq.getArchivoPrimario().getValue().setNombreArchivo(nombre);
+        rq.getArchivoPrimario().getValue().setContenidoArchivo(contenido);
         
         for(NameValue propiedades : documento.getCustomDocMetaData()){
-            NameValue item = new NameValue();
+            Property item = new Property();
             
-            //item.setCodigoPrototipo();
-            item.setName(propiedades.getName() != null ? propiedades.getName() : "");
-            item.setValue(propiedades.getValue() != null ? propiedades.getValue() : "");
+            JAXBElement<String> llave = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "name"), String.class, propiedades.getName());
+            JAXBElement<String> valor = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "value"), String.class, propiedades.getValue());
+            
+            item.setName(llave);
+            item.setValue(valor);
             
             rq.getCustomDocMetaData().add(item);
         }
@@ -182,12 +200,12 @@ public class FacadeContent {
         CheckInUniversalResult rs = getPortCheckIn().process(rq);
         
         //3. construir la salida    
-        response.setDID(rs.getDID());
-        response.setIdRevision(rs.getIdRevision());
-        response.setLabelrevision(rs.getLabelrevision());
-        response.setRevision(rs.getRevision());
-        response.getStatus().setCodigo(rs.getStatus().getValue().getCodigo());
-        response.getStatus().setMensaje(rs.getStatus().getValue().getMensaje());
+        response.setDID(rs.getDID().getValue());
+        response.setIdRevision(rs.getIdRevision().getValue());
+        response.setLabelrevision(rs.getLabelrevision().getValue());
+        response.setRevision(rs.getRevision().getValue());
+        response.getStatus().setCodigo(rs.getStatus().getValue().getCodigo().getValue());
+        response.getStatus().setMensaje(rs.getStatus().getValue().getMensaje().getValue());
         
     }
 }

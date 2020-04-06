@@ -6,18 +6,18 @@ public class Estatus implements Serializable {
     @SuppressWarnings("compatibility:4273248371900997521")
     private static final long serialVersionUID = 1L;
     
-    private int codigo;
+    private Integer codigo;
     private String mensaje;
     
     public Estatus() {
         super();
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 
-    public int getCodigo() {
+    public Integer getCodigo() {
         return codigo;
     }
 
