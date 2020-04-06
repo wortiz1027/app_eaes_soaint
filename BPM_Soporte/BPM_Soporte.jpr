@@ -88,8 +88,7 @@
       <hash n="resourcesContentSet">
          <list n="pattern-filters">
             <string v="+Comun.xsd"/>
-            <!--string v="+Soporte.xsd"/-->
-			<string v="+Misional.xsd"/>
+            <string v="+Misional.xsd"/>
          </list>
          <list n="url-path">
             <url path="."/>
@@ -321,4 +320,5 @@
       </hash>
    </hash>
    <value n="SCA_WORKFLOW_FOLDER_PROPERTY_NAME" v="HumanTasks/"/>
+   <value n="SOA_TRANSFORMATION_FOLDER_NAME" v="xsl/"/>
 </jpr:project>

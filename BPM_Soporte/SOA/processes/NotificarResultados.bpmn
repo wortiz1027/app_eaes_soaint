@@ -28,6 +28,11 @@
                     <bpmnext:Conversation id="CONVERSATION283871420032" type="define_interface">
                         <bpmnext:DefineInterfaceConversationDefinition exposeSOAPService="true"/>
                     </bpmnext:Conversation>
+                    <bpmnext:Conversation id="CONVERSATION284566294770" type="service_call">
+                        <bpmnext:ServiceCallConversationDefinition>
+                            <bpmnext:serviceRef refType="namespaced" name="BPEL_consultarCandidatosPorVacante" namespace="http://xmlns.oracle.com/bpm/interfaceObject/Services/Externals/BPEL_consultarCandidatosPorVacante.Interface" elementType="TYPE" implementationType="interfaceObject"/>
+                        </bpmnext:ServiceCallConversationDefinition>
+                    </bpmnext:Conversation>
                 </bpmnext:Conversations>
                 <bpmnext:ApplicationInfo>
                     <bpmnext:AppLinkName/>
@@ -57,7 +62,7 @@
                 </bpmn:extensionElements>
             </bpmn:lane>
         </bpmn:laneSet>
-        <bpmn:serviceTask isForCompensation="false" name="[SW] Obtener Resultados Candidatos" id="ACT28387160029957">
+        <bpmn:serviceTask implementation="Services.Externals.BPEL_consultarCandidatosPorVacante" operationRef="bpmn:process" isForCompensation="false" name="[SW] Obtener Resultados Candidatos" id="ACT28387160029957">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
@@ -65,7 +70,7 @@
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
-                        <bpmnext:BooleanFeature value="true" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
                         <bpmnext:BooleanFeature value="false" name="inputValidation"/>
                         <bpmnext:BooleanFeature value="false" name="outputValidation"/>
                         <bpmnext:StringFeature value="[]" name="TagFeature"/>
@@ -82,12 +87,74 @@
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
                         </bpmnext:Description>
                     </bpmnext:Localization>
-                    <bpmnext:Conversational/>
+                    <bpmnext:Conversational conversation="CONVERSATION284566294770">
+                        <bpmnext:ServiceCallConversationalDefinition operation="process"/>
+                    </bpmnext:Conversational>
                     <bpmnext:FlowNodeProperties/>
                     <bpmnext:LogHandlers/>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
-            <bpmn:ioSpecification/>
+            <bpmn:ioSpecification>
+                <bpmn:dataInput name="generico" id="generico">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="Generico" namespace="http://xmlns.javeriana.edu.co/co/schemas/process/bpm/consultarCandidatosVacante/v1.0" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataOutput name="candidatos" id="candidatos">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="Candidatos" namespace="http://xmlns.javeriana.edu.co/co/schemas/process/bpm/consultarCandidatosVacante/v1.0" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:inputSet id="ACT28387160029957_uniqueInputSet">
+                    <bpmn:dataInputRefs>generico</bpmn:dataInputRefs>
+                </bpmn:inputSet>
+                <bpmn:outputSet id="ACT28387160029957_uniqueOutputSet">
+                    <bpmn:dataOutputRefs>candidatos</bpmn:dataOutputRefs>
+                </bpmn:outputSet>
+            </bpmn:ioSpecification>
+            <bpmn:dataInputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions/>
+                </bpmn:extensionElements>
+                <bpmn:sourceRef>doSolicitud</bpmn:sourceRef>
+                <bpmn:targetRef>generico</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">number(bpmn:getDataObject('doSolicitud')/ns:vacante/ns:idVacante)
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu.co/co/schemas/process/bpm/consultarCandidatosVacante/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('generico')/ns:numeroVacante
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataInputAssociation>
+            <bpmn:dataOutputAssociation>
+                <bpmn:sourceRef>candidatos</bpmn:sourceRef>
+                <bpmn:targetRef>doCandidatos</bpmn:targetRef>
+                <bpmn:transformation language="xsl">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:ExternalTransformation resource="T1_rsCandidatos_candidatos.xsl"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:transformation>
+            </bpmn:dataOutputAssociation>
         </bpmn:serviceTask>
         <bpmn:subProcess triggeredByEvent="false" isForCompensation="false" name="Notificar Resultados Candidatos" id="ACT28387168041289">
             <bpmn:extensionElements>
