@@ -5,9 +5,9 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="bpel_recursosdisponibles_client" x="0" y="235" side="left"/>
-      <partnerlink name="WS_RecursosDisponibles" x="533" y="188" side="right"/>
+      <partnerlink name="WS_RecursosDisponibles" x="867" y="188" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,689,378" show_swimlanes="true">
+   <graph_layout viewport="0,0,1023,403" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
    </graph_layout>

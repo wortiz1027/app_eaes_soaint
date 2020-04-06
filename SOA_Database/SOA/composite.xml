@@ -31,6 +31,11 @@
           location="WSDLs/WS_ConsDocumento.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_consultardocumento"
           location="WSDLs/bpel_consultardocumento.wsdl" importType="wsdl"/>
+  <import namespace="http://javeriana.edu.co/" location="oramds:/apps/resources/SOA/WSDLs/wsmail.wsdl"
+          importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_mailsender"
+          location="WSDLs/bpel_mailsender.wsdl" importType="wsdl"/>
+  <import namespace="http://javeriana.edu.co/" location="WSDLs/wsmailWrapper.wsdl" importType="wsdl"/>
   <service name="bpel_recursosdisponibles_client_ep" ui:wsdlLocation="WSDLs/bpel_recursosdisponibles.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_recursosdisponibles#wsdl.interface(bpel_recursosdisponibles)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_recursosdisponibles#wsdl.endpoint(bpel_recursosdisponibles_client_ep/bpel_recursosdisponibles_pt)"/>
@@ -50,6 +55,10 @@
   <service name="bpel_consultardocumento_client_ep" ui:wsdlLocation="WSDLs/bpel_consultardocumento.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_consultardocumento#wsdl.interface(bpel_consultardocumento)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_consultardocumento#wsdl.endpoint(bpel_consultardocumento_client_ep/bpel_consultardocumento_pt)"/>
+  </service>
+  <service name="bpel_mailsender_client_ep" ui:wsdlLocation="WSDLs/bpel_mailsender.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_mailsender#wsdl.interface(bpel_mailsender)"/>
+    <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_mailsender#wsdl.endpoint(bpel_mailsender_client_ep/bpel_mailsender_pt)"/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.3.0.170820</property>
   <property name="compositeID" type="xs:string" many="false">ad5892d1-834d-4c28-ba2f-027806b4c4c2</property>
@@ -113,6 +122,18 @@
     </componentType>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
   </component>
+  <component name="bpel_mailsender" version="2.0">
+    <implementation.bpel src="BPEL/bpel_mailsender.bpel"/>
+    <componentType>
+      <service name="bpel_mailsender_client" ui:wsdlLocation="WSDLs/bpel_mailsender.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database/bpel_mailsender#wsdl.interface(bpel_mailsender)"/>
+      </service>
+      <reference name="WS_MailSender" ui:wsdlLocation="WSDLs/wsmailWrapper.wsdl">
+        <interface.wsdl interface="http://javeriana.edu.co/#wsdl.interface(SendEmail)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+  </component>
   <reference name="WS_RecursosDisponibles" ui:wsdlLocation="WSDLs/WS_RecursosDisponibles.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database/WS_RecursosDisponibles#wsdl.interface(WS_RecursosDisponibles_ptt)"/>
     <binding.jca config="Adapters/WS_RecursosDisponibles_db.jca"/>
@@ -153,6 +174,13 @@
     <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
     <property name="jca.retry.maxInterval" type="xs:int" many="false" override="may">120</property>
   </reference>
+  <reference name="WS_MailSender" ui:wsdlLocation="oramds:/apps/resources/SOA/WSDLs/wsmail.wsdl">
+    <interface.wsdl interface="http://javeriana.edu.co/#wsdl.interface(SendEmail)"/>
+    <binding.ws port="http://javeriana.edu.co/#wsdl.endpoint(SendEmailService/SendEmailPort)"
+                location="oramds:/apps/resources/SOA/WSDLs/wsmail.wsdl" soapVersion="1.2">
+      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+    </binding.ws>
+  </reference>
   <wire>
     <source.uri>bpel_recursosdisponibles_client_ep</source.uri>
     <target.uri>bpel_recursosdisponibles/bpel_recursosdisponibles_client</target.uri>
@@ -192,5 +220,13 @@
   <wire>
     <source.uri>bpel_consultardocumento/WS_ConsDocumento</source.uri>
     <target.uri>WS_ConsDocumento</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_mailsender_client_ep</source.uri>
+    <target.uri>bpel_mailsender/bpel_mailsender_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_mailsender/WS_MailSender</source.uri>
+    <target.uri>WS_MailSender</target.uri>
   </wire>
 </composite>

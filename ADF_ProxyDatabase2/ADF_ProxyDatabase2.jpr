@@ -169,10 +169,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_Model.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF DVT Core Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -214,6 +210,10 @@
          </hash>
          <hash>
             <value n="id" v="WSRP Container"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_Model.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -257,10 +257,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_Model.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF DVT Core Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -302,6 +298,10 @@
          </hash>
          <hash>
             <value n="id" v="WSRP Container"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_Model.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

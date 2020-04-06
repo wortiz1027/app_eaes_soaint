@@ -14,10 +14,10 @@ import co.edu.javeriana.proxies.insertarprototipo.proxy.BpelInsertarprototipoCli
 
 import co.edu.javeriana.negocio.Prototipo;
 import co.edu.javeriana.negocio.Colaborador;
+import co.edu.javeriana.negocio.Recomendacion;
 
 import co.edu.javeriana.configuracion.utils.DateUtils;
 
-import co.edu.javeriana.negocio.Recomendacion;
 import co.edu.javeriana.proxies.insertarprototipo.types.InsertarPrototipoType;
 
 import co.edu.javeriana.proxies.insertarprototipo.types.RecomendacionesType;
@@ -144,7 +144,7 @@ public class FacadeDatabase {
         for(Recomendacion recomendacion : prototipo.getRecomendaciones()){
             RecomendacionesType item = new RecomendacionesType();
             
-            //item.setCodigoPrototipo();
+            item.setCodigoPrototipo(recomendacion.getCodigoPrototipo());
             item.setObservacion(recomendacion.getObservacion() != null ? recomendacion.getObservacion() : "");
             rq.getRecomendaciones().getListaRecomendaciones().add(item);
         }

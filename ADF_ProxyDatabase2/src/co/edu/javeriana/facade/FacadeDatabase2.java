@@ -19,8 +19,11 @@ import java.util.List;
 
 import javax.xml.ws.BindingProvider;
 import co.edu.javeriana.negocio.Candidato;
+import co.edu.javeriana.negocio.Entrevista;
 import co.edu.javeriana.negocio.Recomendacion;
 import co.edu.javeriana.proxies.consultarrecomendaciones.types.RecomendacionType;
+import co.edu.javeriana.proxies.insertarentrevista.types.InsertarEntrevistaType;
+import co.edu.javeriana.proxies.insertarentrevista.types.ResponseType;
 
 public class FacadeDatabase2 {
     
@@ -50,7 +53,7 @@ public class FacadeDatabase2 {
     public FacadeDatabase2() {
     }
     
-    public static BpelInsertarentrevistaClientEp getServiceInsertarEntrevista() {
+    private static BpelInsertarentrevistaClientEp getServiceInsertarEntrevista() {
         if (service1 == null) {
             service1 = new BpelInsertarentrevistaClientEp();
         }
@@ -58,7 +61,7 @@ public class FacadeDatabase2 {
         return service1;
     }
     
-    public static BpelInsertarentrevista getPortInsertarEntrevista() {
+    private static BpelInsertarentrevista getPortInsertarEntrevista() {
         try {
             if (port1 == null) {
                 port1 = getServiceInsertarEntrevista().getBpelInsertarentrevistaPt();
@@ -70,14 +73,15 @@ public class FacadeDatabase2 {
         return port1;
     }
     
-    public static BpelConsultacandidatosClientEp getServiceConsultarCandidatos() {       
+    private static BpelConsultacandidatosClientEp getServiceConsultarCandidatos() {       
         if (service2 == null) {
             service2 = new BpelConsultacandidatosClientEp();
         }
         
         return service2;
     }
-    public static BpelConsultacandidatos getPortInsertarColaborador() {
+    
+    private static BpelConsultacandidatos getPortConsultarCandidatos() {
         try {
             if (port2 == null) {
                 port2 = getServiceConsultarCandidatos().getBpelConsultacandidatosPt();
@@ -89,7 +93,7 @@ public class FacadeDatabase2 {
         return port2;
     }
     
-    public static BpelConsprotrecomendacionesClientEp getServiceConsultarRecomendaciones() {
+    private static BpelConsprotrecomendacionesClientEp getServiceConsultarRecomendaciones() {
         if (service3 == null) {
             service3 = new BpelConsprotrecomendacionesClientEp();
         }
@@ -97,7 +101,7 @@ public class FacadeDatabase2 {
         return service3;
     }
     
-    public static BpelConsprotrecomendaciones getPortConsultarPrototipo() {
+    private static BpelConsprotrecomendaciones getPortConsultarRecomendaciones() {
         try {
             if (port3 == null) {
                 port3 = getServiceConsultarRecomendaciones().getBpelConsprotrecomendacionesPt();
@@ -109,7 +113,7 @@ public class FacadeDatabase2 {
         return port3;
     }
     
-    public static BpelUpdateobsentrevistaClientEp getServiceActualizarEntrevista() {
+    private static BpelUpdateobsentrevistaClientEp getServiceActualizarEntrevista() {
         if (service4 == null) {
             service4 = new BpelUpdateobsentrevistaClientEp();
         }
@@ -117,7 +121,7 @@ public class FacadeDatabase2 {
         return service4;
     }
     
-    public static BpelUpdateobsentrevista getPortActualizarEntrevista() {
+    private static BpelUpdateobsentrevista getPortActualizarEntrevista() {
         try {
             if (port4 == null) {
                 port4 = getServiceActualizarEntrevista().getBpelUpdateobsentrevistaPt();
@@ -129,7 +133,7 @@ public class FacadeDatabase2 {
         return port4;
     }
     
-    public static BpelUpdateobsestentrevistaClientEp getServiceActualizarEstadoEntrevista() {
+    private static BpelUpdateobsestentrevistaClientEp getServiceActualizarEstadoEntrevista() {
         if (service5 == null) {
             service5 = new BpelUpdateobsestentrevistaClientEp();
         }
@@ -137,7 +141,7 @@ public class FacadeDatabase2 {
         return service5;
     }
     
-    public static BpelUpdateobsestentrevista getPortActualizarEstadoEntrevista() {
+    private static BpelUpdateobsestentrevista getPortActualizarEstadoEntrevista() {
         try {
             if (port5 == null) {
                 port5 = getServiceActualizarEstadoEntrevista().getBpelUpdateobsestentrevistaPt();
@@ -151,13 +155,25 @@ public class FacadeDatabase2 {
     }
     
     //Mis metodos para consumir las operaciones
+    
+    public static void insertarEntrevista(Entrevista entrevista, String response) {
+        InsertarEntrevistaType rq = new InsertarEntrevistaType();
+        
+        //rq.setCodigoCurriculum(entrevista.getCurriculums().getDocumento().);
+        //rq.setCodigoColaborador(entrevista.getEntrevistador().getIdentificacion());
+        
+        ResponseType rs = getPortInsertarEntrevista().process(rq);
+        
+        response = rs.getEjecucion();
+    }
+    
     public static void consultarCandidatos(List<Candidato> candidatos, String numero) {
         //1. contruir el request
         GenericoType rq = new GenericoType(); 
         rq.setNumero(numero);
         
         //2. llamar a la operación
-        CandidatosType rs = port2.process(rq);
+        CandidatosType rs = getPortConsultarCandidatos().process(rq);
         
         //3. construir la salida
         List<CandidatoType> candidatosType = rs.getCandidatosType();
@@ -172,36 +188,40 @@ public class FacadeDatabase2 {
             candidatos.add(candidato);            
         }//End foreach
         
-        //4. retornar una respuesta
-        //return candidato;        
-    }
-    
-    public static void actualizarEstadoEntrevista(BigDecimal codigoEntrevista, String evaluarSeleccion, String observaciones) {
-        co.edu.javeriana.proxies.updateestadoentrevista.types.InputType rq = new co.edu.javeriana.proxies.updateestadoentrevista.types.InputType();
-        rq.setCodigoEntrevista(codigoEntrevista);
-        rq.setEvaluarSeleccion(evaluarSeleccion);
-        rq.setObservaciones(observaciones);
-        
-        co.edu.javeriana.proxies.updateestadoentrevista.types.OutputType output = port5.process(rq);
-    }
-    
-    public static void actualizarEntrevista(BigDecimal codigoEntrevista, String observaciones) {
-        co.edu.javeriana.proxies.updateentrevista.types.InputType rq = new co.edu.javeriana.proxies.updateentrevista.types.InputType();
-        rq.setCodigoEntrevista(codigoEntrevista);
-        rq.setObservaciones(observaciones);
-        co.edu.javeriana.proxies.updateentrevista.types.OutputType output = port4.process(rq);
     }
     
     public static void consultarRecomendaciones(List<Recomendacion> recomendaciones, BigDecimal codigoPrototipo) {
         co.edu.javeriana.proxies.consultarrecomendaciones.types.InputType rq = new co.edu.javeriana.proxies.consultarrecomendaciones.types.InputType();
         rq.setCodigoPrototipo(codigoPrototipo);
-        co.edu.javeriana.proxies.consultarrecomendaciones.types.OutputType output = port3.process(rq);
-        for(RecomendacionType recomendacionType : output.getRecomendaciones()){
-            Recomendacion recomendacion = new Recomendacion();
-            recomendacion.setObservacion(recomendacionType.getObservacion());
-            recomendacion.setSeleccionado(recomendacionType.getSeleccionado());
+        co.edu.javeriana.proxies.consultarrecomendaciones.types.OutputType output = getPortConsultarRecomendaciones().process(rq);
+        
+        for(RecomendacionType recomendacion : output.getRecomendaciones()){
+            Recomendacion item = new Recomendacion();
+            item.setObservacion(recomendacion.getObservacion());
+            item.setCodigoPrototipo(recomendacion.getCodigoPrototipo());
             
-            recomendaciones.add(recomendacion);
+            recomendaciones.add(item);
         }
     }
+    
+    public static void actualizarEntrevista(BigDecimal codigoEntrevista, String observaciones, String response) {
+        co.edu.javeriana.proxies.updateentrevista.types.InputType rq = new co.edu.javeriana.proxies.updateentrevista.types.InputType();
+        rq.setCodigoEntrevista(codigoEntrevista);
+        rq.setObservaciones(observaciones);
+        co.edu.javeriana.proxies.updateentrevista.types.OutputType rs = getPortActualizarEntrevista().process(rq);
+        
+        response = rs.getEjecucion();
+    }
+    
+    public static void actualizarEstadoEntrevista(BigDecimal codigoEntrevista, String evaluarSeleccion, String observaciones, String response) {
+        co.edu.javeriana.proxies.updateestadoentrevista.types.InputType rq = new co.edu.javeriana.proxies.updateestadoentrevista.types.InputType();
+        rq.setCodigoEntrevista(codigoEntrevista);
+        rq.setEvaluarSeleccion(evaluarSeleccion);
+        rq.setObservaciones(observaciones);
+        
+        co.edu.javeriana.proxies.updateestadoentrevista.types.OutputType rs = getPortActualizarEstadoEntrevista().process(rq);
+        
+        response = rs.getEjecucion();
+    }
+    
 }
