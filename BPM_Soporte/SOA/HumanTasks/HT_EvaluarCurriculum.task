@@ -21,6 +21,9 @@
          <stage name="Stage1" disabled="false">
             <participant disabled="false" name="default.DefaultPerformer">
                <resource identityType="application_role" type="XPATH">bpm:getPerformer()</resource>
+               <dynamicAssignment identityTypeToSelect="group">
+                  <assignmentPattern patternName="LEAST_BUSY" isGlobalPattern="false"/>
+               </dynamicAssignment>
             </participant>
          </stage>
       </participants>
