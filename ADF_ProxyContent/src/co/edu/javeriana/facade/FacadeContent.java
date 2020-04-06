@@ -9,6 +9,7 @@ import co.edu.javeriana.proxies.checkin.proxy.BpelCheckinWcc;
 import co.edu.javeriana.proxies.checkin.proxy.BpelCheckinWccClientEp;
 import co.edu.javeriana.proxies.checkin.types.CheckInUniversal;
 import co.edu.javeriana.proxies.checkin.types.CheckInUniversalResult;
+import co.edu.javeriana.proxies.checkin.types.PrimaryFile;
 import co.edu.javeriana.proxies.checkin.types.Property;
 import co.edu.javeriana.proxies.getfile.proxy.BpelGetFile;
 import co.edu.javeriana.proxies.getfile.proxy.BpelGetfileClientEp;
@@ -175,12 +176,21 @@ public class FacadeContent {
         JAXBElement<String> nombre    = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "nombreArchivo"), String.class, documento.getArchivoPrimario().getNombreArchivo());
         JAXBElement<byte[]> contenido = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "contenidoArchivo"), byte[].class, documento.getArchivoPrimario().getContenidoArchivo());
         
+        PrimaryFile primary = new PrimaryFile();
+        primary.setNombreArchivo(nombre);
+        primary.setContenidoArchivo(contenido);
+        
+        JAXBElement<PrimaryFile> archivo   = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "archivoPrimario"), PrimaryFile.class, primary);
+        
+        
+        
         rq.setAutor(autor);
         rq.setCuenta(cuenta);
         rq.setDDocName(dDocName);
         rq.setGrupoSeguridad(seguridad);
         rq.setTipo(tipo);
         rq.setTitulo(titulo);
+        rq.setArchivoPrimario(archivo);
         rq.getArchivoPrimario().getValue().setNombreArchivo(nombre);
         rq.getArchivoPrimario().getValue().setContenidoArchivo(contenido);
         

@@ -151,12 +151,17 @@
          </list>
       </hash>
    </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="custom" v="false"/>
+            <value n="name" v="Default"/>
+            <url n="targetURL" path="src/co/edu/javeriana/facade/Pruebas.java"/>
+         </hash>
+      </hash>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
-         <hash>
-            <value n="id" v="Adf_configuracion.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
          <hash>
             <value n="id" v="JAX-WS Client"/>
             <value n="isJDK" v="false"/>
@@ -211,6 +216,10 @@
          </hash>
          <hash>
             <value n="id" v="WSRP Container"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Adf_configuracion.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -242,10 +251,6 @@
       </hash>
       <list n="libraryReferences">
          <hash>
-            <value n="id" v="Adf_configuracion.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="JAX-WS Client"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -299,6 +304,10 @@
          </hash>
          <hash>
             <value n="id" v="WSRP Container"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Adf_configuracion.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
