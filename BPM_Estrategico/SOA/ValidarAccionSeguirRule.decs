@@ -19,7 +19,7 @@
         </pattern>
     </decisionService>
     <schemaInformation>
-        <dictionary fqnPackage="co.edu.javeriana.businessrules" fqnName="ValidarAccionSeguirRule" updateNumber="84">
+        <dictionary fqnPackage="co.edu.javeriana.businessrules" fqnName="ValidarAccionSeguirRule" updateNumber="95">
             <schemaBrowser>
                 <package>edu.javeriana.xmlns.edu.schemas.process.reclutamiento.v1</package>
                 <namespace>http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0</namespace>
