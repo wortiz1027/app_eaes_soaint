@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 import javax.faces.event.ActionEvent;
 
-public class MbValidarProblemasCalidad extends AbstractBPMManageBeanBase implements Serializable, ProcessContextualEventInterface {
+public class MbValidarProblemasCalidad extends AbstractBPMManageBeanBase implements Serializable, ProcessContextualEventInterface  {
     @SuppressWarnings("compatibility:7424524058483809606")
     private static final long serialVersionUID = 1L;
 

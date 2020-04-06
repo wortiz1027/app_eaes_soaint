@@ -1,12 +1,12 @@
 # TABLA DE CONTENIDO
 
-1. [Projecto Final Procesos de Negocio](#Projecto-Final-Procesos-de-Negocio)
+1. [Proyecto Final Procesos de Negocio](#Projecto-Final-Procesos-de-Negocio)
     1. [AS-IS](#AS-IS)
     2. [TO-BE](#TO-BE)
     3. [Other information](#other-information)
         
 
-# Projecto Final Procesos de Negocio
+# Proyecto Final Procesos de Negocio
 
 El siguiente proyecto ilustra la aplicación de los conceptos aprendidos en clase  y desarrollar el TO-BE para la capacidad de negocio seleccionada por el grupo para el desarrollo de las actividades de la asignatura
 

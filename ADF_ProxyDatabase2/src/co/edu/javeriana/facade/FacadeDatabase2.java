@@ -13,11 +13,14 @@ import co.edu.javeriana.proxies.updateentrevista.proxy.BpelUpdateobsentrevista;
 import co.edu.javeriana.proxies.updateentrevista.proxy.BpelUpdateobsentrevistaClientEp;
 import co.edu.javeriana.proxies.updateestadoentrevista.proxy.BpelUpdateobsestentrevista;
 import co.edu.javeriana.proxies.updateestadoentrevista.proxy.BpelUpdateobsestentrevistaClientEp;
+import java.math.BigDecimal;
 
 import java.util.List;
 
 import javax.xml.ws.BindingProvider;
 import co.edu.javeriana.negocio.Candidato;
+import co.edu.javeriana.negocio.Recomendacion;
+import co.edu.javeriana.proxies.consultarrecomendaciones.types.RecomendacionType;
 
 public class FacadeDatabase2 {
     
@@ -114,7 +117,7 @@ public class FacadeDatabase2 {
         return service4;
     }
     
-    public static BpelUpdateobsentrevista getPortConsultarDocumento() {
+    public static BpelUpdateobsentrevista getPortActualizarEntrevista() {
         try {
             if (port4 == null) {
                 port4 = getServiceActualizarEntrevista().getBpelUpdateobsentrevistaPt();
@@ -140,6 +143,7 @@ public class FacadeDatabase2 {
                 port5 = getServiceActualizarEstadoEntrevista().getBpelUpdateobsestentrevistaPt();
                 ((BindingProvider) port5).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, WSDL_ACTUALIZAR_EST_ENTREVISTA);
             }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -172,4 +176,32 @@ public class FacadeDatabase2 {
         //return candidato;        
     }
     
+    public static void actualizarEstadoEntrevista(BigDecimal codigoEntrevista, String evaluarSeleccion, String observaciones) {
+        co.edu.javeriana.proxies.updateestadoentrevista.types.InputType rq = new co.edu.javeriana.proxies.updateestadoentrevista.types.InputType();
+        rq.setCodigoEntrevista(codigoEntrevista);
+        rq.setEvaluarSeleccion(evaluarSeleccion);
+        rq.setObservaciones(observaciones);
+        
+        co.edu.javeriana.proxies.updateestadoentrevista.types.OutputType output = port5.process(rq);
+    }
+    
+    public static void actualizarEntrevista(BigDecimal codigoEntrevista, String observaciones) {
+        co.edu.javeriana.proxies.updateentrevista.types.InputType rq = new co.edu.javeriana.proxies.updateentrevista.types.InputType();
+        rq.setCodigoEntrevista(codigoEntrevista);
+        rq.setObservaciones(observaciones);
+        co.edu.javeriana.proxies.updateentrevista.types.OutputType output = port4.process(rq);
+    }
+    
+    public static void consultarRecomendaciones(List<Recomendacion> recomendaciones, BigDecimal codigoPrototipo) {
+        co.edu.javeriana.proxies.consultarrecomendaciones.types.InputType rq = new co.edu.javeriana.proxies.consultarrecomendaciones.types.InputType();
+        rq.setCodigoPrototipo(codigoPrototipo);
+        co.edu.javeriana.proxies.consultarrecomendaciones.types.OutputType output = port3.process(rq);
+        for(RecomendacionType recomendacionType : output.getRecomendaciones()){
+            Recomendacion recomendacion = new Recomendacion();
+            recomendacion.setObservacion(recomendacionType.getObservacion());
+            recomendacion.setSeleccionado(recomendacionType.getSeleccionado());
+            
+            recomendaciones.add(recomendacion);
+        }
+    }
 }
