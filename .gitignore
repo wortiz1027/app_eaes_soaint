@@ -34,7 +34,7 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
- # Others
+# Others
 .git/
 *.bak
 *.git

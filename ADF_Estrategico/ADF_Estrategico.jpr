@@ -388,20 +388,20 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../ADF_Model/deploy/ADF_Model.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="ADF_Model.jar"/>
-               <value n="id" v="ADF_Model.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
                   <url path="../ADF_Configuracion/deploy/ADF_Configuracion.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF_Configuracion.jar"/>
                <value n="id" v="ADF_Configuracion.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_Model/deploy/ADF_Model.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF_Model.jar"/>
+               <value n="id" v="ADF_Model.jar"/>
                <value n="locked" v="true"/>
             </hash>
             <hash>
@@ -557,11 +557,11 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_Model.jar"/>
+            <url n="id" path="ADF_Library_Dependencies.library"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="ADF_Library_Dependencies.library"/>
+            <value n="id" v="ADF_Model.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

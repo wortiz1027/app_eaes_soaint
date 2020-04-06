@@ -12,7 +12,15 @@ import co.edu.javeriana.proxies.insertarcolaborador.types.InsertarColaboradorTyp
 import co.edu.javeriana.proxies.insertarprototipo.proxy.BpelInsertarprototipo;
 import co.edu.javeriana.proxies.insertarprototipo.proxy.BpelInsertarprototipoClientEp;
 
+import co.edu.javeriana.negocio.Prototipo;
+import co.edu.javeriana.negocio.Colaborador;
+
+import co.edu.javeriana.configuracion.utils.DateUtils;
+
+import co.edu.javeriana.negocio.Recomendacion;
 import co.edu.javeriana.proxies.insertarprototipo.types.InsertarPrototipoType;
+
+import co.edu.javeriana.proxies.insertarprototipo.types.RecomendacionesType;
 
 import java.math.BigDecimal;
 
@@ -43,7 +51,7 @@ public class FacadeDatabase {
     public FacadeDatabase() {
     }
     
-    public static BpelInsertarprototipoClientEp getServiceInsertarPrototipo() {
+    private static BpelInsertarprototipoClientEp getServiceInsertarPrototipo() {
         if (service1 == null) {
             service1 = new BpelInsertarprototipoClientEp();
         }
@@ -51,7 +59,7 @@ public class FacadeDatabase {
         return service1;
     }
     
-    public static BpelInsertarprototipo getPortInsertarPrototipo() {
+    private static BpelInsertarprototipo getPortInsertarPrototipo() {
         try {
             if (port1 == null) {
                 port1 = getServiceInsertarPrototipo().getBpelInsertarprototipoPt();
@@ -63,7 +71,7 @@ public class FacadeDatabase {
         return port1;
     }
     
-    public static BpelInscolaboradorClientEp getServiceInsertarColaborador() {
+    private static BpelInscolaboradorClientEp getServiceInsertarColaborador() {
         if (service2 == null) {
             service2 = new BpelInscolaboradorClientEp();
         }
@@ -71,7 +79,7 @@ public class FacadeDatabase {
         return service2;
     }
     
-    public static BpelInscolaborador getPortInsertarColaborador() {
+    private static BpelInscolaborador getPortInsertarColaborador() {
         try {
             if (port2 == null) {
                 port2 = getServiceInsertarColaborador().getBpelInscolaboradorPt();
@@ -91,7 +99,7 @@ public class FacadeDatabase {
         return service3;
     }
     
-    public static BpelConsultarprototipo getPortConsultarPrototipo() {
+    private static BpelConsultarprototipo getPortConsultarPrototipo() {
         try {
             if (port3 == null) {
                 port3 = getServiceConsultarPrototipo().getBpelConsultarprototipoPt();
@@ -103,7 +111,7 @@ public class FacadeDatabase {
         return port3;
     }
     
-    public static BpelConsultardocumentoClientEp getServiceConsultarDocumento() {
+    private static BpelConsultardocumentoClientEp getServiceConsultarDocumento() {
         if (service4 == null) {
             service4 = new BpelConsultardocumentoClientEp();
         }
@@ -111,7 +119,7 @@ public class FacadeDatabase {
         return service4;
     }
     
-    public static BpelConsultardocumento getPortConsultarDocumento() {
+    private static BpelConsultardocumento getPortConsultarDocumento() {
         try {
             if (port4 == null) {
                 port4 = getServiceConsultarDocumento().getBpelConsultardocumentoPt();
@@ -123,75 +131,85 @@ public class FacadeDatabase {
         return port4;
     }
     
-    public static void insertarProtipo(InsertarPrototipoType prototipo, co.edu.javeriana.proxies.insertarprototipo.types.ResponseType response) {
+    public static void insertarProtipo(Prototipo prototipo, String response) {
         //1. contruir el request
         InsertarPrototipoType rq = new InsertarPrototipoType(); 
-        rq.setConocimientos(prototipo.getConocimientos());
+        rq.setConocimientos(prototipo.getConocimiento());
         rq.setDetalle(prototipo.getDetalle());
         rq.setEstado(prototipo.getEstado());
-        rq.setFechaFin(prototipo.getFechaFin());
-        rq.setFechaInicio(prototipo.getFechaInicio());
+        rq.setFechaFin(DateUtils.dateToXMLGregorianCalendar(prototipo.getFechaFin()));
+        rq.setFechaInicio(DateUtils.dateToXMLGregorianCalendar(prototipo.getFechaInicio()));
         rq.setPresupuesto(prototipo.getPresupuesto());
-        rq.setRecomendaciones(prototipo.getRecomendaciones());
-        rq.setTipo(prototipo.getTipo());
+        
+        for(Recomendacion recomendacion : prototipo.getRecomendaciones()){
+            RecomendacionesType item = new RecomendacionesType();
+            
+            //item.setCodigoPrototipo();
+            item.setObservacion(recomendacion.getObservacion() != null ? recomendacion.getObservacion() : "");
+            rq.getRecomendaciones().getListaRecomendaciones().add(item);
+        }
+        
+        rq.setTipo(prototipo.getTipo().getLlave());
         rq.setTitulo(prototipo.getTitulo());
         
         //2. llamar a la operación
-        co.edu.javeriana.proxies.insertarprototipo.types.ResponseType rs = port1.process(rq);
+        co.edu.javeriana.proxies.insertarprototipo.types.ResponseType rs = getPortInsertarPrototipo().process(rq);
         
         //3. construir la salida
-        response.setEjecucion(rs.getEjecucion());
+        response = rs.getEjecucion();
     }
     
-    public static void insertarColaborador(InsertarColaboradorType colaborador, co.edu.javeriana.proxies.insertarcolaborador.types.ResponseType response) {
+    public static void insertarColaborador(Colaborador colaborador, String response) {
         //1. contruir el request
-        InsertarColaboradorType rq = new InsertarColaboradorType(); 
-        rq.setCodigoRol(colaborador.getCodigoRol());
-        rq.setCorreoElectronica(colaborador.getCorreoElectronica());
+        InsertarColaboradorType rq = new InsertarColaboradorType();
+        
+        //rq.setCodigoRol(colaborador.getCodigoRol());
+        rq.setCorreoElectronica(colaborador.getEmail());
         rq.setDisponible(colaborador.getDisponible());
-        rq.setPrimerApellido(colaborador.getPrimerApellido());
+        rq.setPrimerApellido(colaborador.getPrimeroApellido());
         rq.setPrimerNombre(colaborador.getPrimerNombre());
         rq.setSegundoApellido(colaborador.getSegundoApellido());
         rq.setSegundoNombre(colaborador.getSegundoNombre());
         rq.setTelefono(colaborador.getTelefono());
         
         //2. llamar a la operación
-        co.edu.javeriana.proxies.insertarcolaborador.types.ResponseType rs = port2.process(rq);
+        co.edu.javeriana.proxies.insertarcolaborador.types.ResponseType rs = getPortInsertarColaborador().process(rq);
         
         //3. construir la salida
-        response.setEjecucion(rs.getEjecucion());
+        response = rs.getEjecucion();
     }
     
-    public static void consultarPrototipo(BigDecimal codigoPrototipo, PrototipoType prototipo) {
+    public static void consultarPrototipo(BigDecimal codigoPrototipo, Prototipo prototipo) {
         //1. contruir el request
         co.edu.javeriana.proxies.consultarprototipo.types.InputType rq = new co.edu.javeriana.proxies.consultarprototipo.types.InputType(); 
         rq.setCodigoPrototipo(codigoPrototipo);
         
         //2. llamar a la operación
-        PrototipoType rs = port3.process(rq);
+        PrototipoType rs = getPortConsultarPrototipo().process(rq);
         
         //3. construir la salida   
-        prototipo.setCodigoPrototipo(rs.getCodigoPrototipo());
-        prototipo.setConocimientos(rs.getConocimientos());
+        prototipo.setCodigo(rs.getCodigoPrototipo());
+        prototipo.setConocimiento(rs.getConocimientos());
         prototipo.setDetalle(rs.getDetalle());
         prototipo.setEstado(rs.getEstado());
-        prototipo.setFechaCierre(rs.getFechaCierre());
-        prototipo.setFechaInicio(rs.getFechaInicio());
+        prototipo.setFechaFin(DateUtils.xmlGregorianCalendarToDate(rs.getFechaCierre()));
+        prototipo.setFechaInicio(DateUtils.xmlGregorianCalendarToDate(rs.getFechaInicio()));
         prototipo.setPresupuesto(rs.getPresupuesto());
-        prototipo.setTipo(rs.getTipo());
+        prototipo.getTipo().setLlave(rs.getTipo());
+        prototipo.getTipo().setValor(rs.getTipo());
         prototipo.setTitulo(rs.getTitulo());
         
     }
     
-    public static void consultarDocumento(BigDecimal codigoCandidato, OutputType documento) {
+    public static void consultarDocumento(BigDecimal codigoCandidato, String documento) {
         //1. contruir el request
         co.edu.javeriana.proxies.consultardocumento.types.InputType rq = new co.edu.javeriana.proxies.consultardocumento.types.InputType(); 
         rq.setCodigoCandidato(codigoCandidato);
         
         //2. llamar a la operación
-        OutputType rs = port4.process(rq);
+        OutputType rs = getPortConsultarDocumento().process(rq);
         
         //3. construir la salida
-        documento.setCodigoDocumento(rs.getCodigoDocumento());
+        documento = rs.getCodigoDocumento();
     }
 }

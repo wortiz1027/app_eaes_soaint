@@ -4,6 +4,8 @@ import co.edu.javeriana.comun.TipoComun;
 
 import java.io.Serializable;
 
+import java.math.BigDecimal;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,24 +13,26 @@ import java.util.List;
 public class Prototipo implements Serializable {
     @SuppressWarnings("compatibility:3560134668606551454")
     private static final long serialVersionUID = 1L;
+    
+    private BigDecimal codigo;
     private TipoComun tipo;
     private String titulo;
     private String detalle;
     private String conocimiento;
     private Date fechaInicio;
     private Date fechaFin;
-    private Double presupuesto;
+    private BigDecimal presupuesto;
     private List<Documento> documentos;
     private List<Recomendacion> recomendaciones;
-    
+    private String estado;
     private boolean requiereRevisionesExternasOpcionales;
-    
+        
     public Prototipo() {
         super();
         this.tipo = new TipoComun();
         this.fechaInicio = new Date();
         this.fechaFin = new Date();
-        this.presupuesto = 0.0;
+        this.presupuesto = new BigDecimal(0);
     }
 
     public List<Documento> getDocumentos() {
@@ -87,11 +91,11 @@ public class Prototipo implements Serializable {
         return fechaFin;
     }
 
-    public void setPresupuesto(Double presupuesto) {
+    public void setPresupuesto(BigDecimal presupuesto) {
         this.presupuesto = presupuesto;
     }
 
-    public Double getPresupuesto() {
+    public BigDecimal getPresupuesto() {
         return presupuesto;
     }
 
@@ -101,5 +105,37 @@ public class Prototipo implements Serializable {
 
     public boolean isRequiereRevisionesExternasOpcionales() {
         return requiereRevisionesExternasOpcionales;
+    }
+
+    public void setDocumentos(List<Documento> documentos) {
+        this.documentos = documentos;
+    }
+
+    public List<Documento> getDocumentos1() {
+        return documentos;
+    }
+
+    public void setRecomendaciones(List<Recomendacion> recomendaciones) {
+        this.recomendaciones = recomendaciones;
+    }
+
+    public List<Recomendacion> getRecomendaciones1() {
+        return recomendaciones;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setCodigo(BigDecimal codigo) {
+        this.codigo = codigo;
+    }
+
+    public BigDecimal getCodigo() {
+        return codigo;
     }
 }

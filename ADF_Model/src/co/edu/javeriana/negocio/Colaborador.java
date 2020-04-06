@@ -7,6 +7,7 @@ public class Colaborador extends Persona {
     private static final long serialVersionUID = 1L;
     private TipoComun rol;
     private boolean asignado;
+    private String disponible;
     
     public Colaborador() {
         super();
@@ -27,5 +28,13 @@ public class Colaborador extends Persona {
 
     public boolean isAsignado() {
         return asignado;
+    }
+
+    public void setDisponible(String disponible) {
+        this.disponible = disponible;
+    }
+
+    public String getDisponible() {
+        return disponible;
     }
 }
