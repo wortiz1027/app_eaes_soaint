@@ -143,7 +143,9 @@ public class FacadeContent {
         archivo.getStatus().setMensaje(rs.getGetFileByIDResult().getValue().getStatus().getValue().getMensaje().getValue());
     }
     
-    public static void busquedaAvanzada(String queryText, List<Documento> response) {
+    @SuppressWarnings("unchecked")
+    public static void busquedaAvanzada(String queryText, List<Documento> documentos) {
+        System.out.println("Consulta wcc :: " + queryText);
         //1. contruir el request
         AdvancedSearch rq = new AdvancedSearch(); 
         rq.setQueryText(queryText);
@@ -151,13 +153,22 @@ public class FacadeContent {
         //2. llamar a la operación
         SearchResponse rs = getPortAdvanceSearch().process(rq);
         
+        System.out.println("rs.getSearchResults().size() :: " + rs.getSearchResults().size());
+                
         //3. construir la salida
-        List<AdvancedSearchResult> searchResult = rs.getSearchResults();
-           
-        for(AdvancedSearchResult listDocumentos : searchResult){
-            Documento documento = new Documento();
-            
-            //documento.setAutor(listDocumentos);
+        for(AdvancedSearchResult search : rs.getSearchResults()){
+            System.out.println("search.getContent().size() :: " + search.getContent().size());
+            for (JAXBElement element : search.getContent()) {
+                Documento item = new Documento();
+                
+                JAXBElement<String> titulo = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "titulo"), String.class, element.getValue());
+                
+                System.out.println("titulo.getValue() :: " + titulo.getValue());
+                
+                item.setTitulo(titulo.getValue());
+                
+                documentos.add(item);
+            }
         }
     }
     
@@ -181,8 +192,6 @@ public class FacadeContent {
         primary.setContenidoArchivo(contenido);
         
         JAXBElement<PrimaryFile> archivo   = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "archivoPrimario"), PrimaryFile.class, primary);
-        
-        
         
         rq.setAutor(autor);
         rq.setCuenta(cuenta);
