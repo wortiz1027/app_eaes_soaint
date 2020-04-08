@@ -4,13 +4,23 @@ import co.edu.javeriana.wcc.CheckinResult;
 import co.edu.javeriana.wcc.Documento;
 import co.edu.javeriana.wcc.NameValue;
 
-import java.io.*;
+import co.edu.javeriana.facade.FacadeContent;
+
+import co.edu.javeriana.wcc.GetFileResult;
+
+import java.io.FileInputStream;
+
+import java.io.FileNotFoundException;
+
+import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pruebas {
             
     public static void main(String x[]) throws FileNotFoundException, IOException {
-        
-        File file = new File("C:\\Users\\javeriana\\Documents\\prueba_06042020.pdf");
+        java.io.File file = new java.io.File("C:\\Users\\javeriana\\Documents\\prueba_06042020.pdf");
         FileInputStream fis = new FileInputStream(file);
 
         // int byteLength = fff.length(); 
@@ -63,7 +73,48 @@ public class Pruebas {
         System.out.println("Revision   : " + response.getRevision());
         System.out.println("Label      : " + response.getLabelrevision());
         System.out.println("Codigo     : " + response.getStatus().getCodigo());
-        System.out.println("Mensaje    : " + response.getStatus().getMensaje());
+        System.out.println("Mensaje    : " + response.getStatus().getMensaje()); 
+        
+        // Prueba busqueda avanzada
+        System.out.println("----------------------------------------------");
+        List<Documento> documentos = new ArrayList<>();
+        
+        FacadeContent.busquedaAvanzada("dDocType <matches> `Document`", documentos);
+        
+         documentos.forEach(tmp -> {
+            System.out.println("dID       :: " + tmp.getDID());
+            System.out.println("Autor     :: " + tmp.getAutor());
+            System.out.println("Cuenta    :: " + tmp.getCuenta());
+            System.out.println("Fecha     :: " + tmp.getFechaCreacion());
+            System.out.println("docName   :: " + tmp.getDDocName());
+            System.out.println("Extension :: " + tmp.getExtension());
+            System.out.println("Formato   :: " + tmp.getFormato());
+            System.out.println("Revision  :: " + tmp.getRevision());
+            System.out.println("Nombre    :: " + tmp.getNombreOriginal());
+            System.out.println("Url       :: " + tmp.getUrl());
+            
+            for (NameValue nv : tmp.getCustomDocMetaData()) {
+                System.out.println("\t Name  :: " + nv.getName());
+                System.out.println("\t Value :: " + nv.getValue());
+            }
+        });
+        
+        // Consultar archivo
+        System.out.println("----------------------------------------------");
+        co.edu.javeriana.wcc.File file1 = new co.edu.javeriana.wcc.File();
+        file1.setDID(401);
+        file1.setTipoArchivo("Primary");
+        
+        GetFileResult archivo = new GetFileResult();        
+        
+        FacadeContent.obtenerArchivo(file1, archivo);
+        
+        System.out.println(archivo.getInformacionArhivo().getDID());
+        System.out.println(archivo.getInformacionArhivo().getDDocName());
+        System.out.println(archivo.getInformacionArhivo().getTitulo());
+        System.out.println(archivo.getInformacionArhivo().getTipo());
+        System.out.println(archivo.getInformacionArhivo().getAutor());
+        System.out.println(archivo.getInformacionArhivo().getGrupoSeguridad());
     }
     
 }
