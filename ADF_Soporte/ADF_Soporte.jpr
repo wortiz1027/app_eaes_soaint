@@ -544,10 +544,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="ADF_Library_Dependencies.library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF_Configuracion.jar"/>
             <value n="isJDK" v="false"/>
          </hash>

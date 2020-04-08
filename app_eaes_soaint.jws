@@ -152,8 +152,21 @@
          </hash>
       </hash>
       <list n="profileList">
-         <string v="ADF_Soporte"/>
          <string v="ADF_Estrategico"/>
+         <string v="ADF_Soporte"/>
       </list>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="ApplicationSrcContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="ResourceBundleOptions">
+      <list n="RegisteredResourceBundles"/>
    </hash>
 </jws:workspace>
