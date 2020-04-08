@@ -37,6 +37,8 @@
           location="WSDLs/WS_ConsultarCandidatosVacante.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultarCandidatosPorVacante"
           location="WSDLs/bpel_consultarCandidatosPorVacante.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCandidatosCurriculumEnt"
+          location="WSDLs/WS_ConsultarCandidatosCurriculumEnt.wsdl" importType="wsdl"/>
   <service name="bpel_consultacandidatos_client_ep" ui:wsdlLocation="WSDLs/bpel_consultacandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.interface(bpel_consultacandidatos)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.endpoint(bpel_consultacandidatos_client_ep/bpel_consultacandidatos_pt)"/>
@@ -195,6 +197,15 @@
   <reference name="WS_ConsultarCandidatosVacante" ui:wsdlLocation="WSDLs/WS_ConsultarCandidatosVacante.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCandidatosVacante#wsdl.interface(WS_ConsultarCandidatosVacante_ptt)"/>
     <binding.jca config="Adapters/WS_ConsultarCandidatosVacante_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:int" many="false" override="may">120</property>
+  </reference>
+  <reference name="WS_ConsultarCandidatosCurriculumEnt"
+             ui:wsdlLocation="WSDLs/WS_ConsultarCandidatosCurriculumEnt.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCandidatosCurriculumEnt#wsdl.interface(WS_ConsultarCandidatosCurriculumEnt_ptt)"/>
+    <binding.jca config="Adapters/WS_ConsultarCandidatosCurriculumEnt_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
     <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
