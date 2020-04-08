@@ -13,10 +13,10 @@
                             <af:panelBox text="#{soporteBundle.TITULO_CANDIDATOS}" id="pb1">
                                 <af:panelGroupLayout id="pgl2"  halign="center" layout="vertical"
                                                      styleClass="sinBorders" inlineStyle="padding: 20px;">
-                                    <af:table var="row" rowBandingInterval="0" id="t1"
+                                    <af:table value="#{pageFlowScope.mbEvaluarSeleccionarCandidato.lstCandidatos}" var="candidato" rowBandingInterval="0" id="t1"
                                               styleClass="contentTable AFStretchWidth">
                                         <af:column sortable="false" headerText="#{soporteBundle.TITLE_CANDIDATO}" id="c1" width="250%">
-                                            <af:outputText value="#{row.col1}" id="ot1"/>
+                                            <af:outputText value="#{candidato.nombreCompleto}" id="ot1"/>
                                         </af:column>
                                         <af:column sortable="false" headerText="#{soporteBundle.COLUMNA_ACCIONES}" id="c2">
                                             <af:panelGroupLayout id="pgl4" styleClass="sinBorders" halign="center" layout="vertical">
