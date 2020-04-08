@@ -45,6 +45,8 @@
           location="WSDLs/WS_ConsultarCurriculumsCandidatos.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultarcurriculumsAll"
           location="WSDLs/bpel_consultarcurriculumsAll.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_FiltroCurriculum"
+          location="WSDLs/WS_FiltroCurriculum.wsdl" importType="wsdl"/>
   <service name="bpel_consultacandidatos_client_ep" ui:wsdlLocation="WSDLs/bpel_consultacandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.interface(bpel_consultacandidatos)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.endpoint(bpel_consultacandidatos_client_ep/bpel_consultacandidatos_pt)"/>
@@ -252,6 +254,14 @@
   <reference name="WS_ConsultarCurriculumsCandidatos" ui:wsdlLocation="WSDLs/WS_ConsultarCurriculumsCandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCurriculumsCandidatos#wsdl.interface(WS_ConsultarCurriculumsCandidatos_ptt)"/>
     <binding.jca config="Adapters/WS_ConsultarCurriculumsCandidatos_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:int" many="false" override="may">120</property>
+  </reference>
+  <reference name="WS_FiltroCurriculum" ui:wsdlLocation="WSDLs/WS_FiltroCurriculum.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_FiltroCurriculum#wsdl.interface(WS_FiltroCurriculum_ptt)"/>
+    <binding.jca config="Adapters/WS_FiltroCurriculum_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
     <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
