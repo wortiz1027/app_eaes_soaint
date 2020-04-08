@@ -1,5 +1,5 @@
 
-package co.edu.javeriana.proxies.advancese.types;
+package co.edu.javeriana.proxies.advancesearch.types;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +13,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AdvancedSearchResult complex type.
+ * <p>Java class for Search complex type.
  *
  * <p>The following schema fragment specifies the expected content contained within this class.
  *
  * <pre>
- * &lt;complexType name="AdvancedSearchResult"&gt;
+ * &lt;complexType name="Search"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -37,7 +37,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="formato" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="nombreOriginal" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="customDocMetaData" type="{http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0}Property" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -47,8 +46,8 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AdvancedSearchResult", propOrder = { "content" })
-public class AdvancedSearchResult {
+@XmlType(name = "Search", propOrder = { "content" })
+public class Search {
 
     @XmlElementRefs({ @XmlElementRef(name = "dID",
                                      namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
@@ -91,12 +90,9 @@ public class AdvancedSearchResult {
                                      type = JAXBElement.class, required = false),
                       @XmlElementRef(name = "url",
                                      namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                                     type = JAXBElement.class, required = false),
-                      @XmlElementRef(name = "customDocMetaData",
-                                     namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
                                      type = JAXBElement.class, required = false)
         })
-    protected List<JAXBElement<?>> content;
+    protected List<JAXBElement<String>> content;
 
     /**
      * Gets the rest of the content model.
@@ -104,8 +100,8 @@ public class AdvancedSearchResult {
      * <p>
      * You are getting this "catch-all" property because of the following reason:
      * The field name "Revision" is used by two different parts of a schema. See:
-     * line 27 of wsdlfile:/C:/Proyectos/app_eaes_soaint/ADF_ProxyContent/src/co/edu/javeriana/proxies/advancese/proxy/WCC_Search.xsd
-     * line 18 of wsdlfile:/C:/Proyectos/app_eaes_soaint/ADF_ProxyContent/src/co/edu/javeriana/proxies/advancese/proxy/WCC_Search.xsd
+     * line 32 of wsdlfile:/C:/Proyectos/app_eaes_soaint/ADF_ProxyContent/src/co/edu/javeriana/proxies/advancesearch/proxy/WCC_Search.xsd
+     * line 23 of wsdlfile:/C:/Proyectos/app_eaes_soaint/ADF_ProxyContent/src/co/edu/javeriana/proxies/advancesearch/proxy/WCC_Search.xsd
      * <p>
      * To get rid of this property, apply a property customization to one
      * of both of the following declarations to change their names:
@@ -140,13 +136,12 @@ public class AdvancedSearchResult {
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link Property }{@code >}
      *
      *
      */
-    public List<JAXBElement<?>> getContent() {
+    public List<JAXBElement<String>> getContent() {
         if (content == null) {
-            content = new ArrayList<JAXBElement<?>>();
+            content = new ArrayList<JAXBElement<String>>();
         }
         return this.content;
     }

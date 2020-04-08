@@ -1,5 +1,5 @@
 
-package co.edu.javeriana.proxies.advancese.proxy;
+package co.edu.javeriana.proxies.advancesearch.proxy;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -9,9 +9,9 @@ import javax.jws.soap.SOAPBinding;
 
 import javax.xml.bind.annotation.XmlSeeAlso;
 
-import co.edu.javeriana.proxies.advancese.types.AdvancedSearch;
-import co.edu.javeriana.proxies.advancese.types.ObjectFactory;
-import co.edu.javeriana.proxies.advancese.types.SearchResponse;
+import co.edu.javeriana.proxies.advancesearch.types.AdvancedSearch;
+import co.edu.javeriana.proxies.advancesearch.types.ObjectFactory;
+import co.edu.javeriana.proxies.advancesearch.types.SearchResponse;
 
 
 /**
@@ -31,7 +31,7 @@ public interface BpelAdvanceSearch {
      *
      * @param payload
      * @return
-     *     returns co.edu.javeriana.proxies.advancese.types.SearchResponse
+     *     returns co.edu.javeriana.proxies.advancesearch.types.SearchResponse
      */
     @WebMethod(action = "process")
     @WebResult(name = "output",

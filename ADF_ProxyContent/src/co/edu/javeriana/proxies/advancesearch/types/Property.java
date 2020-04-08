@@ -1,10 +1,8 @@
 
-package co.edu.javeriana.proxies.advancese.types;
+package co.edu.javeriana.proxies.advancesearch.types;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -32,22 +30,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Property", propOrder = { "name", "value" })
 public class Property {
 
-    @XmlElementRef(name = "name", namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                   type = JAXBElement.class, required = false)
-    protected JAXBElement<String> name;
-    @XmlElementRef(name = "value", namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                   type = JAXBElement.class, required = false)
-    protected JAXBElement<String> value;
+    protected String name;
+    protected String value;
 
     /**
      * Gets the value of the name property.
      *
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *
      */
-    public JAXBElement<String> getName() {
+    public String getName() {
         return name;
     }
 
@@ -56,10 +50,10 @@ public class Property {
      *
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *
      */
-    public void setName(JAXBElement<String> value) {
+    public void setName(String value) {
         this.name = value;
     }
 
@@ -68,10 +62,10 @@ public class Property {
      *
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *
      */
-    public JAXBElement<String> getValue() {
+    public String getValue() {
         return value;
     }
 
@@ -80,10 +74,10 @@ public class Property {
      *
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *
      */
-    public void setValue(JAXBElement<String> value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

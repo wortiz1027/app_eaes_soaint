@@ -1,5 +1,5 @@
 
-package co.edu.javeriana.proxies.advancese.types;
+package co.edu.javeriana.proxies.advancesearch.types;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each
  * Java content interface and Java element interface
- * generated in the co.edu.javeriana.proxies.advancese.types package.
+ * generated in the co.edu.javeriana.proxies.advancesearch.types package.
  * <p>An ObjectFactory allows you to programatically
  * construct new instances of the Java representation
  * for XML content. The Java representation of XML
@@ -28,43 +28,37 @@ public class ObjectFactory {
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "input");
     private final static QName _Output_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "output");
-    private final static QName _AdvancedSearchResultDID_QNAME =
+    private final static QName _SearchDID_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "dID");
-    private final static QName _AdvancedSearchResultRevision_QNAME =
+    private final static QName _SearchRevision_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "revision");
-    private final static QName _AdvancedSearchResultDDocName_QNAME =
+    private final static QName _SearchDDocName_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "dDocName");
-    private final static QName _AdvancedSearchResultTitulo_QNAME =
+    private final static QName _SearchTitulo_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "titulo");
-    private final static QName _AdvancedSearchResultTipo_QNAME =
+    private final static QName _SearchTipo_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "tipo");
-    private final static QName _AdvancedSearchResultAutor_QNAME =
+    private final static QName _SearchAutor_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "autor");
-    private final static QName _AdvancedSearchResultGrupoSeguridad_QNAME =
+    private final static QName _SearchGrupoSeguridad_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "grupoSeguridad");
-    private final static QName _AdvancedSearchResultCuenta_QNAME =
+    private final static QName _SearchCuenta_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "cuenta");
-    private final static QName _AdvancedSearchResultExtension_QNAME =
+    private final static QName _SearchExtension_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "extension");
-    private final static QName _AdvancedSearchResultExtensionWeb_QNAME =
+    private final static QName _SearchExtensionWeb_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "extensionWeb");
-    private final static QName _AdvancedSearchResultFechaCreacion_QNAME =
+    private final static QName _SearchFechaCreacion_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "fechaCreacion");
-    private final static QName _AdvancedSearchResultFormato_QNAME =
+    private final static QName _SearchFormato_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "formato");
-    private final static QName _AdvancedSearchResultNombreOriginal_QNAME =
+    private final static QName _SearchNombreOriginal_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "nombreOriginal");
-    private final static QName _AdvancedSearchResultUrl_QNAME =
+    private final static QName _SearchUrl_QNAME =
         new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "url");
-    private final static QName _AdvancedSearchResultCustomDocMetaData_QNAME =
-        new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "customDocMetaData");
-    private final static QName _PropertyName_QNAME =
-        new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "name");
-    private final static QName _PropertyValue_QNAME =
-        new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", "value");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: co.edu.javeriana.proxies.advancese.types
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: co.edu.javeriana.proxies.advancesearch.types
      *
      */
     public ObjectFactory() {
@@ -92,6 +86,22 @@ public class ObjectFactory {
      */
     public Property createProperty() {
         return new Property();
+    }
+
+    /**
+     * Create an instance of {@link ListaPropiedades }
+     *
+     */
+    public ListaPropiedades createListaPropiedades() {
+        return new ListaPropiedades();
+    }
+
+    /**
+     * Create an instance of {@link Search }
+     *
+     */
+    public Search createSearch() {
+        return new Search();
     }
 
     /**
@@ -137,9 +147,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "dID",
-                    scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultDID(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultDID_QNAME, String.class, AdvancedSearchResult.class, value);
+                    scope = Search.class)
+    public JAXBElement<String> createSearchDID(String value) {
+        return new JAXBElement<String>(_SearchDID_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -151,10 +161,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "revision", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultRevision(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultRevision_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    name = "revision", scope = Search.class)
+    public JAXBElement<String> createSearchRevision(String value) {
+        return new JAXBElement<String>(_SearchRevision_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -166,10 +175,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "dDocName", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultDDocName(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultDDocName_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    name = "dDocName", scope = Search.class)
+    public JAXBElement<String> createSearchDDocName(String value) {
+        return new JAXBElement<String>(_SearchDDocName_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -181,10 +189,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "titulo",
-                    scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultTitulo(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultTitulo_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    scope = Search.class)
+    public JAXBElement<String> createSearchTitulo(String value) {
+        return new JAXBElement<String>(_SearchTitulo_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -196,10 +203,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "tipo",
-                    scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultTipo(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultTipo_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    scope = Search.class)
+    public JAXBElement<String> createSearchTipo(String value) {
+        return new JAXBElement<String>(_SearchTipo_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -211,10 +217,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "autor",
-                    scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultAutor(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultAutor_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    scope = Search.class)
+    public JAXBElement<String> createSearchAutor(String value) {
+        return new JAXBElement<String>(_SearchAutor_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -226,10 +231,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "grupoSeguridad", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultGrupoSeguridad(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultGrupoSeguridad_QNAME, String.class,
-                                       AdvancedSearchResult.class, value);
+                    name = "grupoSeguridad", scope = Search.class)
+    public JAXBElement<String> createSearchGrupoSeguridad(String value) {
+        return new JAXBElement<String>(_SearchGrupoSeguridad_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -241,10 +245,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "cuenta",
-                    scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultCuenta(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultCuenta_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    scope = Search.class)
+    public JAXBElement<String> createSearchCuenta(String value) {
+        return new JAXBElement<String>(_SearchCuenta_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -256,10 +259,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "extension", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultExtension(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultExtension_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    name = "extension", scope = Search.class)
+    public JAXBElement<String> createSearchExtension(String value) {
+        return new JAXBElement<String>(_SearchExtension_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -271,10 +273,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "extensionWeb", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultExtensionWeb(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultExtensionWeb_QNAME, String.class,
-                                       AdvancedSearchResult.class, value);
+                    name = "extensionWeb", scope = Search.class)
+    public JAXBElement<String> createSearchExtensionWeb(String value) {
+        return new JAXBElement<String>(_SearchExtensionWeb_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -286,10 +287,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "fechaCreacion", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultFechaCreacion(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultFechaCreacion_QNAME, String.class,
-                                       AdvancedSearchResult.class, value);
+                    name = "fechaCreacion", scope = Search.class)
+    public JAXBElement<String> createSearchFechaCreacion(String value) {
+        return new JAXBElement<String>(_SearchFechaCreacion_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -301,10 +301,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "formato", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultFormato(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultFormato_QNAME, String.class, AdvancedSearchResult.class,
-                                       value);
+                    name = "formato", scope = Search.class)
+    public JAXBElement<String> createSearchFormato(String value) {
+        return new JAXBElement<String>(_SearchFormato_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -316,10 +315,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "nombreOriginal", scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultNombreOriginal(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultNombreOriginal_QNAME, String.class,
-                                       AdvancedSearchResult.class, value);
+                    name = "nombreOriginal", scope = Search.class)
+    public JAXBElement<String> createSearchNombreOriginal(String value) {
+        return new JAXBElement<String>(_SearchNombreOriginal_QNAME, String.class, Search.class, value);
     }
 
     /**
@@ -331,52 +329,9 @@ public class ObjectFactory {
      *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "url",
-                    scope = AdvancedSearchResult.class)
-    public JAXBElement<String> createAdvancedSearchResultUrl(String value) {
-        return new JAXBElement<String>(_AdvancedSearchResultUrl_QNAME, String.class, AdvancedSearchResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Property }{@code >}
-     *
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Property }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0",
-                    name = "customDocMetaData", scope = AdvancedSearchResult.class)
-    public JAXBElement<Property> createAdvancedSearchResultCustomDocMetaData(Property value) {
-        return new JAXBElement<Property>(_AdvancedSearchResultCustomDocMetaData_QNAME, Property.class,
-                                         AdvancedSearchResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     *
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "name",
-                    scope = Property.class)
-    public JAXBElement<String> createPropertyName(String value) {
-        return new JAXBElement<String>(_PropertyName_QNAME, String.class, Property.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     *
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Search/v1.0", name = "value",
-                    scope = Property.class)
-    public JAXBElement<String> createPropertyValue(String value) {
-        return new JAXBElement<String>(_PropertyValue_QNAME, String.class, Property.class, value);
+                    scope = Search.class)
+    public JAXBElement<String> createSearchUrl(String value) {
+        return new JAXBElement<String>(_SearchUrl_QNAME, String.class, Search.class, value);
     }
 
 }

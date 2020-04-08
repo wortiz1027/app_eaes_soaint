@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<oracle-webservice-clients xmlns:ns1="http://java.sun.com/xml/ns/javaee">
+<oracle-webservice-clients xmlns:ns0="http://java.sun.com/xml/ns/javaee">
    <webservice-client>
       <service-qname namespaceURI="http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch"
                      localpart="bpel_advancesearch_client_ep"/>

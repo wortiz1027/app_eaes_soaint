@@ -1,12 +1,11 @@
 
-package co.edu.javeriana.proxies.advancese.types;
+package co.edu.javeriana.proxies.advancesearch.types;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -33,7 +32,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "SearchResponse", propOrder = { "searchResults" })
 public class SearchResponse {
 
-    @XmlElement(nillable = true)
     protected List<AdvancedSearchResult> searchResults;
 
     /**

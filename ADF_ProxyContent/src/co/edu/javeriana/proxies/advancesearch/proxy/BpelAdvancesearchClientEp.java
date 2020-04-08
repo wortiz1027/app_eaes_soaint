@@ -1,10 +1,8 @@
 
-package co.edu.javeriana.proxies.advancese.proxy;
+package co.edu.javeriana.proxies.advancesearch.proxy;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.jws.HandlerChain;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -24,7 +22,6 @@ import javax.xml.ws.WebServiceFeature;
                   targetNamespace = "http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch",
                   wsdlLocation =
                   "http://bpm-dv1:7003/soa-infra/services/default/SOA_Content/bpel_advancesearch_client_ep?WSDL#%7Bhttp%3A%2F%2Fxmlns.oracle.com%2Fapp_eaes_soaint%2FSOA_Content%2Fbpel_AdvanceSearch%7Dbpel_advancesearch_client_ep")
-@HandlerChain(file="Bpel_advancesearch_client_epProxy-HandlerChain.xml")
 public class BpelAdvancesearchClientEp extends Service {
 
     private final static URL BPELADVANCESEARCHCLIENTEP_WSDL_LOCATION;

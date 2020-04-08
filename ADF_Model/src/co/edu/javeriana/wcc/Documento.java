@@ -5,13 +5,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Documento implements Serializable{
-    @SuppressWarnings("compatibility:3208890659400865008")
+public class Documento implements Serializable {
+    @SuppressWarnings("compatibility:8167328740546934800")
     private static final long serialVersionUID = 1L;
-    
+
     private int dID;
     private String revision;
     private String dDocName;
+    private String nombreOriginal;
     private String titulo;
     private String tipo;
     private String autor;
@@ -26,7 +27,7 @@ public class Documento implements Serializable{
     private ArchivoPrimario archivoPrimario;
     
     public Documento() {
-        super();
+        this.customDocMetaData = new ArrayList<>();
         this.archivoPrimario = new ArchivoPrimario();
     }
 
@@ -52,6 +53,14 @@ public class Documento implements Serializable{
 
     public String getDDocName() {
         return dDocName;
+    }
+
+    public void setNombreOriginal(String nombreOriginal) {
+        this.nombreOriginal = nombreOriginal;
+    }
+
+    public String getNombreOriginal() {
+        return nombreOriginal;
     }
 
     public void setTitulo(String titulo) {
@@ -134,8 +143,12 @@ public class Documento implements Serializable{
         return url;
     }
 
+    public void setCustomDocMetaData(List<NameValue> customDocMetaData) {
+        this.customDocMetaData = customDocMetaData;
+    }
+
     public List<NameValue> getCustomDocMetaData() {
-        return this.customDocMetaData == null ? new ArrayList<NameValue>(0) : this.customDocMetaData;
+        return customDocMetaData;
     }
 
     public void setArchivoPrimario(ArchivoPrimario archivoPrimario) {
@@ -145,4 +158,5 @@ public class Documento implements Serializable{
     public ArchivoPrimario getArchivoPrimario() {
         return archivoPrimario;
     }
+
 }
