@@ -41,6 +41,10 @@
           location="WSDLs/WS_ConsCurriculumCandidato.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_conscurriculumcandidatos"
           location="WSDLs/bpel_conscurriculumcandidatos.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCurriculumsCandidatos"
+          location="WSDLs/WS_ConsultarCurriculumsCandidatos.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultarcurriculumsAll"
+          location="WSDLs/bpel_consultarcurriculumsAll.wsdl" importType="wsdl"/>
   <service name="bpel_consultacandidatos_client_ep" ui:wsdlLocation="WSDLs/bpel_consultacandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.interface(bpel_consultacandidatos)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultacandidatos#wsdl.endpoint(bpel_consultacandidatos_client_ep/bpel_consultacandidatos_pt)"/>
@@ -74,6 +78,10 @@
   <service name="bpel_conscurriculumcandidatos_client_ep" ui:wsdlLocation="WSDLs/bpel_conscurriculumcandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_conscurriculumcandidatos#wsdl.interface(bpel_conscurriculumcandidatos)"/>
     <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_conscurriculumcandidatos#wsdl.endpoint(bpel_conscurriculumcandidatos_client_ep/bpel_conscurriculumcandidatos_pt)"/>
+  </service>
+  <service name="bpel_consultarcurriculumsall_client_ep" ui:wsdlLocation="WSDLs/bpel_consultarcurriculumsAll.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultarcurriculumsAll#wsdl.interface(bpel_consultarcurriculumsAll)"/>
+    <binding.ws port="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultarcurriculumsAll#wsdl.endpoint(bpel_consultarcurriculumsall_client_ep/bpel_consultarcurriculumsAll_pt)"/>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.3.0.170820</property>
   <property name="compositeID" type="xs:string" many="false">6f06d15a-e2f2-47a6-b106-0b160e02ce59</property>
@@ -172,6 +180,19 @@
     </componentType>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
   </component>
+  <component name="bpel_consultarcurriculumsAll" version="2.0">
+    <implementation.bpel src="BPEL/bpel_consultarcurriculumsAll.bpel"/>
+    <componentType>
+      <service name="bpel_consultarcurriculumsall_client" ui:wsdlLocation="WSDLs/bpel_consultarcurriculumsAll.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/app_eaes_soaint/SOA_Database_2/bpel_consultarcurriculumsAll#wsdl.interface(bpel_consultarcurriculumsAll)"/>
+      </service>
+      <reference name="WS_ConsultarCurriculumsCandidatos"
+                 ui:wsdlLocation="WSDLs/WS_ConsultarCurriculumsCandidatos.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCurriculumsCandidatos#wsdl.interface(WS_ConsultarCurriculumsCandidatos_ptt)"/>
+      </reference>
+    </componentType>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+  </component>
   <reference name="WS_ConsultarCandidatos" ui:wsdlLocation="WSDLs/WS_ConsultarCandidatos.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCandidatos#wsdl.interface(WS_ConsultarCandidatos_ptt)"/>
     <binding.jca config="Adapters/WS_ConsultarCandidatos_db.jca"/>
@@ -223,6 +244,14 @@
   <reference name="WS_ConsCurriculumCandidato" ui:wsdlLocation="WSDLs/WS_ConsCurriculumCandidato.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsCurriculumCandidato#wsdl.interface(WS_ConsCurriculumCandidato_ptt)"/>
     <binding.jca config="Adapters/WS_ConsCurriculumCandidato_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:int" many="false" override="may">120</property>
+  </reference>
+  <reference name="WS_ConsultarCurriculumsCandidatos" ui:wsdlLocation="WSDLs/WS_ConsultarCurriculumsCandidatos.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/app_eaes_soaint/SOA_Database_2/WS_ConsultarCurriculumsCandidatos#wsdl.interface(WS_ConsultarCurriculumsCandidatos_ptt)"/>
+    <binding.jca config="Adapters/WS_ConsultarCurriculumsCandidatos_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
     <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
@@ -287,5 +316,13 @@
   <wire>
     <source.uri>bpel_conscurriculumcandidatos/WS_ConsCurriculumCandidato</source.uri>
     <target.uri>WS_ConsCurriculumCandidato</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_consultarcurriculumsall_client_ep</source.uri>
+    <target.uri>bpel_consultarcurriculumsAll/bpel_consultarcurriculumsall_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>bpel_consultarcurriculumsAll/WS_ConsultarCurriculumsCandidatos</source.uri>
+    <target.uri>WS_ConsultarCurriculumsCandidatos</target.uri>
   </wire>
 </composite>
