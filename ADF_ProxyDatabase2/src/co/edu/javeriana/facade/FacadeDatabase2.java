@@ -185,6 +185,8 @@ public class FacadeDatabase2 {
             candidato.setPrimeroApellido(candidatoType.getPrimerApellido());
             candidato.setSegundoApellido(candidatoType.getSegundoApellido());
             
+            candidato.generarNombreCompleto();
+            
             candidatos.add(candidato);            
         }//End foreach
         
