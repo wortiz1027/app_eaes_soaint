@@ -27,7 +27,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>previousTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  done&lt;/p></property>
       <property
-         name="y">1068.9023</property>
+         name="y">1068.5518</property>
       <property
          name="finish">true</property>
       <property
@@ -90,13 +90,13 @@
       <property
          name="activityId">PG_EntrevistarCandidatos</property>
       <property
-         name="x">159.05078</property>
+         name="x">166.05078</property>
       <property
-         name="start">true</property>
+         name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>PG_EntrevistarCandidatos&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>PG_EntrevistarCandidatos&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">241.79883</property>
+         name="y">-140.90234</property>
       <property
          name="page">/WEB-INF/edu/javeriana/filtradoseleccioncandidato/pages/PG_EntrevistarCandidatos.jspx</property>
       <property
@@ -139,9 +139,9 @@
       <property
          name="srcid">__29</property>
       <property
-         name="x">159.05078</property>
+         name="x">154.05078</property>
       <property
-         name="y">72.0</property>
+         name="y">237.29883</property>
    </WildcardControlFlowRule>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule12">
@@ -166,7 +166,7 @@
       <property
          name="fromsrcid">__33</property>
       <property
-         name="sdm:polyPoints">B50,159.05078,728.7529,410.78906,1014.90234,T50</property>
+         name="sdm:polyPoints">B50,159.05078,728.7529,410.78906,1014.2012,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -223,5 +223,72 @@
          name="fromsrcid">__35</property>
       <property
          name="sdm:polyPoints">R61,195.05078,693.2529,410.78906,826.90234,T50</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule18">
+      <property
+         name="activityId">*</property>
+      <property
+         name="x">180.0</property>
+      <property
+         name="y">43.29883</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase19"
+      from="WildcardControlFlowRule18"
+      to="View8">
+      <property
+         name="fromOutcome">error</property>
+      <property
+         name="sdm:polyPoints">T50,180.0,0.9482422,166.05078,-87.25293,B50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall20">
+      <property
+         name="activityId">inicializarManageBean</property>
+      <property
+         name="x">-133.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>inicializarManageBean&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">-142.9082</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="MethodCall20"
+      to="View8">
+      <property
+         name="fromOutcome">continuar</property>
+      <property
+         name="sdm:polyPoints">R50,-92.0,-143.25879,125.05078,-141.25293,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall22">
+      <property
+         name="activityId">savePayload</property>
+      <property
+         name="x">407.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>savePayload&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">-137.80469</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase23"
+      from="View8"
+      to="MethodCall22">
+      <property
+         name="fromOutcome">finalizar</property>
+      <property
+         name="sdm:polyPoints">R50,207.05078,-141.25293,366.0,-138.15527,L50</property>
    </ControlFlowCase>
 </SDM>
