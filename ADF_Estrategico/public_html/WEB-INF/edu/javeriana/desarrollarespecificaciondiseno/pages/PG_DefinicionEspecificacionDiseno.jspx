@@ -4,6 +4,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
         <af:document title="#{estrategicoBundle.TITULO_PANTALLA_DEFINICION_ESPECIFICACION_DISENIO}" id="d1">
+            <af:messages id="m1"/>
             <af:form id="f1" usesUpload="true">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
@@ -94,7 +95,8 @@
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:panelBox>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                                      binding="#{pageFlowScope.mbDefinicionEspecificacionDiseno.ppCargarArchvo}">
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
                                             cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
                                     <af:panelGroupLayout id="pgl123"  styleClass="sinBorders" halign="center" layout="vertical">
@@ -102,7 +104,8 @@
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                                      binding="#{pageFlowScope.mbDefinicionEspecificacionDiseno.ppVisorDocumento}">
                                 <af:dialog id="d3" title="#{estrategicoBundle.TITULO_VISOR_DOCUMENTO}">
                                     <af:panelGroupLayout id="pgl144" halign="center" layout="vertical" styleClass="sinBorders" inlineStyle="padding: 15px;">
                                         <af:panelGroupLayout id="pgl24" layout="vertical" halign="center" styleClass="sinBorders">
@@ -117,6 +120,8 @@
                     </f:facet>
                     <f:facet name="footer">
                         <af:panelGroupLayout id="pgl15" halign="right" layout="vertical">
+                            <af:outputText value="#{bindings.idSolicitud.inputValue}"
+                                           shortDesc="#{bindings.idSolicitud.hints.tooltip}" id="ot1"/>
                             <af:button text="#{estrategicoBundle.BOTON_ENVIAR}" id="bProcesar" partialSubmit="true"
                                        styleClass="buttonBlue"
                                        action="#{pageFlowScope.mbDefinicionEspecificacionDiseno.finalizarPantalla}"

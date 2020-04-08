@@ -54,6 +54,7 @@ public class MbConcluirRevisiones extends AbstractBPMManageBeanBase implements S
 
     private transient RichTable tblDocumentos;
     private transient RichPopup ppVisorDocumento;
+    private transient RichPopup ppCargarArchvo;
 
     public MbConcluirRevisiones() {
         super();
@@ -70,7 +71,7 @@ public class MbConcluirRevisiones extends AbstractBPMManageBeanBase implements S
             this.visor = new VisorDocumentoBean();
             
             final String codigoPrototipo = (String) JsfUtils.getElObject("#{bindings.codigo.inputValue}");
-            final String queryText = "dDocType <matches> `Document` <AND> xIdcProfile <matches> `005`";
+            final String queryText = "dDocType <matches> `Document` <AND> xIdcProfile <matches> `005` <AND> xIdPrototipo = `"+codigoPrototipo+"`";
             
             List<Documento> documentos = new ArrayList<>();
             
@@ -113,20 +114,21 @@ public class MbConcluirRevisiones extends AbstractBPMManageBeanBase implements S
     }
     
     public void onClickAdjuntar(ActionEvent actionEvent) {
-        
+        RichPopup.PopupHints hints = new RichPopup.PopupHints();
+        this.ppCargarArchvo.show(hints);
     }
 
     @SuppressWarnings("unused")
     public void onClickVer(ActionEvent actionEvent) {        
         String idDoc = (String) tblDocumentos.getSelectedRowData();
         
-        visor.setAlto(VISOR_HEIGHT);
-        visor.setAncho(VISOR_WIDTH);
-        visor.setIdDocumento(idDoc);
-        visor.setUrlDocumento(VisorDocumentoBean.URL + idDoc);
+        this.visor.setAlto(VISOR_HEIGHT);
+        this.visor.setAncho(VISOR_WIDTH);
+        this.visor.setIdDocumento(idDoc);
+        this.visor.setUrlDocumento(VisorDocumentoBean.URL + idDoc);
         
         RichPopup.PopupHints hints = new RichPopup.PopupHints();
-        ppVisorDocumento.show(hints);
+        this.ppVisorDocumento.show(hints);
     }
 
     public void subirArchivo(ValueChangeEvent valueChangeEvent) {
@@ -217,5 +219,13 @@ public class MbConcluirRevisiones extends AbstractBPMManageBeanBase implements S
 
     public RichPopup getPpVisorDocumento() {
         return ppVisorDocumento;
+    }
+
+    public void setPpCargarArchvo(RichPopup ppCargarArchvo) {
+        this.ppCargarArchvo = ppCargarArchvo;
+    }
+
+    public RichPopup getPpCargarArchvo() {
+        return ppCargarArchvo;
     }
 }

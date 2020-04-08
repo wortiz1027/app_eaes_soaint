@@ -84,7 +84,8 @@
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:panelBox>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                                      binding="#{pageFlowScope.mbConcluirRevisiones.ppCargarArchvo}">
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
                                             cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
                                     <af:panelGroupLayout id="pgl12"  styleClass="sinBorders" halign="center" layout="vertical">
