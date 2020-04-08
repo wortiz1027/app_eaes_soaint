@@ -15,7 +15,7 @@
                     <bpmnext:StringFeature value="http://xmlns.javeriana.com/bpmn/bpmnProcess/disenoPrototipoProductosServicios" name="NAMESPACE"/>
                     <bpmnext:StringFeature value="PROJECT_DEFAULT" name="generatesEvents"/>
                     <bpmnext:StringFeature value="HORIZONTAL_LAYOUT" name="process-layout"/>
-                    <bpmnext:StringFeature value="0.737" name="scale"/>
+                    <bpmnext:StringFeature value="0.768" name="scale"/>
                     <bpmnext:StringFeature value="REGULAR" name="sealType"/>
                 </bpmnext:FeatureSet>
                 <bpmnext:Localization/>
@@ -106,7 +106,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="302" y="100"/>
+                        <bpmnext:Position x="475" y="100"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -178,7 +178,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="484" y="100"/>
+                        <bpmnext:Position x="657" y="100"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -286,7 +286,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="699" y="300"/>
+                        <bpmnext:Position x="872" y="300"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -358,7 +358,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="850" y="300"/>
+                        <bpmnext:Position x="1023" y="300"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -466,7 +466,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1041" y="504"/>
+                        <bpmnext:Position x="1214" y="504"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -538,7 +538,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1201" y="504"/>
+                        <bpmnext:Position x="1374" y="504"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -642,6 +642,65 @@
                 </bpmn:assignment>
             </bpmn:dataOutputAssociation>
         </bpmn:receiveTask>
+        <bpmn:scriptTask isForCompensation="false" name="[SET] Título Instancia" id="ACT28472280278435">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:GraphicsAttributes>
+                        <bpmnext:Position x="264" y="100"/>
+                    </bpmnext:GraphicsAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
+                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="false" name="outputValidation"/>
+                        <bpmnext:StringFeature value="[]" name="TagFeature"/>
+                        <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
+                        <bpmnext:StringFeature value="Begin Level" name="level"/>
+                        <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </bpmnext:FeatureSet>
+                    <bpmnext:Localization>
+                        <bpmnext:Label>
+                            <bpmnext:LocalizedContent language="en">[SET] Título Instancia</bpmnext:LocalizedContent>
+                        </bpmnext:Label>
+                        <bpmnext:Description>
+                            <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
+                        </bpmnext:Description>
+                    </bpmnext:Localization>
+                    <bpmnext:FlowNodeProperties/>
+                    <bpmnext:LogHandlers/>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+            <bpmn:ioSpecification/>
+            <bpmn:dataOutputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions>
+                        <bpmnext:OtherRef>doSolicitud</bpmnext:OtherRef>
+                    </bpmnext:OracleExtensions>
+                </bpmn:extensionElements>
+                <bpmn:targetRef>doTituloInstancia</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xpathns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">oraext:setFlowInstanceTitle(oraext:format-string(dvm:lookupValue('oramds:/apps/resources/BPM/DVMs/DVM_Mensajes.dvm', 'CLAVE', 'MENSAJE_PROCESO_DISENIO_PROTOTIPO_PRODUCTOS_SERVICIOS', 'VALOR', 'NODATA'),string(bpmn:getDataObject('doSolicitud')/ns:idSolicitud)))
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('doTituloInstancia')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataOutputAssociation>
+        </bpmn:scriptTask>
         <bpmn:startEvent isInterrupting="false" name="inicio" id="EVT28368611896577">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
@@ -725,7 +784,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1337" y="504"/>
+                        <bpmnext:Position x="1510" y="504"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -759,7 +818,7 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="699" y="96"/>
+                        <bpmnext:Position x="872" y="96"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -781,7 +840,7 @@
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:exclusiveGateway>
-        <bpmn:sequenceFlow sourceRef="EVT28368611896577" targetRef="ACT2836865969540" name="sf28368611896690" id="sf28368611896690">
+        <bpmn:sequenceFlow sourceRef="EVT28368611896577" targetRef="ACT28472280278435" name="sf28368611896690" id="sf28368611896690">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>
@@ -809,11 +868,11 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="495" y="98"/>
+                        <bpmnext:Positions x="668" y="98"/>
                     </bpmnext:SequenceFlowAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="495,98" name="curve"/>
+                        <bpmnext:StringFeature value="668,98" name="curve"/>
                         <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
@@ -835,11 +894,11 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="927" y="404"/>
+                        <bpmnext:Positions x="1100" y="404"/>
                     </bpmnext:SequenceFlowAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="927,404" name="curve"/>
+                        <bpmnext:StringFeature value="1100,404" name="curve"/>
                         <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
@@ -870,11 +929,11 @@
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="1334" y="403"/>
+                        <bpmnext:Positions x="1507" y="403"/>
                     </bpmnext:SequenceFlowAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="1334,403" name="curve"/>
+                        <bpmnext:StringFeature value="1507,403" name="curve"/>
                         <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                         <bpmnext:StringFeature value="No" name="userName"/>
                     </bpmnext:FeatureSet>
@@ -894,6 +953,18 @@
             </bpmn:extensionElements>
         </bpmn:sequenceFlow>
         <bpmn:sequenceFlow sourceRef="ACT28369016538323" targetRef="EVT28368611896672" name="sf28369017591471" id="sf28369017591471">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes/>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <bpmnext:StringFeature value="STRAIGHT" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT28472280278435" targetRef="ACT2836865969540" name="sf28472280965115" id="sf28472280965115">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:SequenceFlowAttributes/>

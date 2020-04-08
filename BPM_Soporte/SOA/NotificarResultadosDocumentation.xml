@@ -36,6 +36,22 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="ACT28463837430620">
+            <labels>
+               <label locale="en">[SET] Notificar Aceptación del Candidato</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT28463841273649">
+            <labels>
+               <label locale="en">[SET] Notificar Rechazo del Candidato</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="EVT28387168147767">
             <labels>
                <label locale="en">Inicio Notificar Resultado por Candidato</label>
@@ -82,6 +98,8 @@
             </descriptions>
          </topicDocumentation>
          <topicDocumentation name="sf28387199679987"/>
+         <topicDocumentation name="sf28463840187188"/>
+         <topicDocumentation name="sf28463842650214"/>
          <topicDocumentation name="ACT28446203582771">
             <labels>
                <label locale="en">[SET] Titulo Instancia</label>

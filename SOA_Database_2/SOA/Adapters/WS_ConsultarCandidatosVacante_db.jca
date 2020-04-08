@@ -1,5 +1,6 @@
-<adapter-config name="WS_ConsultarCandidatosVacante" adapter="db" wsdlLocation="../WSDLs/WS_ConsultarCandidatosVacante.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
-  
+<adapter-config name="WS_ConsultarCandidatosVacante" adapter="db"
+                wsdlLocation="../WSDLs/WS_ConsultarCandidatosVacante.wsdl"
+                xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   <connection-factory UIConnectionName="conn_javeriana" location="eis/DB/Javeriana"/>
   <endpoint-interaction portType="WS_ConsultarCandidatosVacante_ptt" operation="WS_ConsultarCandidatosVacante">
     <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
@@ -9,5 +10,4 @@
       <property name="GetActiveUnitOfWork" value="false"/>
     </interaction-spec>
   </endpoint-interaction>
-
 </adapter-config>
