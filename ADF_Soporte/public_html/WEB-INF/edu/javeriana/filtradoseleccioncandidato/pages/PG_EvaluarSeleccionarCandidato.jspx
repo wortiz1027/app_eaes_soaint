@@ -63,7 +63,13 @@
                     <f:facet name="footer">
                         <af:panelGroupLayout id="pgl9" halign="right" layout="vertical"
                                                          styleClass="sinBorders">
-                            <af:button text="#{soporteBundle.BOTON_ENVIAR}" id="b2"/>
+                            <af:button text="#{soporteBundle.BOTON_ENVIAR}" id="bProcesar" partialSubmit="true"
+                                       styleClass="buttonBlue"
+                                       action="#{pageFlowScope.mbEvaluarSeleccionarCandidato.finalizarPantalla}"
+                                       actionListener="#{pageFlowScope.mbEvaluarSeleccionarCandidato.mySetOperation}">
+                                <f:attribute name="DC_OPERATION_BINDING" value="bindings.APPROVE"/>
+                                <f:attribute name="TIPO_ACCION" value="ACEPTAR"/>
+                            </af:button>
                         </af:panelGroupLayout>
                     </f:facet>
                     
