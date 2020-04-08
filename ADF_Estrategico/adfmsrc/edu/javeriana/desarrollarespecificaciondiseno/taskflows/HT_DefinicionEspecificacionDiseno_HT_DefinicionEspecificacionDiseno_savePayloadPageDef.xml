@@ -11,6 +11,14 @@
     <accessorIterator MasterBinding="getTaskDetailsIterator" Binds="task" RangeSize="10"
                       DataControl="ADF_Estrategico_HT_DefinicionEspecificacionDiseno"
                       BeanClass="ADF_Estrategico_HT_DefinicionEspecificacionDiseno.task" id="taskIterator"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="payload" RangeSize="25"
+                      DataControl="ADF_Estrategico_HT_DefinicionEspecificacionDiseno"
+                      BeanClass="ADF_Estrategico_HT_DefinicionEspecificacionDiseno.HT_DefinicionEspecificacionDisenoPayloadType"
+                      id="payloadIterator"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="DatosProcesoMisional" RangeSize="10"
+                      DataControl="ADF_Estrategico_HT_DefinicionEspecificacionDiseno"
+                      BeanClass="ADF_Estrategico_HT_DefinicionEspecificacionDiseno.DatosProcesoMisionalType"
+                      id="DatosProcesoMisionalIterator"/>
   </executables>
   <bindings>
     <methodAction id="getTaskDetails" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getTaskDetails"
@@ -25,5 +33,10 @@
                   MethodName="APPROVE" IsViewObjectMethod="false"
                   DataControl="ADF_Estrategico_HT_DefinicionEspecificacionDiseno"
                   InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <attributeValues IterBinding="DatosProcesoMisionalIterator" id="realizarRevisionesExternasObligatoriasYOpcionales">
+      <AttrNames>
+        <Item Value="realizarRevisionesExternasObligatoriasYOpcionales"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

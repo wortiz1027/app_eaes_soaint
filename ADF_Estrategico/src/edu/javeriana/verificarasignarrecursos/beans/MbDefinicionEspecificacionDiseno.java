@@ -45,7 +45,7 @@ public class MbDefinicionEspecificacionDiseno extends AbstractBPMManageBeanBase 
     private VisorDocumentoBean visor;
     private Documento documento;
     
-    private boolean opcion1 = Boolean.FALSE;
+    private boolean opcion1 = Boolean.TRUE;
     private boolean opcion2 = Boolean.FALSE;
     
     private transient RichTable tblDocumentos;
