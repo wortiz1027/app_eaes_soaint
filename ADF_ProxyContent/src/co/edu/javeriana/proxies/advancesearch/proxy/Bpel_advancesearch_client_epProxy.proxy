@@ -4,15 +4,17 @@
       <url path="BpelAdvancesearchClientEp.xml"/>
       <url path="bpel_advancesearch_client_ep.wsdl"/>
       <url path="WCC_Search.xsd"/>
-      <url path="../types/package-info.java"/>
-      <url path="BpelAdvancesearchClientEp.java"/>
-      <url path="bpel_AdvanceSearch_ptClient.java"/>
+      <url path="../types/Search.java"/>
+      <url path="../types/SearchResponse.java"/>
+      <url path="BpelAdvanceSearch.java"/>
       <url path="../types/AdvancedSearchResult.java"/>
       <url path="../types/ObjectFactory.java"/>
-      <url path="../types/AdvancedSearch.java"/>
+      <url path="BpelAdvancesearchClientEp.java"/>
       <url path="../types/Property.java"/>
-      <url path="BpelAdvanceSearch.java"/>
-      <url path="../types/SearchResponse.java"/>
+      <url path="../types/AdvancedSearch.java"/>
+      <url path="../types/ListaPropiedades.java"/>
+      <url path="../types/package-info.java"/>
+      <url path="bpel_AdvanceSearch_ptClient.java"/>
    </list>
    <hash n="DATA_MODEL">
       <value n="ATTACHMENT_ENCODING" v="MIME"/>
@@ -26,8 +28,8 @@
          </hash>
          <hash n="WSDL_TO_JAVA_PROPERTIES">
             <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
-            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="co.edu.javeriana.proxies.advancese.proxy"/>
-            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="co.edu.javeriana.proxies.advancese.types"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="co.edu.javeriana.proxies.advancesearch.proxy"/>
+            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="co.edu.javeriana.proxies.advancesearch.types"/>
          </hash>
       </hash>
       <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
@@ -41,7 +43,7 @@
          <hash n="bpel_AdvanceSearch_pt">
             <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
             <value n="ACCESSES_RPC_ENCODED" v="false"/>
-            <value n="CLASS_NAME" v="co.edu.javeriana.proxies.advancese.proxy.BpelAdvanceSearch"/>
+            <value n="CLASS_NAME" v="co.edu.javeriana.proxies.advancesearch.proxy.BpelAdvanceSearch"/>
             <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
             <value n="NAME" v="bpel_AdvanceSearch_pt"/>
             <hash n="OPERATIONS">
@@ -82,7 +84,7 @@
                <value n="NAME" v="{http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch}bpel_AdvanceSearchBinding"/>
                <list n="OP_BINDINGS">
                   <hash>
-                     <value n="BOUND_OPERATION" v="co.edu.javeriana.proxies.advancese.types.SearchResponse.process.co.edu.javeriana.proxies.advancese.types.AdvancedSearch"/>
+                     <value n="BOUND_OPERATION" v="co.edu.javeriana.proxies.advancesearch.types.SearchResponse.process.co.edu.javeriana.proxies.advancesearch.types.AdvancedSearch"/>
                      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
                      <hash n="PROPERTY_GROUPS"/>
                   </hash>
@@ -91,7 +93,7 @@
             </hash>
          </list>
          <list n="BINDING_FILES"/>
-         <value n="GUID" v="46f0711c-0171-1000-8011-c0a80012d018"/>
+         <value n="GUID" v="578fad73-0171-1000-8002-c0a80012a6cf"/>
          <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
          <list n="PO_">
             <hash>
@@ -101,7 +103,7 @@
                <value n="PORT_BINDING_NAME" v="{http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch}bpel_AdvanceSearchBinding"/>
                <list n="PORT_OPS">
                   <hash>
-                     <value n="EXPOSED_BD_OPERATION" v="co.edu.javeriana.proxies.advancese.types.SearchResponse.process.co.edu.javeriana.proxies.advancese.types.AdvancedSearch"/>
+                     <value n="EXPOSED_BD_OPERATION" v="co.edu.javeriana.proxies.advancesearch.types.SearchResponse.process.co.edu.javeriana.proxies.advancesearch.types.AdvancedSearch"/>
                      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
                      <hash n="PROPERTY_GROUPS"/>
                   </hash>
@@ -113,8 +115,8 @@
          <hash n="PROPERTY_GROUPS">
             <hash n="WSDL_TO_JAVA_PROPERTIES">
                <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
-               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="co.edu.javeriana.proxies.advancese.proxy"/>
-               <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="co.edu.javeriana.proxies.advancese.types"/>
+               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="co.edu.javeriana.proxies.advancesearch.proxy"/>
+               <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="co.edu.javeriana.proxies.advancesearch.types"/>
             </hash>
          </hash>
          <list n="PT_">
@@ -124,9 +126,9 @@
                <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
                <value n="NAME" v="{http://xmlns.oracle.com/app_eaes_soaint/SOA_Content/bpel_AdvanceSearch}bpel_AdvanceSearch"/>
                <hash n="PROPERTY_GROUPS"/>
-               <value n="PT_CLASS" v="co.edu.javeriana.proxies.advancese.proxy.BpelAdvanceSearchImpl"/>
-               <value n="PT_SERVICE_INTERFACE" v="co.edu.javeriana.proxies.advancese.proxy.BpelAdvanceSearch"/>
-               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="co.edu.javeriana.proxies.advancese.proxy.BpelAdvanceSearch"/>
+               <value n="PT_CLASS" v="co.edu.javeriana.proxies.advancesearch.proxy.BpelAdvanceSearchImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="co.edu.javeriana.proxies.advancesearch.proxy.BpelAdvanceSearch"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="co.edu.javeriana.proxies.advancesearch.proxy.BpelAdvanceSearch"/>
             </hash>
          </list>
          <url n="TARGET_PROJECT" path="../../../../../../../ADF_ProxyContent.jpr"/>

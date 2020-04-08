@@ -1,22 +1,22 @@
 package co.edu.javeriana.facade;
 
-import co.edu.javeriana.proxies.advancese.proxy.BpelAdvanceSearch;
-import co.edu.javeriana.proxies.advancese.proxy.BpelAdvancesearchClientEp;
-import co.edu.javeriana.proxies.advancese.types.AdvancedSearch;
-import co.edu.javeriana.proxies.advancese.types.AdvancedSearchResult;
-import co.edu.javeriana.proxies.advancese.types.SearchResponse;
+import co.edu.javeriana.proxies.advancesearch.proxy.BpelAdvanceSearch;
+import co.edu.javeriana.proxies.advancesearch.proxy.BpelAdvancesearchClientEp;
+import co.edu.javeriana.proxies.advancesearch.types.AdvancedSearch;
+import co.edu.javeriana.proxies.advancesearch.types.AdvancedSearchResult;
+import co.edu.javeriana.proxies.advancesearch.types.SearchResponse;
 import co.edu.javeriana.proxies.checkin.proxy.BpelCheckinWcc;
 import co.edu.javeriana.proxies.checkin.proxy.BpelCheckinWccClientEp;
 import co.edu.javeriana.proxies.checkin.types.CheckInUniversal;
 import co.edu.javeriana.proxies.checkin.types.CheckInUniversalResult;
 import co.edu.javeriana.proxies.checkin.types.PrimaryFile;
-import co.edu.javeriana.proxies.checkin.types.Property;
 import co.edu.javeriana.proxies.getfile.proxy.BpelGetFile;
 import co.edu.javeriana.proxies.getfile.proxy.BpelGetfileClientEp;
 
 import co.edu.javeriana.proxies.getfile.types.GetFileByID;
 import co.edu.javeriana.proxies.getfile.types.GetFileByIDResponse;
 import co.edu.javeriana.proxies.getfile.types.FileInfo;
+import co.edu.javeriana.proxies.advancesearch.types.Property;
 import co.edu.javeriana.wcc.CheckinResult;
 import co.edu.javeriana.wcc.Documento;
 import co.edu.javeriana.wcc.File;
@@ -143,7 +143,8 @@ public class FacadeContent {
         archivo.getStatus().setMensaje(rs.getGetFileByIDResult().getValue().getStatus().getValue().getMensaje().getValue());
     }
     
-    public static void busquedaAvanzada(String queryText, List<Documento> response) {
+    @SuppressWarnings("unchecked")
+    public static void busquedaAvanzada(String queryText, List<Documento> documentos) {
         //1. contruir el request
         AdvancedSearch rq = new AdvancedSearch(); 
         rq.setQueryText(queryText);
@@ -151,14 +152,98 @@ public class FacadeContent {
         //2. llamar a la operación
         SearchResponse rs = getPortAdvanceSearch().process(rq);
         
+        int index = 0;
         //3. construir la salida
-        List<AdvancedSearchResult> searchResult = rs.getSearchResults();
-           
-        for(AdvancedSearchResult listDocumentos : searchResult){
-            Documento documento = new Documento();
+        for(AdvancedSearchResult asr : rs.getSearchResults()){
+            Documento item = new Documento();
+        
+            for (JAXBElement element : asr.getInformacion().getContent()) {
+                QName name = element.getName();
+                
+                if (name.getLocalPart().equalsIgnoreCase("dID")) {
+                    JAXBElement<String> dID = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "dID"), String.class, element.getValue());
+                    item.setDID(Integer.parseInt(dID.getValue() != null || dID.getValue().toString().isEmpty() ? dID.getValue().toString() : "0"));
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("revision")) {
+                    JAXBElement<String> revision = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "revision"), String.class, element.getValue());                    
+                    item.setRevision(revision.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("dDocName")) {
+                    JAXBElement<String> dDocName = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "dDocName"), String.class, element.getValue());
+                    item.setDDocName(dDocName.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("titulo")) {
+                    JAXBElement<String> titulo = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "titulo"), String.class, element.getValue());
+                    item.setTitulo(titulo.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("tipo")) {
+                    JAXBElement<String> tipo = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "tipo"), String.class, element.getValue());
+                    item.setTipo(tipo.getValue());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("autor")) {
+                    JAXBElement<String> autor = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "titulo"), String.class, element.getValue());
+                    item.setAutor(autor.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("grupoSeguridad")) {
+                    JAXBElement<String> grupoSeguridad = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "grupoSeguridad"), String.class, element.getValue());
+                    item.setGrupoSeguridad(grupoSeguridad.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("cuenta")) {
+                    JAXBElement<String> cuenta = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "cuenta"), String.class, element.getValue());
+                    item.setCuenta(cuenta.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("extension")) {
+                    JAXBElement<String> extension = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "extension"), String.class, element.getValue());
+                    item.setExtension(extension.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("extensionWeb")) {
+                    JAXBElement<String> extensionWeb = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "extensionWeb"), String.class, element.getValue());
+                    item.setExtensionWeb(extensionWeb.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("fechaCreacion")) {
+                    JAXBElement<String> fechaCreacion = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "fechaCreacion"), String.class, element.getValue());
+                    item.setFechaCreacion(fechaCreacion.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("formato")) {
+                    JAXBElement<String> formato = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "formato"), String.class, element.getValue());
+                    item.setFormato(formato.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("nombreOriginal")) {
+                    JAXBElement<String> nombreOriginal = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "url"), String.class, element.getValue());
+                    item.setNombreOriginal(nombreOriginal.getValue().toString());
+                }
+                
+                if (name.getLocalPart().equalsIgnoreCase("url")) {
+                    JAXBElement<String> url = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "url"), String.class, element.getValue());
+                    item.setUrl(url.getValue().toString());
+                }
+            }
             
-            //documento.setAutor(listDocumentos);
-        }
+            for (Property tmp : asr.getCustomDocMetaData().getPropiedades()) {
+                 JAXBElement<String> nombre = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "name"), String.class, tmp.getName());
+                 JAXBElement<String> valor = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_GetFile/v1.0", "value"), String.class, tmp.getValue());
+                
+                 NameValue propiedad = new NameValue();
+                 propiedad.setName(nombre.getValue().toString());
+                 propiedad.setValue(valor.getValue().toString());
+                
+                 item.getCustomDocMetaData().add(propiedad);
+            }
+            
+            documentos.add(item);
+        } 
     }
     
     @SuppressWarnings("unchecked")
@@ -182,8 +267,6 @@ public class FacadeContent {
         
         JAXBElement<PrimaryFile> archivo   = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "archivoPrimario"), PrimaryFile.class, primary);
         
-        
-        
         rq.setAutor(autor);
         rq.setCuenta(cuenta);
         rq.setDDocName(dDocName);
@@ -195,7 +278,7 @@ public class FacadeContent {
         rq.getArchivoPrimario().getValue().setContenidoArchivo(contenido);
         
         for(NameValue propiedades : documento.getCustomDocMetaData()){
-            Property item = new Property();
+            co.edu.javeriana.proxies.checkin.types.Property item = new co.edu.javeriana.proxies.checkin.types.Property();
             
             JAXBElement<String> llave = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "name"), String.class, propiedades.getName());
             JAXBElement<String> valor = new JAXBElement(new QName("http://xmlns.javeriana.edu.co/co/schemas/process/bpm/WCC_Checkin/v1.0", "value"), String.class, propiedades.getValue());

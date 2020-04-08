@@ -1,5 +1,5 @@
 
-package co.edu.javeriana.proxies.advancese.types;
+package co.edu.javeriana.proxies.advancesearch.types;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,6 @@ public class AdvancedSearch {
 
     @XmlElement(required = true)
     protected String queryText;
-    @XmlElement(nillable = true)
     protected List<Property> property;
 
     /**

@@ -4,5 +4,5 @@
                                                                .annotation
                                                                .XmlNsForm
                                                                .QUALIFIED)
-package co.edu.javeriana.proxies.advancese.types;
+package co.edu.javeriana.proxies.advancesearch.types;
 
