@@ -188,7 +188,7 @@ public class MbConcluirRevisiones extends AbstractBPMManageBeanBase implements S
             logger.severe("Error subiendo el archivo al content", e);
         }
         LOGGER.end(Level.INFO,"Salida aceptarPopUpAdjuntarDocumento ");
-        }
+    }
     
     public void setPrototipo(Prototipo prototipo) {
         this.prototipo = prototipo;

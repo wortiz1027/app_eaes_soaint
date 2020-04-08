@@ -77,12 +77,13 @@
                                 <af:panelGroupLayout id="pgl13" inlineStyle="padding: 20px;" styleClass="sinBorders" halign="center" layout="vertical">
                                     <af:table var="row" rowBandingInterval="0" id="t2"
                                               styleClass="contentTable AFStretchWidth"
-                                              value="#{pageFlowScope.mbValidarProblemasCalidad.prototipo.documentos}">
+                                              value="#{pageFlowScope.mbValidarProblemasCalidad.prototipo.documentos}"
+                                              binding="#{pageFlowScope.mbValidarProblemasCalidad.tblDocumentos}">
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_DOCUMENTOS}" id="c2" width="250%">
                                             <af:outputText value="#{row.nombre}" id="ot2"/>
                                         </af:column>
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_ACCIONES}" id="c3">
-                                            <af:panelGroupLayout id="pgl14">
+                                            <af:panelGroupLayout id="pgl14" layout="horizontal" halign="center" styleClass="sinBorders">
                                                 <af:button text="#{estrategicoBundle.BOTON_ADJUNTAR}" id="b1" icon="/images/ico-editar.png"
                                                            styleClass="tamanioauto2"
                                                            actionListener="#{pageFlowScope.mbValidarProblemasCalidad.onClickAdjuntar}"/>
@@ -95,15 +96,19 @@
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:panelBox>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                                      binding="#{pageFlowScope.mbValidarProblemasCalidad.ppCargarArchvo}">
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
-                                            cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
+                                            cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}"
+                                           dialogListener="#{pageFlowScope.mbValidarProblemasCalidad.aceptarPopUpAdjuntarDocumento}">
                                     <af:panelGroupLayout id="pgl123"  styleClass="sinBorders" halign="center" layout="vertical">
-                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"/>
+                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"
+                                                      valueChangeListener="#{pageFlowScope.mbValidarProblemasCalidad.subirArchivo}"/>
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                                      binding="#{pageFlowScope.mbValidarProblemasCalidad.ppVisorDocumento}">
                                 <af:dialog id="d3" title="#{estrategicoBundle.TITULO_VISOR_DOCUMENTO}">
                                     <af:panelGroupLayout id="pgl144" halign="center" layout="vertical" styleClass="sinBorders" inlineStyle="padding: 15px;">
                                         <af:panelGroupLayout id="pgl24" layout="vertical" halign="center" styleClass="sinBorders">
