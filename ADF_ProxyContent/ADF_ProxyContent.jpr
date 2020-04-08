@@ -99,7 +99,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="bpel_advancesearch_client_ep-Client">
+         <hash n="ADF_ProxyContent">
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
             </hash>
@@ -128,81 +128,13 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/bpel_advancesearch_client_ep-Client.jar"/>
+            <url n="jarURL" path="deploy/ADF_ProxyContent.jar"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
-            <value n="profileName" v="bpel_advancesearch_client_ep-Client"/>
-         </hash>
-         <hash n="bpel_checkin_wcc_client_ep-Client">
-            <hash n="archiveOptions">
-               <value n="hasManifest" v="true"/>
-            </hash>
-            <hash n="fileGroups">
-               <list n="groups">
-                  <hash>
-                     <list n="contributors">
-                        <hash>
-                           <value n="type" v="2"/>
-                        </hash>
-                        <hash>
-                           <value n="type" v="7"/>
-                        </hash>
-                     </list>
-                     <value n="displayName" v="Project Output"/>
-                     <hash n="filters">
-                        <list n="rules">
-                           <hash>
-                              <value n="pattern" v="**"/>
-                              <value n="type" v="0"/>
-                           </hash>
-                        </list>
-                     </hash>
-                     <value n="internalName" v="project-output"/>
-                     <value n="type" v="1"/>
-                  </hash>
-               </list>
-            </hash>
-            <url n="jarURL" path="deploy/bpel_checkin_wcc_client_ep-Client.jar"/>
-            <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
-            <value n="profileName" v="bpel_checkin_wcc_client_ep-Client"/>
-         </hash>
-         <hash n="bpel_getfile_client_ep-Client">
-            <hash n="archiveOptions">
-               <value n="hasManifest" v="true"/>
-            </hash>
-            <hash n="fileGroups">
-               <list n="groups">
-                  <hash>
-                     <list n="contributors">
-                        <hash>
-                           <value n="type" v="2"/>
-                        </hash>
-                        <hash>
-                           <value n="type" v="7"/>
-                        </hash>
-                     </list>
-                     <value n="displayName" v="Project Output"/>
-                     <hash n="filters">
-                        <list n="rules">
-                           <hash>
-                              <value n="pattern" v="**"/>
-                              <value n="type" v="0"/>
-                           </hash>
-                        </list>
-                     </hash>
-                     <value n="internalName" v="project-output"/>
-                     <value n="type" v="1"/>
-                  </hash>
-               </list>
-            </hash>
-            <url n="jarURL" path="deploy/bpel_getfile_client_ep-Client.jar"/>
-            <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
-            <value n="profileName" v="bpel_getfile_client_ep-Client"/>
+            <value n="profileName" v="ADF_ProxyContent"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="bpel_getfile_client_ep-Client"/>
-         <string v="bpel_advancesearch_client_ep-Client"/>
-         <string v="bpel_checkin_wcc_client_ep-Client"/>
+         <string v="ADF_ProxyContent"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
@@ -219,12 +151,17 @@
          </list>
       </hash>
    </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="custom" v="false"/>
+            <value n="name" v="Default"/>
+            <url n="targetURL" path="src/co/edu/javeriana/facade/Pruebas.java"/>
+         </hash>
+      </hash>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
-         <hash>
-            <value n="id" v="Adf_configuracion.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
          <hash>
             <value n="id" v="JAX-WS Client"/>
             <value n="isJDK" v="false"/>
@@ -279,6 +216,10 @@
          </hash>
          <hash>
             <value n="id" v="WSRP Container"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Adf_configuracion.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -310,10 +251,6 @@
       </hash>
       <list n="libraryReferences">
          <hash>
-            <value n="id" v="Adf_configuracion.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="JAX-WS Client"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -367,6 +304,10 @@
          </hash>
          <hash>
             <value n="id" v="WSRP Container"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Adf_configuracion.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
