@@ -82,5 +82,17 @@
       <cell>MENSAJE_PANTALLA_NOTIFICAR_RESULTADOS</cell>
       <cell>Solicitud {0} - Notificar resultados</cell>
     </row>
+	<row>
+      <cell>MENSAJE_PANTALLA_EVALUAR_CURRICULUM</cell>
+      <cell>Solicitud {0} - Evaluar Curriculum</cell>
+    </row>
+	<row>
+      <cell>MENSAJE_PANTALLA_ENTREVISTAR_CANDIDATOS</cell>
+      <cell>Solicitud {0} - Entrevistar Candidatos</cell>
+    </row>
+	<row>
+      <cell>MENSAJE_PANTALLA_EVALUAR_SELECCIONAR_CANDIDATOS</cell>
+      <cell>Solicitud {0} - Evaluar y Seleccionar Candidatos</cell>
+    </row>
   </rows> 
 </dvm>

@@ -5,9 +5,9 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="bpel_mailsender_client" x="0" y="283" side="left"/>
-      <partnerlink name="WS_MailSender" x="902" y="284" side="right"/>
+      <partnerlink name="WS_MailSender" x="800" y="284" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,213,1023,412" show_swimlanes="true">
+   <graph_layout viewport="0,101,921,457" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
    </graph_layout>
