@@ -109,7 +109,8 @@ public class MbConcluirRevisiones extends AbstractBPMManageBeanBase implements S
     }
     
     public String finalizarPantalla() {
-        //TODO Da por sentado que la pantalla ya se debe cerrar y la actividad debe viajar
+        String response = "";
+        FacadeDatabase.insertarProtipo(this.prototipo, response);
         return MbConcluirRevisiones.NAVEGACION_FINALIZAR;
     }
     

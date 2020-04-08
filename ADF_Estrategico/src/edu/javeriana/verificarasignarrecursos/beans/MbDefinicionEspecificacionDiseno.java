@@ -104,7 +104,8 @@ public class MbDefinicionEspecificacionDiseno extends AbstractBPMManageBeanBase 
     }
     
     public String finalizarPantalla() {
-        //TODO Da por sentado que la pantalla ya se debe cerrar y la actividad debe viajar
+        String response = "";
+        FacadeDatabase.insertarProtipo(this.prototipo, response);
         
         JsfUtils.setExpressionValue("#{bindings.realizarRevisionesExternasObligatoriasYOpcionales.inputValue}", prototipo.isRequiereRevisionesExternasOpcionales());
         
