@@ -4,7 +4,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
         <af:document title="#{estrategicoBundle.PANEL_TITULO_INFORMACION_PROTOTIPO}" id="d1">
-            <af:form id="f1">
+            <af:form id="f1" usesUpload="true">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
                     <f:facet name="content">
@@ -118,14 +118,20 @@
                     </f:facet>
                     <f:facet name="footer">
                         <af:panelGroupLayout id="pgl15" halign="right" layout="vertical">
-                            <af:button text="#{estrategicoBundle.BOTON_ENVIAR}" id="b3"/>
+                            <af:button text="#{estrategicoBundle.BOTON_ENVIAR}" id="bProcesar" partialSubmit="true"
+                                       styleClass="buttonBlue"
+                                       action="#{pageFlowScope.mbValidarProblemasCalidad.finalizarPantalla}"
+                                       actionListener="#{pageFlowScope.mbValidarProblemasCalidad.mySetOperation}">
+                                <f:attribute name="DC_OPERATION_BINDING" value="bindings.APPROVE"/>
+                                <f:attribute name="TIPO_ACCION" value="ACEPTAR"/>
+                            </af:button>
                         </af:panelGroupLayout>
                     </f:facet>
                     
                     <f:attribute name="titulo"  value="#{estrategicoBundle.TITULO_PANTALLA}"/>
-                    <f:attribute name="fecha"   value="#{pageFlowScope.mbValidarProblemasCalidad.datosProceso.fecha}"/>
-                    <f:attribute name="login"   value="#{pageFlowScope.mbValidarProblemasCalidad.usuario.userLogin}"/>
-                    <f:attribute name="nombre"  value="#{pageFlowScope.mbValidarProblemasCalidad.usuario.nombreUsuario}"/>
+                    <f:attribute name="fecha"   value=""/>
+                    <f:attribute name="login"   value=""/>
+                    <f:attribute name="nombre"  value=""/>
                     <f:attribute name="version" value="#{estrategicoBundle.VERSION}"/>
                 </af:pageTemplate>
             </af:form>

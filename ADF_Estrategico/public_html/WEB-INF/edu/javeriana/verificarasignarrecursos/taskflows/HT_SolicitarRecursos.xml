@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="HT_SolicitarRecursos">
-    <default-activity>PG_SolicitarRecursos</default-activity>
+    <default-activity>inicializarManageBean</default-activity>
     <data-control-scope>
       <isolated/>
     </data-control-scope>
@@ -249,24 +249,36 @@
     </task-flow-return>
     <task-flow-return id="taskFlowRefresh">
       <outcome>
-        <name>refresh</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="previousTaskFlow">
       <outcome>
-        <name>previous</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="nextTaskFlow">
       <outcome>
-        <name>next</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
     <task-flow-return id="taskFlowCompleted">
       <outcome>
-        <name>new</name>
+        <name>done</name>
       </outcome>
     </task-flow-return>
+    <method-call id="inicializarManageBean">
+      <method>#{pageFlowScope.mbSolicitarRecursos.inicializarManageBean}</method>
+      <outcome>
+        <fixed-outcome>continuar</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="savePayload">
+      <method>#{pageFlowScope.mbSolicitarRecursos.myInvokeOperationTaskFLow}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__29">
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__30">
@@ -300,6 +312,27 @@
       <control-flow-case id="__38">
         <from-outcome>fetchNewTask</from-outcome>
         <to-activity-id>taskFlowCompleted</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__58">
+      <from-activity-id>inicializarManageBean</from-activity-id>
+      <control-flow-case id="__59">
+        <from-outcome>continuar</from-outcome>
+        <to-activity-id>PG_SolicitarRecursos</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__60">
+      <from-activity-id>PG_SolicitarRecursos</from-activity-id>
+      <control-flow-case id="__61">
+        <from-outcome>finalizar</from-outcome>
+        <to-activity-id>savePayload</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__62">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__63">
+        <from-outcome>error</from-outcome>
+        <to-activity-id>PG_SolicitarRecursos</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

@@ -14,9 +14,9 @@
       <property
          name="x">395.4375</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>taskFlowCompleted&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  new&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowCompleted&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  done&lt;/p></property>
       <property
-         name="y">1212.9541</property>
+         name="y">1212.6035</property>
       <property
          name="finish">true</property>
       <property
@@ -62,7 +62,7 @@
       <property
          name="x">395.4375</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>previousTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  previous&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>previousTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  done&lt;/p></property>
       <property
          name="y">1024.9541</property>
       <property
@@ -92,7 +92,7 @@
       <property
          name="x">395.4375</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>taskFlowRefresh&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  refresh&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowRefresh&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  done&lt;/p></property>
       <property
          name="y">460.9541</property>
       <property
@@ -107,7 +107,7 @@
       <property
          name="x">395.4375</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>nextTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  next&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>nextTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  done&lt;/p></property>
       <property
          name="y">836.9541</property>
       <property
@@ -131,15 +131,15 @@
       <property
          name="activityId">PG_ConcluirRevisiones</property>
       <property
-         name="x">151.375</property>
+         name="x">129.375</property>
       <property
-         name="start">true</property>
+         name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>PG_ConcluirRevisiones&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>PG_ConcluirRevisiones&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">98.09766</property>
+         name="y">-78.30469</property>
       <property
-         name="page">/WEB-INF/edu/javeriana/desarrolarespecificaciondiseno/pages/PG_ConcluirRevisiones.jspx</property>
+         name="page">/WEB-INF/edu/javeriana/desarrollarespecificaciondiseno/pages/PG_ConcluirRevisiones.jspx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -180,7 +180,7 @@
       <property
          name="fromsrcid">__37</property>
       <property
-         name="sdm:polyPoints">B50,151.375,872.4541,395.4375,1158.6035,T50</property>
+         name="sdm:polyPoints">B50,151.375,872.4541,395.4375,1158.2529,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -223,5 +223,72 @@
          name="fromsrcid">__33</property>
       <property
          name="sdm:polyPoints">R61,187.375,836.9541,395.4375,970.6035,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall18">
+      <property
+         name="activityId">inicializarManageBean</property>
+      <property
+         name="x">-92.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>inicializarManageBean&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">-86.55762</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <MethodCall
+      id="MethodCall19">
+      <property
+         name="activityId">savePayload</property>
+      <property
+         name="x">338.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>savePayload&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">-84.40234</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule20">
+      <property
+         name="activityId">*</property>
+      <property
+         name="x">183.0</property>
+      <property
+         name="y">106.29883</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="WildcardControlFlowRule20"
+      to="View11">
+      <property
+         name="fromOutcome">error</property>
+      <property
+         name="sdm:polyPoints">T50,183.0,63.948242,129.375,-24.655273,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="MethodCall18"
+      to="View11">
+      <property
+         name="fromOutcome">continuar</property>
+      <property
+         name="sdm:polyPoints">R50,-51.0,-86.9082,88.375,-78.65527,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase23"
+      from="View11"
+      to="MethodCall19">
+      <property
+         name="fromOutcome">finalizar</property>
+      <property
+         name="sdm:polyPoints">R50,170.375,-78.65527,297.0,-84.75293,L50</property>
    </ControlFlowCase>
 </SDM>

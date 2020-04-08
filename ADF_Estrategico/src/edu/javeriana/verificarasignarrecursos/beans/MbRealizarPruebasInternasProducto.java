@@ -1,114 +1,60 @@
 package edu.javeriana.verificarasignarrecursos.beans;
 
 import co.edu.javeriana.configuracion.extend.AbstractBPMManageBeanBase;
-
-import co.edu.javeriana.configuracion.contextual.event.ProcessContextualEventInterface;
-import co.edu.javeriana.configuracion.extend.AbstractBPMManageBeanBase;
-
 import co.edu.javeriana.negocio.Prototipo;
 
 import java.io.Serializable;
 
 import javax.faces.event.ActionEvent;
 
-public class MbRealizarPruebasInternasProducto extends AbstractBPMManageBeanBase implements Serializable, ProcessContextualEventInterface {
-    @SuppressWarnings("compatibility:7424524058483809606")
+import oracle.adf.share.logging.ADFLogger;
+
+public class MbRealizarPruebasInternasProducto extends AbstractBPMManageBeanBase implements Serializable {
+    @SuppressWarnings("compatibility:6880019375903261517")
     private static final long serialVersionUID = 1L;
+    private static ADFLogger logger = ADFLogger.createADFLogger(MbRealizarPruebasInternasProducto.class);
     
     private Prototipo prototipo;
-
-    public MbRealizarPruebasInternasProducto() {       
+    
+    public MbRealizarPruebasInternasProducto() {
+        super();
     }
-
+    
+    @Override
+    public String inicializarManageBean() {      
+        //TODO Realizar todas las inicializaciones y operaciones de arranque        
+        return MbRealizarPruebasInternasProducto.NAVEGACION_CONTINUAR;
+    }
+    
     @Override
     public void finalizarActionListener(ActionEvent actionEvent) {
-        // TODO Implement this method
+        //TODO Realizo las actividades intermedias que crea necesarias
     }
 
     @Override
     public Boolean finalizarActividad() {
-        // TODO Implement this method
-        return null;
-    }
-
-    @Override
-    public String inicializarManageBean() {
-        // TODO Implement this method
-        return null;
-    }
-
-    @Override
-    public void processContextualEvent(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnError(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnCleanError(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnSelect(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnRefresh(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnSearch(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnChange(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnClick(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processValidateParticipante(Object object, Object object2) {
-        // TODO Implement this method
-
-    }
-
-    @Override
-    public void processOnLoad(Object object, Object object2) {
-        // TODO Implement this method
+        //TODO Se realizar actividades de validación para determinar si debo o no terminar la tarea
+        return Boolean.TRUE;
     }
     
-    public void setPrototipo(Prototipo prototipo) {
-        this.prototipo = prototipo;
+    public String finalizarPantalla() {
+        //TODO Da por sentado que la pantalla ya se debe cerrar y la actividad debe viajar
+        return MbRealizarPruebasInternasProducto.NAVEGACION_FINALIZAR;
     }
-
-    public Prototipo getPrototipo() {
-        return prototipo;
-    }
-
+    
     public void onClickAdjuntar(ActionEvent actionEvent) {
         // Add event code here...
     }
 
     public void onClickVer(ActionEvent actionEvent) {
         // Add event code here...
+    }
+
+    public void setPrototipo(Prototipo prototipo) {
+        this.prototipo = prototipo;
+    }
+
+    public Prototipo getPrototipo() {
+        return prototipo;
     }
 }
