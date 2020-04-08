@@ -214,11 +214,11 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_Model.jar"/>
+            <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="JPS Designtime"/>
+            <value n="id" v="ADF_Model.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -306,11 +306,11 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_Model.jar"/>
+            <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="JPS Designtime"/>
+            <value n="id" v="ADF_Model.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
