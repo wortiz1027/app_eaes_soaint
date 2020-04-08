@@ -17,25 +17,18 @@
       <persistence-config>
         <metadata-namespaces>
           <namespace path="/apps" metadata-store-usage="mstore-usage_4"/>
-          <namespace path="/soa/shared" metadata-store-usage="mstore-usage_5"/>
         </metadata-namespaces>
         <metadata-store-usages>
           <metadata-store-usage id="mstore-usage_4">
             <metadata-store class-name="oracle.mds.persistence.stores.file.FileMetadataStore">
               <property name="metadata-path" value="${soamds.apps.home}"/>
             </metadata-store>
-          </metadata-store-usage>
-          <metadata-store-usage id="mstore-usage_5">
-            <metadata-store class-name="oracle.mds.persistence.stores.file.FileMetadataStore">
-              <property name="partition-name" value="seed"/>
-              <property name="metadata-path" value="${soa.oracle.home}/integration"/>
-            </metadata-store>
-          </metadata-store-usage>
+          </metadata-store-usage>      
         </metadata-store-usages>
       </persistence-config>
     </mds-config>
   </adf-mds-config>
-  <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+  <!--adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
     <defaults changeEventPolicy="ppr" useBindVarsForViewCriteriaLiterals="true" useBindValuesInFindByKey="true"
               iteratorRowValidationFlag="false"/>
     <startup>
@@ -43,5 +36,5 @@
         <config:Database jbo.locking.mode="optimistic"/>
       </amconfig-overrides>
     </startup>
-  </adf-adfm-config>
+  </adf-adfm-config-->
 </adf-config>

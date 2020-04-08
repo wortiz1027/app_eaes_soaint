@@ -4,8 +4,8 @@
     <LookupType>LOCAL</LookupType>
     <TaskFlowDeploy>false</TaskFlowDeploy>
     <TaskFlowServer>
-        <hostName/>
-        <httpPort/>
+        <hostName>bpm-dv1</hostName>
+        <httpPort>7003</httpPort>
         <httpsPort/>
     </TaskFlowServer>
     <hwTaskFlow>

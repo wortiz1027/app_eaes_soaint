@@ -4,6 +4,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
         <af:document title="#{estrategicoBundle.TITULO_PANTALLA_CONCLUIR_REVISION}" id="d1">
+            <af:messages id="m1"/>
             <af:form id="f1" usesUpload="true">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
@@ -64,12 +65,13 @@
                                 <af:panelGroupLayout id="pgl13" inlineStyle="padding: 20px;" styleClass="sinBorders" halign="center" layout="vertical">
                                     <af:table var="row" rowBandingInterval="0" id="t2"
                                               styleClass="contentTable AFStretchWidth"
-                                              value="#{pageFlowScope.mbConcluirRevisiones.prototipo.documentos}">
+                                              value="#{pageFlowScope.mbConcluirRevisiones.prototipo.documentos}"
+                                              binding="#{pageFlowScope.mbConcluirRevisiones.tblDocumentos}">
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_DOCUMENTOS}" id="c2" width="250%">
                                             <af:outputText value="#{row.nombre}" id="ot2"/>
                                         </af:column>
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_ACCIONES}" id="c3">
-                                            <af:panelGroupLayout id="pgl14">
+                                            <af:panelGroupLayout id="pgl14" styleClass="sinBorders" halign="center" layout="horizontal">
                                                 <af:button text="#{estrategicoBundle.BOTON_ADJUNTAR}" id="b1" icon="/images/ico-editar.png"
                                                            styleClass="tamanioauto2"
                                                            actionListener="#{pageFlowScope.mbConcluirRevisiones.onClickAdjuntar}"/>
@@ -86,16 +88,18 @@
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
                                             cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
                                     <af:panelGroupLayout id="pgl12"  styleClass="sinBorders" halign="center" layout="vertical">
-                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"/>
+                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"
+                                                      valueChangeListener="#{pageFlowScope.mbConcluirRevisiones.subirArchivo}"/>
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                                      binding="#{pageFlowScope.mbConcluirRevisiones.ppVisorDocumento}">
                                 <af:dialog id="d3" title="#{estrategicoBundle.TITULO_VISOR_DOCUMENTO}">
                                     <af:panelGroupLayout id="pgl144" halign="center" layout="vertical" styleClass="sinBorders" inlineStyle="padding: 15px;">
                                         <af:panelGroupLayout id="pgl24" layout="vertical" halign="center" styleClass="sinBorders">
-                                          <af:inlineFrame id="if14" source="#{pageFlowScope.mbVisorDocumentos.visor.urlDocumento}"
-                                                          inlineStyle="height:#{pageFlowScope.mbVisorDocumentos.visor.alto}px; width:#{pageFlowScope.mbVisorDocumentos.visor.ancho}px;"
+                                          <af:inlineFrame id="if14" source="#{pageFlowScope.mbConcluirRevisiones.visor.urlDocumento}"
+                                                          inlineStyle="height:#{pageFlowScope.mbConcluirRevisiones.visor.alto}px; width:#{pageFlowScope.mbConcluirRevisiones.visor.ancho}px;"
                                                           shortDesc="#{estrategicoBundle.LABEL_SHORT_DESC}"/>
                                         </af:panelGroupLayout>
                                       </af:panelGroupLayout>
@@ -104,7 +108,7 @@
                         </af:panelGroupLayout>
                     </f:facet>
                     <f:facet name="footer">
-                        <af:panelGroupLayout id="pgl15" halign="right" layout="vertical">
+                        <af:panelGroupLayout id="pgl15" halign="right" layout="vertical">                            
                             <af:button text="#{estrategicoBundle.BOTON_ENVIAR}" id="bProcesar" partialSubmit="true"
                                        styleClass="buttonBlue"
                                        action="#{pageFlowScope.mbConcluirRevisiones.finalizarPantalla}"

@@ -36,6 +36,8 @@
           usageId="adf_estrategico_HT_EvaluarAsignarRecursoPrototipado_HT_EvaluarAsignarRecursoPrototipado_inicializarManageBeanPageDef"/>
     <page path="/WEB-INF/edu/javeriana/verificarasignarrecursos/taskflows/HT_EvaluarAsignarRecursoPrototipado.xml#HT_EvaluarAsignarRecursoPrototipado@savePayload"
           usageId="adf_estrategico_HT_EvaluarAsignarRecursoPrototipado_HT_EvaluarAsignarRecursoPrototipado_savePayloadPageDef"/>
+    <page path="/WEB-INF/edu/javeriana/desarrollarespecificaciondiseno/pages/PG_ConcluirRevisiones.jspx"
+          usageId="adf_estrategico_PG_ConcluirRevisionesPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="adf_estrategico_PG_SolicitarRecursosPageDef"
@@ -72,8 +74,11 @@
           path="edu.javeriana.verificarasignarrecursos.taskflows.HT_EvaluarAsignarRecursoPrototipado_HT_EvaluarAsignarRecursoPrototipado_inicializarManageBeanPageDef"/>
     <page id="adf_estrategico_HT_EvaluarAsignarRecursoPrototipado_HT_EvaluarAsignarRecursoPrototipado_savePayloadPageDef"
           path="edu.javeriana.verificarasignarrecursos.taskflows.HT_EvaluarAsignarRecursoPrototipado_HT_EvaluarAsignarRecursoPrototipado_savePayloadPageDef"/>
+    <page id="adf_estrategico_PG_ConcluirRevisionesPageDef"
+          path="edu.javeriana.desarrollarespecificaciondiseno.pages.PG_ConcluirRevisionesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="ADF_Estrategico_HT_ConcluirRevisiones" path="adf_estrategico.ADF_Estrategico_HT_ConcluirRevisiones"/>
     <dc id="ADF_Estrategico_HT_SolicitarRecursos" path="adf_estrategico.ADF_Estrategico_HT_SolicitarRecursos"/>
   </dataControlUsages>
 </Application>

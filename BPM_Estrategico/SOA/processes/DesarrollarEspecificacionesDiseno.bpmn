@@ -89,6 +89,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                         <bpmnext:AttributeExpression name="subjectExpressionFeature">
                             <bpmnext:expression language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xpathns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace">oraext:format-string(dvm:lookupValue('oramds:/apps/resources/BPM/DVMs/DVM_Mensajes.dvm', 'CLAVE', 'MENSAJE_PANTALLA_DEFINICION_ESPECIFICACION_DISENIO', 'VALOR', 'NODATA'),string(bpmn:getDataObject('doSolicitud')/ns:idSolicitud))
                                 <bpmn:extensionElements>
@@ -310,6 +311,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                         <bpmnext:AttributeExpression name="subjectExpressionFeature">
                             <bpmnext:expression language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xpathns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace">oraext:format-string(dvm:lookupValue('oramds:/apps/resources/BPM/DVMs/DVM_Mensajes.dvm', 'CLAVE', 'MENSAJE_PANTALLA_CONCLUIR_REVISIONES', 'VALOR', 'NODATA'),string(bpmn:getDataObject('doSolicitud')/ns:idSolicitud))
                                 <bpmn:extensionElements>
@@ -531,6 +533,7 @@
                         <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <bpmnext:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <bpmnext:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <bpmnext:StringFeature value="" name="reinitiateSource"/>
                         <bpmnext:AttributeExpression name="subjectExpressionFeature">
                             <bpmnext:expression language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xpathns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace">oraext:format-string(dvm:lookupValue('oramds:/apps/resources/BPM/DVMs/DVM_Mensajes.dvm', 'CLAVE', 'MENSAJE_PANTALLA_DISENIAR_PRODUCTOS', 'VALOR', 'NODATA'),string(bpmn:getDataObject('doSolicitud')/ns:idSolicitud))
                                 <bpmn:extensionElements>
