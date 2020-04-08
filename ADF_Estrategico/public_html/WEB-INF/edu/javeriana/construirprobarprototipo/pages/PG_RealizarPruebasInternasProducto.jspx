@@ -101,7 +101,8 @@
                                                      halign="center" layout="vertical">
                                     <af:table var="row" rowBandingInterval="0" id="t2"
                                               styleClass="contentTable AFStretchWidth"
-                                              value="#{pageFlowScope.mbRealizarPruebasInternasProducto.prototipo.documentos}">
+                                              value="#{pageFlowScope.mbRealizarPruebasInternasProducto.prototipo.documentos}"
+                                              binding="#{pageFlowScope.mbRealizarPruebasInternasProducto.tblDocumentos}">
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_DOCUMENTOS}"
                                                    id="c2" width="250%">
                                             <af:outputText value="#{row.nombre}" id="ot23"/>
@@ -122,17 +123,21 @@
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:panelBox>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                                      binding="#{pageFlowScope.mbRealizarPruebasInternasProducto.ppCargarArchvo}">
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}"
                                            affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
-                                           cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
+                                           cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}"
+                                           dialogListener="#{pageFlowScope.mbRealizarPruebasInternasProducto.aceptarPopUpAdjuntarDocumento}">
                                     <af:panelGroupLayout id="pgl123" styleClass="sinBorders" halign="center"
                                                          layout="vertical">
-                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"/>
+                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"
+                                                      valueChangeListener="#{pageFlowScope.mbRealizarPruebasInternasProducto.subirArchivo}"/>
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>
-                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+                            <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+                                      binding="#{pageFlowScope.mbRealizarPruebasInternasProducto.ppVisorDocumento}">
                                 <af:dialog id="d3" title="#{estrategicoBundle.TITULO_VISOR_DOCUMENTO}">
                                     <af:panelGroupLayout id="pgl144" halign="center" layout="vertical"
                                                          styleClass="sinBorders" inlineStyle="padding: 15px;">

@@ -96,17 +96,25 @@
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_ACCIONES}" id="c3">
                                             <af:panelGroupLayout id="pgl14" styleClass="sinBorders" halign="center" layout="horizontal">
                                                 <af:button text="#{estrategicoBundle.BOTON_VER}" id="b2" icon="/images/ico-documento.png"
-                                                           styleClass="tamanioauto2"/>
+                                                           styleClass="tamanioauto2"
+                                                           actionListener="#{pageFlowScope.mbConstruirPrototipoPruebasConcepto.onClickVer}"/>
                                             </af:panelGroupLayout>
                                         </af:column>
                                     </af:table>
                                 </af:panelGroupLayout>
                             </af:panelBox>
                             <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
-                                <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
+                                <af:dialog id="d2" title="#{estrategicoBundle.TITULO_OBSERVACION}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
                                             cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
-                                    <af:panelGroupLayout id="pgl123"  styleClass="sinBorders" halign="center" layout="vertical">
-                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"/>
+                                    <af:panelGroupLayout id="pgl123"  styleClass="sinBorders row" halign="center" layout="vertical">
+                                        <af:panelGroupLayout id="pgl17" halign="center" layout="vertical"
+                                                     styleClass="sinBorders col-xs-12">
+                                            <af:panelFormLayout id="pfl7" styleClass="sinBorders stretchedForm" labelAlignment="top">
+                                                <af:inputText label="#{estrategicoBundle.LABEL_OBESERVACION}" id="it5"
+                                                              rows="7"
+                                                              value="#{pageFlowScope.mbConstruirPrototipoPruebasConcepto.observacion}"/>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>

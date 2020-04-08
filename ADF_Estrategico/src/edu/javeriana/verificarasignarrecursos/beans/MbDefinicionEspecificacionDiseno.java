@@ -44,7 +44,10 @@ public class MbDefinicionEspecificacionDiseno extends AbstractBPMManageBeanBase 
     private Prototipo prototipo;
     private VisorDocumentoBean visor;
     private Documento documento;
-
+    
+    private boolean opcion1 = Boolean.TRUE;
+    private boolean opcion2 = Boolean.FALSE;
+    
     private transient RichTable tblDocumentos;
     private transient RichPopup ppVisorDocumento;
     private transient RichPopup ppCargarArchvo;
@@ -101,7 +104,11 @@ public class MbDefinicionEspecificacionDiseno extends AbstractBPMManageBeanBase 
     }
     
     public String finalizarPantalla() {
-        //TODO Da por sentado que la pantalla ya se debe cerrar y la actividad debe viajar
+        String response = "";
+        FacadeDatabase.insertarProtipo(this.prototipo, response);
+        
+        JsfUtils.setExpressionValue("#{bindings.realizarRevisionesExternasObligatoriasYOpcionales.inputValue}", prototipo.isRequiereRevisionesExternasOpcionales());
+        
         return MbDefinicionEspecificacionDiseno.NAVEGACION_FINALIZAR;
     }
     
@@ -179,7 +186,7 @@ public class MbDefinicionEspecificacionDiseno extends AbstractBPMManageBeanBase 
             logger.severe("Error subiendo el archivo al content", e);
         }
         LOGGER.end(Level.INFO,"Salida aceptarPopUpAdjuntarDocumento ");
-        }
+    }
 
     public void setPrototipo(Prototipo prototipo) {
         this.prototipo = prototipo;
@@ -227,5 +234,21 @@ public class MbDefinicionEspecificacionDiseno extends AbstractBPMManageBeanBase 
 
     public RichPopup getPpCargarArchvo() {
         return ppCargarArchvo;
+    }
+
+    public void setOpcion1(boolean opcion1) {
+        this.opcion1 = opcion1;
+    }
+
+    public boolean isOpcion1() {
+        return opcion1;
+    }
+
+    public void setOpcion2(boolean opcion2) {
+        this.opcion2 = opcion2;
+    }
+
+    public boolean isOpcion2() {
+        return opcion2;
     }
 }

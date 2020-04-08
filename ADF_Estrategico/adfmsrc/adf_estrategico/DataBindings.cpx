@@ -40,6 +40,8 @@
           usageId="adf_estrategico_PG_ConcluirRevisionesPageDef"/>
     <page path="/WEB-INF/edu/javeriana/desarrollarespecificaciondiseno/pages/PG_DefinicionEspecificacionDiseno.jspx"
           usageId="adf_estrategico_PG_DefinicionEspecificacionDisenoPageDef"/>
+    <page path="/WEB-INF/edu/javeriana/desarrollarespecificaciondiseno/pages/PG_DisenarProductos.jspx"
+          usageId="adf_estrategico_PG_DisenarProductosPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="adf_estrategico_PG_SolicitarRecursosPageDef"
@@ -80,6 +82,8 @@
           path="edu.javeriana.desarrollarespecificaciondiseno.pages.PG_ConcluirRevisionesPageDef"/>
     <page id="adf_estrategico_PG_DefinicionEspecificacionDisenoPageDef"
           path="edu.javeriana.desarrollarespecificaciondiseno.pages.PG_DefinicionEspecificacionDisenoPageDef"/>
+    <page id="adf_estrategico_PG_DisenarProductosPageDef"
+          path="edu.javeriana.desarrollarespecificaciondiseno.pages.PG_DisenarProductosPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="ADF_Estrategico_HT_EvaluarAsignarRecursoPrototipado"

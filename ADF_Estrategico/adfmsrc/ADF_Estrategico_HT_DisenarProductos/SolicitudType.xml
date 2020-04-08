@@ -55,4 +55,15 @@
       <Property Name="targetNamespace" Value="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"/>
     </Properties>
   </AccessorAttribute>
+  <AccessorAttribute id="gerente" IsCollection="true" BeanClass="ADF_Estrategico_HT_DisenarProductos.GerenteType"
+                     CollectionBeanClass="ADF_Estrategico_HT_DisenarProductos.GerenteType_gerente_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Gerente"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="gerente"/>
+      <Property Name="targetNamespace" Value="http://xmlns.javeriana.edu/edu/schemas/process/reclutamiento/v1.0"/>
+    </Properties>
+  </AccessorAttribute>
 </JavaBean>

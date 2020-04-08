@@ -64,8 +64,8 @@
                                             <af:panelFormLayout id="pfl7" styleClass="sinBorders stretchedForm" labelAlignment="top">
                                                 <af:selectOneRadio label="#{estrategicoBundle.LABEL_REVISIONES_EXTERNAS_OBLIGATORIAS_OPCIONALES}" id="sor1" layout="horizontal"
                                                                    value="#{pageFlowScope.mbDefinicionEspecificacionDiseno.prototipo.requiereRevisionesExternasOpcionales}">
-                                                    <f:selectItem value="#{estrategicoBundle.LABEL_VALUE_SI}" id="si1"/>
-                                                    <f:selectItem value="#{estrategicoBundle.LABEL_VALUE_NO}" id="si2"/>
+                                                    <f:selectItem value="#{pageFlowScope.mbDefinicionEspecificacionDiseno.opcion1}" id="si1"/>
+                                                    <f:selectItem value="#{pageFlowScope.mbDefinicionEspecificacionDiseno.opcion2}" id="si2"/>
                                                 </af:selectOneRadio>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
@@ -77,12 +77,13 @@
                                 <af:panelGroupLayout id="pgl13" inlineStyle="padding: 20px;" styleClass="sinBorders" halign="center" layout="vertical">
                                     <af:table var="row" rowBandingInterval="0" id="t2"
                                               styleClass="contentTable AFStretchWidth"
-                                              value="#{pageFlowScope.mbDefinicionEspecificacionDiseno.prototipo.documentos}">
+                                              value="#{pageFlowScope.mbDefinicionEspecificacionDiseno.prototipo.documentos}"
+                                              binding="#{pageFlowScope.mbDefinicionEspecificacionDiseno.tblDocumentos}">
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_DOCUMENTOS}" id="c2" width="250%">
                                             <af:outputText value="#{row.nombre}" id="ot2"/>
                                         </af:column>
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_ACCIONES}" id="c3">
-                                            <af:panelGroupLayout id="pgl14">
+                                            <af:panelGroupLayout id="pgl14" halign="center" layout="horizontal">
                                                 <af:button text="#{estrategicoBundle.BOTON_ADJUNTAR}" id="b1" icon="/images/ico-editar.png"
                                                            styleClass="tamanioauto2"
                                                            actionListener="#{pageFlowScope.mbDefinicionEspecificacionDiseno.onClickAdjuntar}"/>
@@ -98,9 +99,11 @@
                             <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                                       binding="#{pageFlowScope.mbDefinicionEspecificacionDiseno.ppCargarArchvo}">
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
-                                            cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
+                                            cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}"
+                                           dialogListener="#{pageFlowScope.mbDefinicionEspecificacionDiseno.aceptarPopUpAdjuntarDocumento}">
                                     <af:panelGroupLayout id="pgl123"  styleClass="sinBorders" halign="center" layout="vertical">
-                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"/>
+                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"
+                                                      valueChangeListener="#{pageFlowScope.mbDefinicionEspecificacionDiseno.subirArchivo}"/>
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>
@@ -119,9 +122,7 @@
                         </af:panelGroupLayout>
                     </f:facet>
                     <f:facet name="footer">
-                        <af:panelGroupLayout id="pgl15" halign="right" layout="vertical">
-                            <af:outputText value="#{bindings.idSolicitud.inputValue}"
-                                           shortDesc="#{bindings.idSolicitud.hints.tooltip}" id="ot1"/>
+                        <af:panelGroupLayout id="pgl15" halign="right" layout="vertical">                            
                             <af:button text="#{estrategicoBundle.BOTON_ENVIAR}" id="bProcesar" partialSubmit="true"
                                        styleClass="buttonBlue"
                                        action="#{pageFlowScope.mbDefinicionEspecificacionDiseno.finalizarPantalla}"

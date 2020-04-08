@@ -331,10 +331,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF_LookAndFeel.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF_Model.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -348,6 +344,10 @@
          </hash>
          <hash>
             <value n="id" v="ADF_ProxyContent.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_LookAndFeel.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -414,15 +414,6 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../ADF_LookAndFeel/deploy/ADF_LookAndFeel.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="ADF_LookAndFeel.jar"/>
-               <value n="id" v="ADF_LookAndFeel.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
                   <url path="../ADF_ProxyContent/deploy/ADF_ProxyContent.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
@@ -437,6 +428,15 @@
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF_Model.jar"/>
                <value n="id" v="ADF_Model.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../ADF_LookAndFeel/deploy/ADF_LookAndFeel.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF_LookAndFeel.jar"/>
+               <value n="id" v="ADF_LookAndFeel.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -575,15 +575,7 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="ADF_Library_Dependencies.library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF_Configuracion.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF_LookAndFeel.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -600,6 +592,10 @@
          </hash>
          <hash>
             <value n="id" v="ADF_ProxyContent.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF_LookAndFeel.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
