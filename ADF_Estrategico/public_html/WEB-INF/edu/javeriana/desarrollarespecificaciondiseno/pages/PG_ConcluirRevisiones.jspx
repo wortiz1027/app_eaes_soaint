@@ -87,7 +87,8 @@
                             <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                                       binding="#{pageFlowScope.mbConcluirRevisiones.ppCargarArchvo}">
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
-                                            cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
+                                            cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}"
+                                           dialogListener="#{pageFlowScope.mbConcluirRevisiones.aceptarPopUpAdjuntarDocumento}">
                                     <af:panelGroupLayout id="pgl12"  styleClass="sinBorders" halign="center" layout="vertical">
                                         <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"
                                                       valueChangeListener="#{pageFlowScope.mbConcluirRevisiones.subirArchivo}"/>

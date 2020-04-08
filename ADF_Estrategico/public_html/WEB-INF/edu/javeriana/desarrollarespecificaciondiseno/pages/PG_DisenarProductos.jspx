@@ -4,6 +4,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
         <af:document title="#{estrategicoBundle.TITULO_PANTALLA_DISENAR_PRODUCTO}" id="d1">
+            <af:messages id="m1"/>
             <af:form id="f1" usesUpload="true">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
                     <f:facet name="header"/>
@@ -82,14 +83,16 @@
                                                      halign="center" layout="vertical">
                                     <af:table var="row" rowBandingInterval="0" id="t2"
                                               styleClass="contentTable AFStretchWidth"
-                                              value="#{pageFlowScope.mbDiseniarProductos.prototipo.documentos}">
+                                              value="#{pageFlowScope.mbDiseniarProductos.prototipo.documentos}"
+                                              binding="#{pageFlowScope.mbDiseniarProductos.tblDocumentos}">
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_DOCUMENTOS}"
                                                    id="c2" width="250%">
                                             <af:outputText value="#{row.nombre}" id="ot2"/>
                                         </af:column>
                                         <af:column sortable="false" headerText="#{estrategicoBundle.COLUMNA_ACCIONES}"
                                                    id="c3">
-                                            <af:panelGroupLayout id="pgl14">
+                                            <af:panelGroupLayout id="pgl14" halign="center" layout="horizontal"
+                                                         styleClass="sinBorders">
                                                 <af:button text="#{estrategicoBundle.BOTON_ADJUNTAR}" id="b1"
                                                            icon="/images/ico-editar.png" styleClass="tamanioauto2"
                                                            actionListener="#{pageFlowScope.mbDiseniarProductos.onClickAdjuntar}"/>
@@ -105,10 +108,12 @@
                             <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
                                 <af:dialog id="d2" title="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}"
                                            affirmativeTextAndAccessKey="#{estrategicoBundle.BOTON_ACEPTAR}"
-                                           cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}">
+                                           cancelTextAndAccessKey="#{estrategicoBundle.BOTON_CANCELAR}"
+                                           dialogListener="#{pageFlowScope.mbDiseniarProductos.aceptarPopUpAdjuntarDocumento}">
                                     <af:panelGroupLayout id="pgl123" styleClass="sinBorders" halign="center"
                                                          layout="vertical">
-                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"/>
+                                        <af:inputFile label="#{estrategicoBundle.PANEL_TITULO_DOCUMENTOS}" id="if1"
+                                                      valueChangeListener="#{pageFlowScope.mbDiseniarProductos.subirArchivo}"/>
                                     </af:panelGroupLayout>
                                 </af:dialog>
                             </af:popup>
