@@ -49,7 +49,7 @@ public class MbConcluirRevisiones extends AbstractBPMManageBeanBase implements S
     private final Integer VISOR_WIDTH  = 1113;
     
     private Prototipo prototipo;
-    private VisorDocumentoBean visor;
+    private VisorDocumentoBean visor; 
     private Documento documento;
 
     private transient RichTable tblDocumentos;

@@ -10,6 +10,14 @@
     <accessorIterator MasterBinding="getTaskDetailsIterator" Binds="task" RangeSize="10"
                       DataControl="ADF_Soporte_HT_EntrevistarCandidatos"
                       BeanClass="ADF_Soporte_HT_EntrevistarCandidatos.task" id="taskIterator"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="payload" RangeSize="25"
+                      DataControl="ADF_Soporte_HT_EntrevistarCandidatos"
+                      BeanClass="ADF_Soporte_HT_EntrevistarCandidatos.HT_EntrevistarCandidatosPayloadType"
+                      id="payloadIterator"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="DatosProcesoSoporte" RangeSize="10"
+                      DataControl="ADF_Soporte_HT_EntrevistarCandidatos"
+                      BeanClass="ADF_Soporte_HT_EntrevistarCandidatos.DatosProcesoSoporteType"
+                      id="DatosProcesoSoporteIterator"/>
   </executables>
   <bindings>
     <methodAction id="getTaskDetails" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getTaskDetails"
@@ -23,5 +31,10 @@
     <methodAction IterBinding="taskIterator" id="APPROVE" RequiresUpdateModel="true" Action="invokeMethod"
                   MethodName="APPROVE" IsViewObjectMethod="false" DataControl="ADF_Soporte_HT_EntrevistarCandidatos"
                   InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <attributeValues IterBinding="DatosProcesoSoporteIterator" id="existenCandidatosParaEvaluar">
+      <AttrNames>
+        <Item Value="existenCandidatosParaEvaluar"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

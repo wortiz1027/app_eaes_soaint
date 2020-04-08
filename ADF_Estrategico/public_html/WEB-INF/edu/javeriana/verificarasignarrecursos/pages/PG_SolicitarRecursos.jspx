@@ -7,9 +7,7 @@
             <af:messages id="m1"/>
             <af:form id="f1">
                 <af:pageTemplate viewId="/template/adf_template.jspx" id="pt1">
-                    <f:facet name="header">
-                        <af:panelGroupLayout id="pgl10"></af:panelGroupLayout>
-                    </f:facet>
+                    <f:facet name="header"/>
                     <f:facet name="content">
                         <af:panelGroupLayout id="pgl1" halign="center" layout="vertical"
                                              styleClass="padding-right: 25px;">

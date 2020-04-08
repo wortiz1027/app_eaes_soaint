@@ -2,11 +2,14 @@ package co.edu.javeriana.negocio;
 
 import java.io.Serializable;
 
+import java.math.BigDecimal;
+
 import java.util.Date;
 
 public class Entrevista implements Serializable {
-    @SuppressWarnings("compatibility:-3987782155323688184")
+    @SuppressWarnings("compatibility:6876235155068162370")
     private static final long serialVersionUID = 1L;
+    private BigDecimal codigo;
     private Curriculum curriculums;
     private Colaborador entrevistador;
     private Colaborador emisorRespuesta;
@@ -45,6 +48,14 @@ public class Entrevista implements Serializable {
         this.vacante = new Vacante();
         this.fechaRealizacion = new Date();
         this.fechaEmisionResultado = new Date();
+    }
+
+    public void setCodigo(BigDecimal codigo) {
+        this.codigo = codigo;
+    }
+
+    public BigDecimal getCodigo() {
+        return codigo;
     }
 
     public void setCurriculums(Curriculum curriculums) {

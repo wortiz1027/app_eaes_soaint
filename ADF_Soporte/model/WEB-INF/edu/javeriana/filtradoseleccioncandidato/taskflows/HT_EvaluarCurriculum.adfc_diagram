@@ -235,7 +235,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>inicializarManageBean&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">-256.4541</property>
+         name="y">-259.60938</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -279,7 +279,7 @@
       <property
          name="fromOutcome">continuar</property>
       <property
-         name="sdm:polyPoints">R50,-71.0,-256.8047,112.368164,-241.55176,L50</property>
+         name="sdm:polyPoints">R50,-71.0,-259.95996,112.368164,-241.55176,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"

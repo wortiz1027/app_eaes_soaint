@@ -1,5 +1,9 @@
 package co.edu.javeriana.facade;
 
+import co.edu.javeriana.configuracion.utils.DateUtils;
+import co.edu.javeriana.negocio.Candidato;
+import co.edu.javeriana.negocio.Entrevista;
+import co.edu.javeriana.negocio.Recomendacion;
 import co.edu.javeriana.proxies.consultarcandidatos.proxy.BpelConsultacandidatos;
 import co.edu.javeriana.proxies.consultarcandidatos.proxy.BpelConsultacandidatosClientEp;
 import co.edu.javeriana.proxies.consultarcandidatos.types.CandidatoType;
@@ -7,23 +11,21 @@ import co.edu.javeriana.proxies.consultarcandidatos.types.CandidatosType;
 import co.edu.javeriana.proxies.consultarcandidatos.types.GenericoType;
 import co.edu.javeriana.proxies.consultarrecomendaciones.proxy.BpelConsprotrecomendaciones;
 import co.edu.javeriana.proxies.consultarrecomendaciones.proxy.BpelConsprotrecomendacionesClientEp;
+import co.edu.javeriana.proxies.consultarrecomendaciones.types.RecomendacionType;
 import co.edu.javeriana.proxies.insertarentrevista.proxy.BpelInsertarentrevista;
 import co.edu.javeriana.proxies.insertarentrevista.proxy.BpelInsertarentrevistaClientEp;
+import co.edu.javeriana.proxies.insertarentrevista.types.InsertarEntrevistaType;
+import co.edu.javeriana.proxies.insertarentrevista.types.ResponseType;
 import co.edu.javeriana.proxies.updateentrevista.proxy.BpelUpdateobsentrevista;
 import co.edu.javeriana.proxies.updateentrevista.proxy.BpelUpdateobsentrevistaClientEp;
 import co.edu.javeriana.proxies.updateestadoentrevista.proxy.BpelUpdateobsestentrevista;
 import co.edu.javeriana.proxies.updateestadoentrevista.proxy.BpelUpdateobsestentrevistaClientEp;
+
 import java.math.BigDecimal;
 
 import java.util.List;
 
 import javax.xml.ws.BindingProvider;
-import co.edu.javeriana.negocio.Candidato;
-import co.edu.javeriana.negocio.Entrevista;
-import co.edu.javeriana.negocio.Recomendacion;
-import co.edu.javeriana.proxies.consultarrecomendaciones.types.RecomendacionType;
-import co.edu.javeriana.proxies.insertarentrevista.types.InsertarEntrevistaType;
-import co.edu.javeriana.proxies.insertarentrevista.types.ResponseType;
 
 public class FacadeDatabase2 {
     
@@ -155,18 +157,6 @@ public class FacadeDatabase2 {
     }
     
     //Mis metodos para consumir las operaciones
-    
-    public static void insertarEntrevista(Entrevista entrevista, String response) {
-        InsertarEntrevistaType rq = new InsertarEntrevistaType();
-        
-        //rq.setCodigoCurriculum(entrevista.getCurriculums().getDocumento().);
-        //rq.setCodigoColaborador(entrevista.getEntrevistador().getIdentificacion());
-        
-        ResponseType rs = getPortInsertarEntrevista().process(rq);
-        
-        response = rs.getEjecucion();
-    }
-    
     public static void consultarCandidatos(List<Candidato> candidatos, String numero) {
         //1. contruir el request
         GenericoType rq = new GenericoType(); 
@@ -184,6 +174,7 @@ public class FacadeDatabase2 {
             candidato.setSegundoNombre(candidatoType.getSegundoNombre());
             candidato.setPrimeroApellido(candidatoType.getPrimerApellido());
             candidato.setSegundoApellido(candidatoType.getSegundoApellido());
+            candidato.generarNombreCompleto();
             
             candidatos.add(candidato);            
         }//End foreach
@@ -224,4 +215,97 @@ public class FacadeDatabase2 {
         response = rs.getEjecucion();
     }
     
+    public static void consultarCurriculums(List<Entrevista> entrevistas, BigDecimal idVacantes) {
+        /*
+        RequesAlgo rq = new RequesAlgo();
+        ResponseAlgo rs = getPort().consultarCurriculums(rq);
+        
+        for (Response respuesta : rs.lista) {
+            Entrevista entrevista = new Entrevista();
+            entrevista.getVacante().setCodigo(idVacantes);
+            entrevista.getCurriculums().setCodigo("arg0");
+            entrevista.getCurriculums().getDocumento().setIdDoc("arg0");
+            entrevista.getCurriculums().getCandidato().getIdentificacion().setTipo("arg0");
+            entrevista.getCurriculums().getCandidato().getIdentificacion().setNumero("arg0");
+            entrevista.getCurriculums().getCandidato().setPrimerNombre("arg0");
+            entrevista.getCurriculums().getCandidato().setSegundoNombre("arg0");
+            entrevista.getCurriculums().getCandidato().setPrimeroApellido("arg0");
+            entrevista.getCurriculums().getCandidato().setSegundoApellido("arg0");
+            entrevista.getCurriculums().getCandidato().setEmail("arg0");
+            entrevista.getCurriculums().getCandidato().setTelefono("arg0");
+            entrevista.getCurriculums().getCandidato().setTelefono("arg0");
+            
+            entrevista.getCurriculums().getCandidato().generarNombreCompleto();
+            entrevistas.add(entrevista);
+        }//End foreach
+        */        
+    }
+    
+    public static void consultarCurriculumsPorVacante(List<Entrevista> entrevistas, BigDecimal idVacantes) {
+        /*
+        RequesAlgo rq = new RequesAlgo();
+        ResponseAlgo rs = getPort().consultarCurriculums(rq);
+        
+        for (Response respuesta : rs.lista) {
+            Entrevista entrevista = new Entrevista();
+            entrevista.setCodigo("arg0");
+            entrevista.getVacante().setCodigo(idVacantes);
+            entrevista.getCurriculums().setCodigo("arg0");
+            entrevista.getCurriculums().getDocumento().setIdDoc("arg0");
+            entrevista.getCurriculums().getCandidato().getIdentificacion().setTipo("arg0");
+            entrevista.getCurriculums().getCandidato().getIdentificacion().setNumero("arg0");
+            entrevista.getCurriculums().getCandidato().setPrimerNombre("arg0");
+            entrevista.getCurriculums().getCandidato().setSegundoNombre("arg0");
+            entrevista.getCurriculums().getCandidato().setPrimeroApellido("arg0");
+            entrevista.getCurriculums().getCandidato().setSegundoApellido("arg0");
+            entrevista.getCurriculums().getCandidato().setEmail("arg0");
+            entrevista.getCurriculums().getCandidato().setTelefono("arg0");
+            entrevista.getCurriculums().getCandidato().setTelefono("arg0");
+            
+            entrevista.getCurriculums().getCandidato().generarNombreCompleto();
+            entrevistas.add(entrevista);
+        }//End foreach
+        */
+    }
+    
+    public static void consultarCurriculumsPorVacanteYEstado(List<Entrevista> entrevistas, BigDecimal idVacantes, String estado) {
+        /*
+        RequesAlgo rq = new RequesAlgo();
+        ResponseAlgo rs = getPort().consultarCurriculums(rq);
+        
+        for (Response respuesta : rs.lista) {
+            Entrevista entrevista = new Entrevista();
+            entrevista.setCodigo("arg0");
+            entrevista.getVacante().setCodigo(idVacantes);
+            entrevista.getCurriculums().setCodigo("arg0");
+            entrevista.getCurriculums().getDocumento().setIdDoc("arg0");
+            entrevista.getCurriculums().getCandidato().getIdentificacion().setTipo("arg0");
+            entrevista.getCurriculums().getCandidato().getIdentificacion().setNumero("arg0");
+            entrevista.getCurriculums().getCandidato().setPrimerNombre("arg0");
+            entrevista.getCurriculums().getCandidato().setSegundoNombre("arg0");
+            entrevista.getCurriculums().getCandidato().setPrimeroApellido("arg0");
+            entrevista.getCurriculums().getCandidato().setSegundoApellido("arg0");
+            entrevista.getCurriculums().getCandidato().setEmail("arg0");
+            entrevista.getCurriculums().getCandidato().setTelefono("arg0");
+            entrevista.getCurriculums().getCandidato().setTelefono("arg0");
+            
+            entrevista.getCurriculums().getCandidato().generarNombreCompleto();
+            entrevistas.add(entrevista);
+        }//End foreach
+        */
+    }
+    
+    public static void insertarEntrevista(Entrevista entrevista) {
+        InsertarEntrevistaType rq = new InsertarEntrevistaType();
+        
+        rq.setCodigoCurriculum(entrevista.getCurriculums().getCodigo());
+        rq.setCodigoColaborador(entrevista.getCurriculums().getCandidato().getCodigo());
+        rq.setCodigoVacante(entrevista.getVacante().getCodigo());
+        
+        if (entrevista.getFechaRealizacion() != null) {
+            rq.setFechaRealizacion(DateUtils.dateToXMLGregorianCalendar(entrevista.getFechaRealizacion()));
+        }//End if        
+        
+        ResponseType rs = getPortInsertarEntrevista().process(rq);        
+    }    
 }

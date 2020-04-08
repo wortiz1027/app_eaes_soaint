@@ -2,10 +2,12 @@ package co.edu.javeriana.negocio;
 
 import java.io.Serializable;
 
+import java.math.BigDecimal;
+
 public class Vacante implements Serializable {
-    @SuppressWarnings("compatibility:-3342146981343264331")
+    @SuppressWarnings("compatibility:5366798286595312204")
     private static final long serialVersionUID = 1L;
-    private String codigo;
+    private BigDecimal codigo;
     private String nombre;
     private String descripcion;
     
@@ -13,11 +15,11 @@ public class Vacante implements Serializable {
         super();
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(BigDecimal codigo) {
         this.codigo = codigo;
     }
 
-    public String getCodigo() {
+    public BigDecimal getCodigo() {
         return codigo;
     }
 
